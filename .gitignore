@@ -1,0 +1,27 @@
+# ECC / Claude Code local state
+.claude/ecc/install-state.json
+.claude/settings.local.json
+.claude/sessions/
+.claude/homunculus/
+.ecc/memory/
+CLAUDE.local.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
