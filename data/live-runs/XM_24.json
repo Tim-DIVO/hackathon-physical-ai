@@ -1,0 +1,2003 @@
+{
+  "runId": "run-mvcenv7e",
+  "startedAt": "2026-10-17T13:01:33.552Z",
+  "windows": [
+    {
+      "start": 0,
+      "end": 4,
+      "events": [
+        {
+          "id": "XM_24-live-0-0",
+          "clipId": "XM_24",
+          "start": 1.5,
+          "end": 2.5,
+          "action": "Pick up pipette",
+          "actionLabel": "other",
+          "tipState": "no_tip",
+          "description": "Right hand removes a yellow-coded adjustable micropipette from the stand and brings it into the work area.",
+          "objects": [
+            "yellow-coded adjustable micropipette",
+            "pipette stand"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "yellow-coded micropipette",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            1.5,
+            2,
+            2.5
+          ]
+        },
+        {
+          "id": "XM_24-live-0-1",
+          "clipId": "XM_24",
+          "start": 2.5,
+          "end": 3.5,
+          "action": "Adjust pipette setting",
+          "actionLabel": "other",
+          "tipState": "no_tip",
+          "description": "Operator manipulates the plunger/adjustment dial area of the yellow-coded micropipette, likely setting the volume. No volume digits are legible and no tip attachment is visible.",
+          "objects": [
+            "yellow-coded adjustable micropipette"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "yellow-coded micropipette",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            2.5,
+            3,
+            3.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "no tip attached/unknown (pipette selected; no tip mounted visible)",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3859,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 255,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4114
+      }
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "events": [
+        {
+          "id": "XM_24-live-40-0",
+          "clipId": "XM_24",
+          "start": 4,
+          "end": 7.5,
+          "action": "Attach pipette tip",
+          "actionLabel": "attach_tip",
+          "tipState": "fresh_tip_attached",
+          "description": "The operator presses a handheld micropipette down onto a yellow tip held at the bench, seating the tip by pushing/twisting. No aspiration or dispensing is visible.",
+          "objects": [
+            "handheld micropipette",
+            "yellow pipette tip",
+            "tip rack/bench area"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "micropipette with yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            4,
+            4.5,
+            5,
+            5.5,
+            6,
+            6.5,
+            7,
+            7.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3859,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 163,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4022
+      }
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "events": [
+        {
+          "id": "XM_24-live-80-0",
+          "clipId": "XM_24",
+          "start": 8,
+          "end": 8.5,
+          "action": "Attach yellow tip",
+          "actionLabel": "attach_tip",
+          "tipState": "fresh_tip_attached",
+          "description": "A yellow pipette tip is visible on the handheld pipette after the hand is near the tip/rack area, indicating a tip has been mounted.",
+          "objects": [
+            "handheld pipette",
+            "yellow pipette tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "yellow-tip pipette",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            8,
+            8.5
+          ]
+        },
+        {
+          "id": "XM_24-live-80-1",
+          "clipId": "XM_24",
+          "start": 8.5,
+          "end": 11.5,
+          "action": "Handle red reagent bottle",
+          "actionLabel": "open_container",
+          "tipState": "same_tip_continued",
+          "description": "The right hand holds and manipulates a red/pink liquid reagent bottle or reservoir on the right side of the hood while the pipette with attached yellow tip remains in the left hand. No aspiration or dispense is visible in this window.",
+          "objects": [
+            "red/pink liquid container",
+            "handheld pipette"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "yellow-tip pipette",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Red/pink liquid container identity is not readable; review sample/reagent identity if it matters for the protocol.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            8.5,
+            9,
+            9.5,
+            10,
+            10.5,
+            11,
+            11.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3909,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 307,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4216
+      }
+    },
+    {
+      "start": 12,
+      "end": 16,
+      "events": [
+        {
+          "id": "XM_24-live-120-0",
+          "clipId": "XM_24",
+          "start": 13,
+          "end": 15,
+          "action": "Aspirate unknown reagent",
+          "actionLabel": "aspirate",
+          "tipState": "same_tip_continued",
+          "description": "Pipette with the previously attached yellow tip is positioned into an open multiwell/strip reservoir area on the right and the plunger is operated, consistent with aspirating liquid. The exact source identity is not readable.",
+          "objects": [
+            "pipette with yellow tip",
+            "open reservoir or multiwell container",
+            "unknown reagent/source"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: liquid/source identity is not readable during aspiration.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            13,
+            13.5,
+            14,
+            14.5,
+            15
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3916,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 185,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4101
+      }
+    },
+    {
+      "start": 16,
+      "end": 20,
+      "events": [
+        {
+          "id": "XM_24-live-160-0",
+          "clipId": "XM_24",
+          "start": 16,
+          "end": 18,
+          "action": "Aspirate from EP tube",
+          "actionLabel": "aspirate",
+          "tipState": "same_tip_continued",
+          "description": "Pipette with the previously attached yellow tip is positioned into/at the open labeled microcentrifuge tube in the rack, consistent with aspirating liquid from the tube. Container label/sample identity is not readable.",
+          "objects": [
+            "pipette with yellow tip",
+            "open labeled EP tube",
+            "tube racks"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "EP tube/sample identity is not readable; confirm the intended tube for this aspiration.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            16,
+            16.5,
+            17,
+            17.5,
+            18
+          ]
+        },
+        {
+          "id": "XM_24-live-160-1",
+          "clipId": "XM_24",
+          "start": 18.5,
+          "end": 19.5,
+          "action": "Dispense into small tube",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "Without a visible tip change, the same yellow tip is moved to a small tube/cuvette-like container held in the left hand and inserted/held inside it, consistent with dispensing liquid into that container.",
+          "objects": [
+            "pipette with yellow tip",
+            "small clear tube or cuvette held in hand",
+            "green tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 1,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Destination container identity is unclear; confirm this is the intended EP tube/reagent addition destination.",
+              "status": "needs_review"
+            },
+            {
+              "type": "tip_reuse",
+              "message": "Same tip appears to move from the prior EP tube/source to a different small container without a visible tip change; review whether this reuse is intended.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            18.5,
+            19,
+            19.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3952,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 381,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4333
+      }
+    },
+    {
+      "start": 20,
+      "end": 24,
+      "events": [
+        {
+          "id": "XM_24-live-200-0",
+          "clipId": "XM_24",
+          "start": 20,
+          "end": 22,
+          "action": "Dispense into EP tube",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "Pipette tip is positioned inside/at the mouth of a small open EP tube held in the left hand, consistent with dispensing previously aspirated unknown reagent into the EP tube.",
+          "objects": [
+            "pipette with yellow tip",
+            "open EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 1,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: reagent/sample identity dispensed into the EP tube is not readable in this window.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            20,
+            20.5,
+            21,
+            21.5,
+            22
+          ]
+        },
+        {
+          "id": "XM_24-live-200-1",
+          "clipId": "XM_24",
+          "start": 22,
+          "end": 23.5,
+          "action": "Move pipette to rack",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "After dispensing, the pipette is withdrawn from the hand-held EP tube and moved toward the tube racks; no tip ejection or new tip mounting is visible.",
+          "objects": [
+            "pipette with same yellow tip",
+            "tube racks",
+            "open EP tube in hand"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            22.5,
+            23,
+            23.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3971,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 292,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4263
+      }
+    },
+    {
+      "start": 24,
+      "end": 28,
+      "events": [
+        {
+          "id": "XM_24-live-240-0",
+          "clipId": "XM_24",
+          "start": 24,
+          "end": 24.5,
+          "action": "Position pipette over rack",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Pipette with the previously attached yellow tip is held above/near the tube rack area; no liquid transfer is clearly visible yet.",
+          "objects": [
+            "pipette with yellow tip",
+            "tube rack",
+            "small tubes"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            24,
+            24.5
+          ]
+        },
+        {
+          "id": "XM_24-live-240-1",
+          "clipId": "XM_24",
+          "start": 25,
+          "end": 27.5,
+          "action": "Dispense into small tube",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "The same yellow-tipped pipette is inserted into or held at the mouth of a small tube/strip tube held by the left hand, consistent with dispensing reagent/sample into the tube. Container identity is not readable.",
+          "objects": [
+            "pipette with yellow tip",
+            "small tube or tube strip",
+            "green tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": 2,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "tip_reuse",
+              "message": "Possible issue needing review: the same visible tip appears to be used for another tube/source without a visible tip change in this window.",
+              "status": "needs_review"
+            },
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: the destination tube/sample identity is unreadable.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            25,
+            25.5,
+            26,
+            26.5,
+            27,
+            27.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3982,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 334,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4316
+      }
+    },
+    {
+      "start": 28,
+      "end": 32,
+      "events": [
+        {
+          "id": "XM_24-live-280-0",
+          "clipId": "XM_24",
+          "start": 28.5,
+          "end": 30,
+          "action": "Aspirate unknown reagent",
+          "actionLabel": "aspirate",
+          "tipState": "same_tip_continued",
+          "description": "The pipette with an already-attached clear tip is lowered into a small tube/well in the white rack area and appears to draw liquid. The container identity/label is not readable.",
+          "objects": [
+            "pipette with clear tip",
+            "small tube/well in white rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: source container identity is unreadable during aspiration.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            28.5,
+            29,
+            29.5,
+            30
+          ]
+        },
+        {
+          "id": "XM_24-live-280-1",
+          "clipId": "XM_24",
+          "start": 30.5,
+          "end": 31.5,
+          "action": "Dispense into EP tube",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "Using the same visible tip, the operator moves from the rack area to a small handheld microcentrifuge/EP tube and dispenses liquid into it, consistent with the next reagent addition into the EP tube.",
+          "objects": [
+            "pipette with clear tip",
+            "handheld EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 3,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "tip_reuse",
+              "message": "Possible issue needing review: the same tip appears to move from a source tube/well to the handheld EP tube without a visible tip change.",
+              "status": "needs_review"
+            },
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: receiving EP tube/sample identity is not readable.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            30.5,
+            31,
+            31.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3989,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 594,
+        "output_tokens_details": {
+          "reasoning_tokens": 232
+        },
+        "total_tokens": 4583
+      }
+    },
+    {
+      "start": 32,
+      "end": 36,
+      "events": [
+        {
+          "id": "XM_24-live-320-0",
+          "clipId": "XM_24",
+          "start": 32,
+          "end": 34.5,
+          "action": "Pipette-mix small tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "The white pipette with an attached clear/yellowish tip is held in a small clear tube supported by the other hand, with the tip remaining in the liquid area for repeated pipetting/possible mixing before being withdrawn.",
+          "objects": [
+            "white adjustable pipette",
+            "attached pipette tip",
+            "small clear tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Small tube/sample identity is not readable; review whether this is the intended dilution tube for mixing.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            32,
+            32.5,
+            33,
+            33.5,
+            34,
+            34.5
+          ]
+        },
+        {
+          "id": "XM_24-live-320-1",
+          "clipId": "XM_24",
+          "start": 35,
+          "end": 35.5,
+          "action": "Handle yellow-capped container",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "After withdrawing the pipette, the right hand holds or repositions a small container with a yellow cap near the pipette stand; no opening, transfer, or tip change is visible.",
+          "objects": [
+            "yellow-capped container",
+            "pipette stand"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Yellow-capped container identity is unreadable; review if it is a reagent or sample source for the next step.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            35,
+            35.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3993,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 767,
+        "output_tokens_details": {
+          "reasoning_tokens": 430
+        },
+        "total_tokens": 4760
+      }
+    },
+    {
+      "start": 36,
+      "end": 40,
+      "events": [
+        {
+          "id": "XM_24-live-360-0",
+          "clipId": "XM_24",
+          "start": 36,
+          "end": 36.5,
+          "action": "Set pipette down",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The right hand places the active pipette down on the hood surface while the left hand holds a small clear tube/container near the green rack.",
+          "objects": [
+            "pipette",
+            "small clear tube",
+            "green tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            36,
+            36.5
+          ]
+        },
+        {
+          "id": "XM_24-live-360-1",
+          "clipId": "XM_24",
+          "start": 36.5,
+          "end": 37.5,
+          "action": "Move tube to rack",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The right hand picks up a small turquoise-capped tube and places it upright into the blue/purple tube rack next to another labeled tube.",
+          "objects": [
+            "turquoise-capped tube",
+            "blue/purple tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Tube identity/contents are not readable and may need review if it is part of the dilution series.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            36.5,
+            37,
+            37.5
+          ]
+        },
+        {
+          "id": "XM_24-live-360-2",
+          "clipId": "XM_24",
+          "start": 37.5,
+          "end": 38.5,
+          "action": "Return pipette to stand",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The right hand lifts the pipette with its yellow tip still attached and places it back into the pipette stand. No tip ejection or new tip mounting is visible.",
+          "objects": [
+            "pipette with yellow tip",
+            "pipette stand"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "yellow-tip pipette",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            37.5,
+            38,
+            38.5
+          ]
+        },
+        {
+          "id": "XM_24-live-360-3",
+          "clipId": "XM_24",
+          "start": 39,
+          "end": 39.5,
+          "action": "Handle small tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Both hands manipulate a small clear tube/container near the green rack, likely positioning or closing it. No pipetting action is visible.",
+          "objects": [
+            "small clear tube",
+            "green tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Small tube/container identity is not readable and may need review if it is part of the protocol.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            39,
+            39.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3993,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 516,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4509
+      }
+    },
+    {
+      "start": 40,
+      "end": 44,
+      "events": [
+        {
+          "id": "XM_24-live-400-0",
+          "clipId": "XM_24",
+          "start": 40,
+          "end": 42.5,
+          "action": "Hold small tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Operator holds a small clear plastic tube or cap near the front of the hood while the right hand hovers over the green tube rack; no pipetting or liquid transfer is visible.",
+          "objects": [
+            "small clear tube or cap",
+            "green tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            40,
+            40.5,
+            41,
+            41.5,
+            42,
+            42.5
+          ]
+        },
+        {
+          "id": "XM_24-live-400-1",
+          "clipId": "XM_24",
+          "start": 42.5,
+          "end": 43.5,
+          "action": "Reposition tube rack",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Right hand grips the green tube rack and slides/repositions it toward the right side of the workspace. No tip ejection, new tip attachment, aspiration, or dispense is visible.",
+          "objects": [
+            "green tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            42.5,
+            43,
+            43.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3992,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "reasoning_tokens": 179
+        },
+        "total_tokens": 4431
+      }
+    },
+    {
+      "start": 44,
+      "end": 48,
+      "events": [
+        {
+          "id": "XM_24-live-440-0",
+          "clipId": "XM_24",
+          "start": 44.5,
+          "end": 45.5,
+          "action": "Remove pipette from stand",
+          "actionLabel": "other",
+          "tipState": "no_tip",
+          "description": "The operator reaches to the pipette stand and removes a white adjustable pipette, bringing it toward the work area.",
+          "objects": [
+            "pipette",
+            "pipette stand"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "white adjustable pipette",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            44.5,
+            45,
+            45.5
+          ]
+        },
+        {
+          "id": "XM_24-live-440-1",
+          "clipId": "XM_24",
+          "start": 45.5,
+          "end": 47.5,
+          "action": "Attach fresh tip",
+          "actionLabel": "attach_tip",
+          "tipState": "fresh_tip_attached",
+          "description": "The operator aligns the pipette shaft with a loose clear/white pipette tip held in the other hand and presses/twists the pipette onto the tip to attach it.",
+          "objects": [
+            "pipette",
+            "clear/white pipette tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "white adjustable pipette",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            45.5,
+            46,
+            46.5,
+            47,
+            47.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3986,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 251,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4237
+      }
+    },
+    {
+      "start": 48,
+      "end": 52,
+      "events": [
+        {
+          "id": "XM_24-live-480-0",
+          "clipId": "XM_24",
+          "start": 48,
+          "end": 51.5,
+          "action": "Hold pipette idle",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Operator holds a manual pipette with the previously attached tip near the tube racks; no visible aspiration, dispense, tip ejection, or container contact occurs in this window.",
+          "objects": [
+            "manual pipette",
+            "attached pipette tip",
+            "tube racks"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            48,
+            48.5,
+            49,
+            49.5,
+            50,
+            50.5,
+            51,
+            51.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3976,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 153,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4129
+      }
+    },
+    {
+      "start": 52,
+      "end": 56,
+      "events": [
+        {
+          "id": "XM_24-live-520-0",
+          "clipId": "XM_24",
+          "start": 52,
+          "end": 54.5,
+          "action": "Hold pipette idle",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The operator holds a manual pipette with an attached tip near the tube racks; no aspiration or dispensing is visible.",
+          "objects": [
+            "manual pipette",
+            "attached pipette tip",
+            "tube racks"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            52,
+            52.5,
+            53,
+            53.5,
+            54
+          ]
+        },
+        {
+          "id": "XM_24-live-520-1",
+          "clipId": "XM_24",
+          "start": 54.5,
+          "end": 55.5,
+          "action": "Handle culture dish",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "The right hand reaches to the pink culture dish/plate on the right side of the hood and slides or repositions it while the pipette remains held in the left hand. No liquid transfer to the dish is visible in this window.",
+          "objects": [
+            "pink culture dish or plate",
+            "manual pipette with attached tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Container identity/contents of the pink culture dish or plate are not readable and may need review.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            54.5,
+            55,
+            55.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3976,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 293,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4269
+      }
+    },
+    {
+      "start": 56,
+      "end": 60,
+      "events": [
+        {
+          "id": "XM_24-live-560-0",
+          "clipId": "XM_24",
+          "start": 56,
+          "end": 57,
+          "action": "Handle tip box",
+          "actionLabel": "open_container",
+          "tipState": "same_tip_continued",
+          "description": "Right hand manipulates a black pipette-tip box or rack on the right side of the hood; no tip pickup or ejection is visible.",
+          "objects": [
+            "black tip box/rack",
+            "gloved right hand"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            56,
+            56.5,
+            57
+          ]
+        },
+        {
+          "id": "XM_24-live-560-1",
+          "clipId": "XM_24",
+          "start": 57,
+          "end": 58.5,
+          "action": "Hold tube and pipette",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Left hand holds a small clear tube or tube cap while the pipette with its existing tip remains in hand/nearby; no aspiration or dispense is visible.",
+          "objects": [
+            "small clear tube or cap",
+            "pipette with attached tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Small tube/cap identity is not readable; review if this container identity matters for the dilution sequence.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            57,
+            57.5,
+            58,
+            58.5
+          ]
+        },
+        {
+          "id": "XM_24-live-560-2",
+          "clipId": "XM_24",
+          "start": 58.5,
+          "end": 60,
+          "action": "Reposition pipette",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Operator grips and repositions the pipette with the same attached tip near the tip box/work area; there is no visible liquid contact, aspiration, dispense, or tip change.",
+          "objects": [
+            "pipette with attached tip",
+            "black tip box/rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            58.5,
+            59,
+            59.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3975,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 597,
+        "output_tokens_details": {
+          "reasoning_tokens": 203
+        },
+        "total_tokens": 4572
+      }
+    },
+    {
+      "start": 60,
+      "end": 64,
+      "events": [
+        {
+          "id": "XM_24-live-600-0",
+          "clipId": "XM_24",
+          "start": 60,
+          "end": 61,
+          "action": "Remove pipette from reservoir",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The operator lifts/withdraws a pipette with an attached tip from the area of a red reagent reservoir or container on the right side of the hood. No aspiration or dispense is clearly visible in this interval.",
+          "objects": [
+            "pipette with attached tip",
+            "red reagent reservoir/container"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            60,
+            60.5,
+            61
+          ]
+        },
+        {
+          "id": "XM_24-live-600-1",
+          "clipId": "XM_24",
+          "start": 61,
+          "end": 63.5,
+          "action": "Position pipette over EP tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "With the same attached tip, the operator moves the pipette leftward and aligns it near a small open EP tube held in the other hand, apparently preparing to dispense or mix, but no liquid transfer is visibly completed within this window.",
+          "objects": [
+            "pipette with attached tip",
+            "open EP tube",
+            "green tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Container/sample identity for the open EP tube is not readable and may need review if this is a transfer target.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            61.5,
+            62,
+            62.5,
+            63,
+            63.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3976,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 313,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4289
+      }
+    },
+    {
+      "start": 64,
+      "end": 68,
+      "events": [
+        {
+          "id": "XM_24-live-640-0",
+          "clipId": "XM_24",
+          "start": 64,
+          "end": 67.5,
+          "action": "Hold pipette in tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The operator holds a micropipette with the same attached tip positioned down into an opening/well in the green tube rack while the left hand steadies a small clear tube or strip nearby. No clear aspiration, dispensing, mixing stroke, tip ejection, or new tip pickup is visible in this interval.",
+          "objects": [
+            "micropipette with attached tip",
+            "green tube rack",
+            "small clear tube or strip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Container identity for the tube/rack position being accessed is unreadable and may need review.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            64,
+            64.5,
+            65,
+            65.5,
+            66,
+            66.5,
+            67,
+            67.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3980,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 214,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4194
+      }
+    },
+    {
+      "start": 68,
+      "end": 72,
+      "events": [
+        {
+          "id": "XM_24-live-680-0",
+          "clipId": "XM_24",
+          "start": 68,
+          "end": 71.5,
+          "action": "Position pipette over small tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Operator holds a small clear tube/strip in the left hand while the right hand keeps a pipette with the existing tip aligned above it. The tip approaches the container by the end of the window, but no clear aspiration, dispense, mixing stroke, tip ejection, or new tip attachment is visible.",
+          "objects": [
+            "pipette with attached tip",
+            "small clear tube or tube strip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Container/sample identity for the small clear tube or tube strip is unreadable; review if this container identity matters for the dilution step.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            68,
+            68.5,
+            69,
+            69.5,
+            70,
+            70.5,
+            71,
+            71.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3983,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 547,
+        "output_tokens_details": {
+          "reasoning_tokens": 327
+        },
+        "total_tokens": 4530
+      }
+    },
+    {
+      "start": 72,
+      "end": 76,
+      "events": [
+        {
+          "id": "XM_24-live-720-0",
+          "clipId": "XM_24",
+          "start": 72,
+          "end": 75.5,
+          "action": "Mix EP tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "The pipette with the previously attached white tip remains inserted in the held EP/microcentrifuge tube, consistent with continued pipetting up and down/mixing of the tube contents. No tip ejection or new tip mounting is visible.",
+          "objects": [
+            "pipette",
+            "white pipette tip",
+            "EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            72,
+            72.5,
+            73,
+            73.5,
+            74,
+            74.5,
+            75,
+            75.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3985,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 376,
+        "output_tokens_details": {
+          "reasoning_tokens": 209
+        },
+        "total_tokens": 4361
+      }
+    },
+    {
+      "start": 76,
+      "end": 80,
+      "events": [
+        {
+          "id": "XM_24-live-760-0",
+          "clipId": "XM_24",
+          "start": 76,
+          "end": 76.5,
+          "action": "Withdraw from EP tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Pipette with an already-attached tip is lifted away from the small EP tube held in the left hand; no visible tip change occurs.",
+          "objects": [
+            "pipette with white tip",
+            "EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            76,
+            76.5
+          ]
+        },
+        {
+          "id": "XM_24-live-760-1",
+          "clipId": "XM_24",
+          "start": 77,
+          "end": 79.5,
+          "action": "Reposition pipette and tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "User holds the EP tube while moving the pipette back toward the rack/working area, positioning the tip near the tube but no clear aspiration or dispense is visible in this interval.",
+          "objects": [
+            "pipette with white tip",
+            "EP tube",
+            "green tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            77,
+            78,
+            79,
+            79.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3985,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 248,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4233
+      }
+    },
+    {
+      "start": 80,
+      "end": 84,
+      "events": [
+        {
+          "id": "XM_24-live-800-0",
+          "clipId": "XM_24",
+          "start": 80,
+          "end": 82,
+          "action": "Pipette in rack tube",
+          "actionLabel": "aspirate",
+          "tipState": "same_tip_continued",
+          "description": "The pipette with the previously attached tip is held with its tip inserted in a small tube/well in the green rack, then withdrawn. The exact liquid/sample identity is not readable, and aspiration vs. final part of mixing is not directly confirmable from the frames.",
+          "objects": [
+            "pipette with white tip",
+            "green tube rack",
+            "small tube/well"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Sample or reagent identity in the green rack tube/well is unreadable and may need review.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            80,
+            80.5,
+            81,
+            81.5,
+            82
+          ]
+        },
+        {
+          "id": "XM_24-live-800-1",
+          "clipId": "XM_24",
+          "start": 82,
+          "end": 83.5,
+          "action": "Move to tube strip",
+          "actionLabel": "transfer",
+          "tipState": "same_tip_continued",
+          "description": "Without a visible tip change, the pipette is moved away from the green rack tube/well toward a small clear tube strip held in the other hand, ending with the tip positioned near one of the strip tube openings. No clear dispense is visible in this window.",
+          "objects": [
+            "pipette with same white tip",
+            "clear tube strip",
+            "green tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "tip_reuse",
+              "message": "Possible issue needing review: the same visible pipette tip moves from the green rack tube/well to a different tube strip without a visible tip change.",
+              "status": "needs_review"
+            },
+            {
+              "type": "unknown_sample",
+              "message": "The identities of the source tube/well and destination tube strip are unreadable.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            82,
+            82.5,
+            83,
+            83.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3988,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 877,
+        "output_tokens_details": {
+          "reasoning_tokens": 475
+        },
+        "total_tokens": 4865
+      }
+    },
+    {
+      "start": 84,
+      "end": 88,
+      "events": [
+        {
+          "id": "XM_24-live-840-0",
+          "clipId": "XM_24",
+          "start": 84,
+          "end": 87.5,
+          "action": "Mix EP tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "Pipette tip remains inserted in the handheld small EP tube while the operator appears to pipette up and down/mix the contents. No tip ejection or new tip attachment is visible.",
+          "objects": [
+            "pipette with white tip",
+            "handheld EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            84,
+            84.5,
+            85,
+            85.5,
+            86,
+            86.5,
+            87,
+            87.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3993,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 155,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4148
+      }
+    },
+    {
+      "start": 88,
+      "end": 92,
+      "events": [
+        {
+          "id": "XM_24-live-880-0",
+          "clipId": "XM_24",
+          "start": 88,
+          "end": 91.5,
+          "action": "Hold pipette in EP tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The gloved user holds a micropipette with the existing tip positioned at or inside a small clear tube held in the other hand. No visible tip change, aspiration, dispense, or clear up/down mixing stroke is observable in this window.",
+          "objects": [
+            "micropipette",
+            "same attached tip",
+            "small clear EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The small tube/sample identity is not readable; confirm this is the intended dilution tube for the mixing step.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            88,
+            88.5,
+            89,
+            89.5,
+            90,
+            90.5,
+            91,
+            91.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3992,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 652,
+        "output_tokens_details": {
+          "reasoning_tokens": 449
+        },
+        "total_tokens": 4644
+      }
+    },
+    {
+      "start": 92,
+      "end": 96,
+      "events": [
+        {
+          "id": "XM_24-live-920-0",
+          "clipId": "XM_24",
+          "start": 92,
+          "end": 95.5,
+          "action": "Mix EP tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "The operator holds a small clear microcentrifuge/EP tube and keeps the pipette tip inserted in it, performing or maintaining a pipetting mix position with the same previously attached tip. No tip change is visible.",
+          "objects": [
+            "pipette",
+            "attached pipette tip",
+            "clear EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            92,
+            92.5,
+            93,
+            93.5,
+            94,
+            94.5,
+            95,
+            95.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3990,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 268,
+        "output_tokens_details": {
+          "reasoning_tokens": 104
+        },
+        "total_tokens": 4258
+      }
+    },
+    {
+      "start": 96,
+      "end": 100,
+      "events": [
+        {
+          "id": "XM_24-live-960-0",
+          "clipId": "XM_24",
+          "start": 96,
+          "end": 99.5,
+          "action": "Mix EP tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "Pipette tip remains inserted in a small clear EP tube held by the left hand, consistent with continued pipetting/mixing of the tube contents. No tip change is visible.",
+          "objects": [
+            "pipette with attached tip",
+            "clear EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            96,
+            96.5,
+            97,
+            97.5,
+            98,
+            98.5,
+            99,
+            99.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3990,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 152,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4142
+      }
+    },
+    {
+      "start": 100,
+      "end": 104,
+      "events": [
+        {
+          "id": "XM_24-live-1000-0",
+          "clipId": "XM_24",
+          "start": 100,
+          "end": 102,
+          "action": "Dispense into strip tube",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "Pipette with the same attached tip is held in/at a small clear tube or tube strip held by the other hand; the plunger appears depressed while liquid is dispensed or the tip is held at the tube opening.",
+          "objects": [
+            "pipette with attached tip",
+            "clear tube strip/small tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Container identity/contents of the clear tube or strip are unreadable; review whether this is the intended serial-dilution destination.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            100,
+            100.5,
+            101,
+            101.5,
+            102
+          ]
+        },
+        {
+          "id": "XM_24-live-1000-1",
+          "clipId": "XM_24",
+          "start": 102,
+          "end": 103.5,
+          "action": "Withdraw pipette from tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Pipette tip is lifted away from the clear tube/strip while the tube remains held in the other hand. No tip ejection or new tip pickup is visible.",
+          "objects": [
+            "pipette with attached tip",
+            "clear tube strip/small tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            102,
+            102.5,
+            103,
+            103.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3989,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 311,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4300
+      }
+    }
+  ]
+}

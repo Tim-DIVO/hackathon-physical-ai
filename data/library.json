@@ -1,42 +1,52 @@
 [
   {
-    "id": "pmd_correct_02",
-    "title": "Pipette technique clip A",
-    "duration": 12.7,
-    "videoUrl": "/videos/lsv/pmd_correct_02.mp4",
-    "sourcePath": "data/eval/clips/pmd_correct_02.mp4",
+    "id": "XM_34",
+    "title": "Tissue-culture hood procedure · glasses 01",
+    "duration": 169.8,
+    "videoUrl": "/videos/lsv/XM_34.mp4",
+    "sourcePath": "data/eval/long/XM_34.mp4",
     "viewpoint": "First-person · smart glasses",
-    "protocol": "Short pipette-use segment from the LSV PMD split (pipette technique practice)",
+    "protocol": "Virus packaging transfection of 293T cells: plasmid/reagent mixing and pipetting in a tissue-culture hood (LSV XMglass)",
     "referenceLabel": "correct"
   },
   {
-    "id": "pmd_correct_06",
-    "title": "Pipette technique clip B",
-    "duration": 14,
-    "videoUrl": "/videos/lsv/pmd_correct_06.mp4",
-    "sourcePath": "data/eval/clips/pmd_correct_06.mp4",
+    "id": "XM_33",
+    "title": "Tissue-culture hood procedure · glasses 02",
+    "duration": 71.2,
+    "videoUrl": "/videos/lsv/XM_33.mp4",
+    "sourcePath": "data/eval/long/XM_33.mp4",
     "viewpoint": "First-person · smart glasses",
-    "protocol": "Short pipette-use segment from the LSV PMD split (pipette technique practice)",
+    "protocol": "Lentivirus infection of target cells: medium and reagent additions with pipette in a tissue-culture hood (LSV XMglass)",
+    "referenceLabel": "error: Forgot to add lentivirus"
+  },
+  {
+    "id": "XM_24",
+    "title": "Tissue-culture hood procedure · glasses 03",
+    "duration": 139.2,
+    "videoUrl": "/videos/lsv/XM_24.mp4",
+    "sourcePath": "data/eval/long/XM_24.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Serial dilution protocol in a tissue-culture hood: sample dilution series with pipette (LSV XMglass)",
+    "referenceLabel": "error: Forgot to mark concentration; pipetted wrong volume of solution"
+  },
+  {
+    "id": "XM_30",
+    "title": "Tissue-culture hood procedure · glasses 04",
+    "duration": 103.3,
+    "videoUrl": "/videos/lsv/XM_30.mp4",
+    "sourcePath": "data/eval/long/XM_30.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Cell freezing and aliquoting: resuspension and pipette transfer of cells into cryovials (LSV XMglass)",
     "referenceLabel": "correct"
   },
   {
-    "id": "pmd_incorrect_reuse_200ul_tip_12",
-    "title": "Pipette technique clip C",
-    "duration": 8.5,
-    "videoUrl": "/videos/lsv/pmd_incorrect_reuse_200ul_tip_12.mp4",
-    "sourcePath": "data/eval/clips/pmd_incorrect_reuse_200ul_tip_12.mp4",
+    "id": "XM_41",
+    "title": "Tissue-culture hood procedure · glasses 05",
+    "duration": 94.3,
+    "videoUrl": "/videos/lsv/XM_41.mp4",
+    "sourcePath": "data/eval/long/XM_41.mp4",
     "viewpoint": "First-person · smart glasses",
-    "protocol": "Short pipette-use segment from the LSV PMD split (pipette technique practice)",
-    "referenceLabel": "error: reuse_tip"
-  },
-  {
-    "id": "pmd_incorrect_reuse_same_media_10ul_tip_08",
-    "title": "Pipette technique clip D",
-    "duration": 6.8,
-    "videoUrl": "/videos/lsv/pmd_incorrect_reuse_same_media_10ul_tip_08.mp4",
-    "sourcePath": "data/eval/clips/pmd_incorrect_reuse_same_media_10ul_tip_08.mp4",
-    "viewpoint": "First-person · smart glasses",
-    "protocol": "Short pipette-use segment from the LSV PMD split (pipette technique practice)",
-    "referenceLabel": "error: reuse_same_media"
+    "protocol": "Lentiviral infection of iPSC-derived fibroblasts: reagent additions to cultured cells (LSV XMglass)",
+    "referenceLabel": "correct"
   }
 ]

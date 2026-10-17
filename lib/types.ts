@@ -11,6 +11,8 @@ export interface LabEvent {
   sourceSampleId: string | null;
   destinationSampleId: string | null;
   volumeUl: number | null;
+  /** Operator-stated concentration, verbatim with units; never inferred from video. */
+  concentration?: string | null;
   protocolStep: number | null;
   /** Deprecated: self-reported model confidence is uncalibrated and is not displayed. */
   confidence?: number;

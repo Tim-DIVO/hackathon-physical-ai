@@ -1,0 +1,1294 @@
+{
+  "runId": "run-mvceufnf",
+  "startedAt": "2026-10-17T13:06:38.295Z",
+  "windows": [
+    {
+      "start": 0,
+      "end": 4,
+      "events": [
+        {
+          "id": "XM_33-live-0-0",
+          "clipId": "XM_33",
+          "start": 2.5,
+          "end": 3.5,
+          "action": "Select bench pipette",
+          "actionLabel": "other",
+          "tipState": "no_tip",
+          "description": "Gloved hand reaches to the pipette stand and grasps/adjusts one of the mounted manual pipettes; no pipette is removed from the stand and no tip handling or liquid transfer is visible.",
+          "objects": [
+            "pipette stand",
+            "manual pipettes"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            2.5,
+            3,
+            3.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "no_tip",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3671,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 138,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3809
+      }
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "events": [
+        {
+          "id": "XM_33-live-40-0",
+          "clipId": "XM_33",
+          "start": 4,
+          "end": 7.5,
+          "action": "Adjust pipette setting",
+          "actionLabel": "other",
+          "tipState": "no_tip",
+          "description": "Gloved hands hold a yellow-accent adjustable micropipette and turn/press the top plunger area, apparently setting or checking the pipette before use. No tip is attached and no liquid handling occurs.",
+          "objects": [
+            "adjustable micropipette",
+            "gloved hands"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            4,
+            4.5,
+            5,
+            5.5,
+            6,
+            6.5,
+            7,
+            7.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "no_tip",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3692,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 324,
+        "output_tokens_details": {
+          "reasoning_tokens": 169
+        },
+        "total_tokens": 4016
+      }
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "events": [
+        {
+          "id": "XM_33-live-80-0",
+          "clipId": "XM_33",
+          "start": 8,
+          "end": 11.5,
+          "action": "Adjust pipette setting",
+          "actionLabel": "other",
+          "tipState": "no_tip",
+          "description": "Gloved hands hold a bench micropipette and rotate/press near the top adjustment/plunger area. No tip is attached and no liquid handling occurs.",
+          "objects": [
+            "micropipette"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow-coded pipette",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            8,
+            8.5,
+            9,
+            9.5,
+            10,
+            10.5,
+            11,
+            11.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "no_tip",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3692,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 143,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3835
+      }
+    },
+    {
+      "start": 12,
+      "end": 16,
+      "events": [
+        {
+          "id": "XM_33-live-120-0",
+          "clipId": "XM_33",
+          "start": 12,
+          "end": 15.5,
+          "action": "Attach yellow tip",
+          "actionLabel": "attach_tip",
+          "tipState": "fresh_tip_attached",
+          "description": "The operator presses a handheld pipette down onto a yellow tip and seats it on the pipette shaft; no aspiration or dispensing is visible.",
+          "objects": [
+            "handheld pipette",
+            "yellow pipette tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            12,
+            12.5,
+            13,
+            13.5,
+            14,
+            14.5,
+            15,
+            15.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3724,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 147,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3871
+      }
+    },
+    {
+      "start": 16,
+      "end": 20,
+      "events": [
+        {
+          "id": "XM_33-live-160-0",
+          "clipId": "XM_33",
+          "start": 16.5,
+          "end": 18.5,
+          "action": "Pick up microtube",
+          "actionLabel": "open_container",
+          "tipState": "same_tip_continued",
+          "description": "Gloved left hand grasps a small microcentrifuge/EP tube from the green rack and lifts it toward the work area; the tube identity/label is not readable.",
+          "objects": [
+            "small EP tube",
+            "green tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Small EP tube identity/contents are unreadable and may need review.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            16.5,
+            17,
+            17.5,
+            18,
+            18.5
+          ]
+        },
+        {
+          "id": "XM_33-live-160-1",
+          "clipId": "XM_33",
+          "start": 19,
+          "end": 19.5,
+          "action": "Position pipette at tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "A handheld pipette with the previously attached yellow tip is brought toward the small EP tube held in the left hand, but no clear aspiration or dispense is visible in this window.",
+          "objects": [
+            "pipette with yellow tip",
+            "small EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Target EP tube identity/contents are unreadable and may need review.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            19,
+            19.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3743,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 467,
+        "output_tokens_details": {
+          "reasoning_tokens": 158
+        },
+        "total_tokens": 4210
+      }
+    },
+    {
+      "start": 20,
+      "end": 24,
+      "events": [
+        {
+          "id": "XM_33-live-200-0",
+          "clipId": "XM_33",
+          "start": 20,
+          "end": 23.5,
+          "action": "Position tipped pipette",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Gloved hand holds a single-channel pipette with a yellow tip attached and moves it over the hood workspace near racks and tubes; no clear aspiration, dispensing, tip ejection, or container entry is visible.",
+          "objects": [
+            "single-channel pipette",
+            "yellow tip",
+            "tube racks",
+            "tubes"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            20,
+            20.5,
+            21,
+            21.5,
+            22,
+            22.5,
+            23,
+            23.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3743,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 166,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3909
+      }
+    },
+    {
+      "start": 24,
+      "end": 28,
+      "events": [
+        {
+          "id": "XM_33-live-240-0",
+          "clipId": "XM_33",
+          "start": 24,
+          "end": 26.5,
+          "action": "Aspirate from microtube",
+          "actionLabel": "aspirate",
+          "tipState": "same_tip_continued",
+          "description": "With the previously attached yellow tip, the operator holds a small microtube/EP tube and keeps the pipette tip inserted, apparently drawing liquid from the tube. The container identity/contents are not readable.",
+          "objects": [
+            "P200 pipette with yellow tip",
+            "microtube/EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: the aspirated tube/source identity and contents are not readable.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            24,
+            24.5,
+            25,
+            25.5,
+            26,
+            26.5
+          ]
+        },
+        {
+          "id": "XM_33-live-240-1",
+          "clipId": "XM_33",
+          "start": 26.5,
+          "end": 27.5,
+          "action": "Withdraw from tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The pipette is withdrawn from the microtube while retaining the same yellow tip; no tip ejection or new tip attachment is visible.",
+          "objects": [
+            "P200 pipette with yellow tip",
+            "microtube/EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            26.5,
+            27,
+            27.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3785,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 306,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4091
+      }
+    },
+    {
+      "start": 28,
+      "end": 32,
+      "events": [
+        {
+          "id": "XM_33-live-280-0",
+          "clipId": "XM_33",
+          "start": 29,
+          "end": 30,
+          "action": "Open culture dish",
+          "actionLabel": "open_container",
+          "tipState": "same_tip_continued",
+          "description": "The gloved left hand grasps the small culture dish containing pink medium and lifts/removes the clear lid, exposing the dish on the work surface.",
+          "objects": [
+            "culture dish with pink medium",
+            "culture dish lid"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            29,
+            29.5,
+            30
+          ]
+        },
+        {
+          "id": "XM_33-live-280-1",
+          "clipId": "XM_33",
+          "start": 30,
+          "end": 31.5,
+          "action": "Position pipette at dish",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "A white micropipette with the previously attached yellow tip is brought toward the open culture dish area, hovering near the dish/bench without a clearly visible aspiration or dispense in this window.",
+          "objects": [
+            "micropipette with yellow tip",
+            "open culture dish"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "white micropipette, yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            30,
+            30.5,
+            31,
+            31.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3785,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 257,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4042
+      }
+    },
+    {
+      "start": 32,
+      "end": 36,
+      "events": [
+        {
+          "id": "XM_33-live-320-0",
+          "clipId": "XM_33",
+          "start": 32,
+          "end": 34,
+          "action": "Position over dish",
+          "actionLabel": "transfer",
+          "tipState": "same_tip_continued",
+          "description": "A pipette with the previously attached tip is held near the open culture dish while the other hand steadies the dish; no liquid release is clearly visible yet.",
+          "objects": [
+            "pipette with tip",
+            "open culture dish"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 6,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            32,
+            32.5,
+            33,
+            33.5,
+            34
+          ]
+        },
+        {
+          "id": "XM_33-live-320-1",
+          "clipId": "XM_33",
+          "start": 34,
+          "end": 34.5,
+          "action": "Dispense into dish",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "The pipette tip is positioned at the edge/interior of the open culture dish and appears to dispense liquid into the pink medium/cell culture.",
+          "objects": [
+            "pipette with tip",
+            "open culture dish",
+            "pink culture medium"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 6,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The identity of the liquid being added from the pipette to the culture dish is not readable and may need review.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            34,
+            34.5
+          ]
+        },
+        {
+          "id": "XM_33-live-320-2",
+          "clipId": "XM_33",
+          "start": 34.5,
+          "end": 35.5,
+          "action": "Withdraw from dish",
+          "actionLabel": "transfer",
+          "tipState": "same_tip_continued",
+          "description": "The pipette tip is lifted and moved away from the open culture dish after the apparent addition; the same tip remains attached with no visible tip change.",
+          "objects": [
+            "pipette with tip",
+            "open culture dish"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 6,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            34.5,
+            35,
+            35.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3794,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 386,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4180
+      }
+    },
+    {
+      "start": 36,
+      "end": 40,
+      "events": [
+        {
+          "id": "XM_33-live-360-0",
+          "clipId": "XM_33",
+          "start": 36,
+          "end": 37.5,
+          "action": "Rock culture dish",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "Gloved hand holds and gently moves the open culture dish containing pink medium, consistent with rocking/swirl to distribute contents.",
+          "objects": [
+            "culture dish",
+            "pink medium"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 7,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            36,
+            36.5,
+            37
+          ]
+        },
+        {
+          "id": "XM_33-live-360-1",
+          "clipId": "XM_33",
+          "start": 37.5,
+          "end": 38.5,
+          "action": "Position pipette near tips",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "A pipette is brought over the pink tip rack area; no aspiration or dispensing is visible.",
+          "objects": [
+            "pipette",
+            "pink tip rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            37.5,
+            38
+          ]
+        },
+        {
+          "id": "XM_33-live-360-2",
+          "clipId": "XM_33",
+          "start": 39,
+          "end": 39.5,
+          "action": "Attach new yellow tip",
+          "actionLabel": "attach_tip",
+          "tipState": "fresh_tip_attached",
+          "description": "Operator holds a micropipette with a yellow tip newly attached/being seated. No tip ejection is visible in this window, but a yellow tip is present by the end.",
+          "objects": [
+            "micropipette",
+            "yellow tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            39,
+            39.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3794,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 330,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4124
+      }
+    },
+    {
+      "start": 40,
+      "end": 44,
+      "events": [
+        {
+          "id": "XM_33-live-400-0",
+          "clipId": "XM_33",
+          "start": 40,
+          "end": 41,
+          "action": "Handle culture dish",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "The right hand grips and slightly moves/tilts the culture dish/plate area after the prior dispense, consistent with handling or beginning to rock the dish. No pipetting into a new container is visible.",
+          "objects": [
+            "culture dish/plate",
+            "gloved hand"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200-class pipette with yellow tip",
+          "protocolStep": 7,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            40,
+            40.5,
+            41
+          ]
+        },
+        {
+          "id": "XM_33-live-400-1",
+          "clipId": "XM_33",
+          "start": 41.5,
+          "end": 43.5,
+          "action": "Adjust pipette setting",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "With the same yellow tip still attached, the operator holds the pipette and manipulates the top/plunger or adjustment knob. No aspiration, dispense, tip ejection, or new tip attachment is visible.",
+          "objects": [
+            "pipette"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200-class pipette with yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            41.5,
+            42,
+            42.5,
+            43,
+            43.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3796,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 667,
+        "output_tokens_details": {
+          "reasoning_tokens": 389
+        },
+        "total_tokens": 4463
+      }
+    },
+    {
+      "start": 44,
+      "end": 48,
+      "events": [
+        {
+          "id": "XM_33-live-440-0",
+          "clipId": "XM_33",
+          "start": 44,
+          "end": 45.5,
+          "action": "Adjust pipette setting",
+          "actionLabel": "other",
+          "tipState": "fresh_tip_attached",
+          "description": "Gloved hands manipulate the top plunger/volume-setting area of a yellow-tipped pipette while holding it above the bench; no aspiration or dispense is visible.",
+          "objects": [
+            "yellow-tipped pipette"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            44,
+            44.5,
+            45,
+            45.5
+          ]
+        },
+        {
+          "id": "XM_33-live-440-1",
+          "clipId": "XM_33",
+          "start": 46,
+          "end": 47,
+          "action": "Return pipette to stand",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The same yellow-tipped pipette is moved to the pipette stand and placed into a slot. The attached tip remains on the pipette; no ejection is visible.",
+          "objects": [
+            "yellow-tipped pipette",
+            "pipette stand"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "yellow tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            46,
+            46.5,
+            47
+          ]
+        },
+        {
+          "id": "XM_33-live-440-2",
+          "clipId": "XM_33",
+          "start": 47.5,
+          "end": 48,
+          "action": "Handle culture dish",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "A small round culture dish/plate with pink medium is brought into view and positioned on the bench with both gloved hands. No pipetting into it is visible in this window.",
+          "objects": [
+            "culture dish with pink medium"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            47.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3797,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 354,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4151
+      }
+    },
+    {
+      "start": 48,
+      "end": 52,
+      "events": [
+        {
+          "id": "XM_33-live-480-0",
+          "clipId": "XM_33",
+          "start": 48,
+          "end": 51.5,
+          "action": "Rock culture dish",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "Both gloved hands hold and gently rock/swirl the small culture dish on the hood surface to distribute the added mixture over the cells.",
+          "objects": [
+            "culture dish"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 7,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            48,
+            48.5,
+            49,
+            49.5,
+            50,
+            50.5,
+            51,
+            51.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3797,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 137,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3934
+      }
+    },
+    {
+      "start": 52,
+      "end": 56,
+      "events": [
+        {
+          "id": "XM_33-live-520-0",
+          "clipId": "XM_33",
+          "start": 52,
+          "end": 55.5,
+          "action": "Rock culture dish",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "Both gloved hands hold a small culture dish/plate containing pink medium and gently rock/swirl it on the hood surface, then lift/shift it slightly while continuing to handle it.",
+          "objects": [
+            "culture dish with pink medium",
+            "gloved hands",
+            "biosafety cabinet work surface"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 7,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            52,
+            52.5,
+            53,
+            53.5,
+            54,
+            54.5,
+            55,
+            55.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3793,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 160,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3953
+      }
+    },
+    {
+      "start": 56,
+      "end": 60,
+      "events": [
+        {
+          "id": "XM_33-live-560-0",
+          "clipId": "XM_33",
+          "start": 56,
+          "end": 59.5,
+          "action": "Carry culture dish",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "The operator holds and carries a small culture dish containing pink medium away from the tissue-culture hood toward other lab equipment/freezers. No pipetting is visible.",
+          "objects": [
+            "culture dish with pink medium",
+            "gloved hands"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            56,
+            56.5,
+            57,
+            58.5,
+            59,
+            59.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3793,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 143,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3936
+      }
+    },
+    {
+      "start": 60,
+      "end": 64,
+      "events": [
+        {
+          "id": "XM_33-live-600-0",
+          "clipId": "XM_33",
+          "start": 60,
+          "end": 62.5,
+          "action": "Open incubator door",
+          "actionLabel": "open_container",
+          "tipState": "same_tip_continued",
+          "description": "Right hand pulls open the incubator door while the left hand holds a pink-lidded culture dish.",
+          "objects": [
+            "incubator",
+            "culture dish"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            60,
+            60.5,
+            61,
+            61.5,
+            62,
+            62.5
+          ]
+        },
+        {
+          "id": "XM_33-live-600-1",
+          "clipId": "XM_33",
+          "start": 60,
+          "end": 63.5,
+          "action": "Carry culture dish",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "Culture dish is held and brought in front of the opened incubator; no placement into the incubator is visible within this window.",
+          "objects": [
+            "culture dish",
+            "incubator"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Culture dish identity/label is not readable and may need review if sample identity matters.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            60,
+            61,
+            62,
+            62.5,
+            63,
+            63.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3792,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 263,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4055
+      }
+    },
+    {
+      "start": 64,
+      "end": 68,
+      "events": [
+        {
+          "id": "XM_33-live-640-0",
+          "clipId": "XM_33",
+          "start": 64,
+          "end": 65.5,
+          "action": "Place culture dish in incubator",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "A gloved hand carries a small culture dish containing pink medium into the open incubator and sets it onto the lower shelf among other culture dishes.",
+          "objects": [
+            "culture dish",
+            "incubator",
+            "incubator shelf"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            64,
+            64.5,
+            65
+          ]
+        },
+        {
+          "id": "XM_33-live-640-1",
+          "clipId": "XM_33",
+          "start": 66,
+          "end": 67.5,
+          "action": "Close incubator inner door",
+          "actionLabel": "close_container",
+          "tipState": "same_tip_continued",
+          "description": "The user swings the transparent inner incubator door closed and secures the lower latch while the outer incubator door remains open.",
+          "objects": [
+            "incubator inner glass door",
+            "incubator"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            66,
+            66.5,
+            67,
+            67.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3791,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 241,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4032
+      }
+    },
+    {
+      "start": 68,
+      "end": 71.2,
+      "events": [
+        {
+          "id": "XM_33-live-680-0",
+          "clipId": "XM_33",
+          "start": 68,
+          "end": 69.5,
+          "action": "Close incubator door",
+          "actionLabel": "close_container",
+          "tipState": "same_tip_continued",
+          "description": "A large incubator/refrigerator-style door is pushed closed; no sample container or pipetting is visible.",
+          "objects": [
+            "incubator door"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            68,
+            68.5,
+            69
+          ]
+        },
+        {
+          "id": "XM_33-live-680-1",
+          "clipId": "XM_33",
+          "start": 69.5,
+          "end": 70.5,
+          "action": "View culture hoods",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Camera pans back toward tissue-culture hoods/benches; no direct manipulation of samples, dishes, tubes, or pipette is visible.",
+          "objects": [
+            "tissue-culture hood"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            69.5,
+            70,
+            70.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "fresh_tip_attached",
+      "frames": 6,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3061,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 224,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3285
+      }
+    }
+  ]
+}

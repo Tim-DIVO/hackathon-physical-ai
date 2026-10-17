@@ -110,3 +110,40 @@ for (const [folder, id] of LSV_CLIPS) {
   await rename(pending, output);
   console.log(`Prepared browser H.264 derivative ${id}`);
 }
+
+// Longer first-person smart-glasses (XM) LSV recordings (CC BY-NC 4.0, cong-lab/lsv). The 640px
+// originals stay in data/eval/long (inference); browser H.264 derivatives go to public/videos/lsv.
+const LONG_CLIPS = ["XM_34", "XM_33", "XM_24", "XM_30", "XM_41"];
+await mkdir("data/eval/long", { recursive: true });
+for (const id of LONG_CLIPS) {
+  const original = path.resolve("data/eval/long", `${id}.mp4`);
+  try {
+    if ((await stat(original)).size <= 1000) throw new Error("empty");
+  } catch {
+    const response = await fetch(
+      `https://huggingface.co/datasets/cong-lab/lsv/resolve/main/videos640/${id}.mp4`,
+    );
+    if (!response.ok || !response.body) throw new Error(`Download ${id}: ${response.status}`);
+    try {
+      await pipeline(Readable.fromWeb(response.body), createWriteStream(`${original}.part`));
+      await rename(`${original}.part`, original);
+    } catch (error) {
+      await rm(`${original}.part`, { force: true });
+      throw error;
+    }
+    console.log(`Downloaded ${id}`);
+  }
+  const output = path.resolve("public/videos/lsv", `${id}.mp4`);
+  try {
+    if ((await stat(output)).size > 1000) continue;
+  } catch {}
+  const pending = path.resolve("public/videos/lsv", `${id}.part.mp4`);
+  await promisify(execFile)(
+    process.env.FFMPEG_PATH || ffmpeg,
+    ["-hide_banner", "-loglevel", "error", "-i", original, "-vf", "scale='min(1280,iw)':-2", "-c:v", "libx264",
+      "-preset", "medium", "-crf", "26", "-pix_fmt", "yuv420p", "-an", "-movflags", "+faststart", "-y", pending],
+    { timeout: 600000 },
+  );
+  await rename(pending, output);
+  console.log(`Prepared browser H.264 derivative ${id}`);
+}

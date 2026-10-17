@@ -20,6 +20,8 @@ export interface WindowRequest {
   /** Compact summary of what earlier windows observed, for continuity. */
   context: string;
   tipStateIn: string;
+  /** Procedure description from dataset metadata; the CRISPR reference steps apply only to DJI clips. */
+  procedure?: string;
 }
 
 const windowSchema = {
@@ -139,11 +141,15 @@ async function extractWindow(req: WindowRequest, folder: string) {
 function prompt(req: WindowRequest, frames: number) {
   return [
     `You are the live perception module of a smart-glasses wet-lab copilot. These ${frames} frames cover t=${req.start}s to t=${req.end}s of a lab recording (${WINDOW_FPS} fps).`,
-    `Reference protocol (context only, NOT evidence): ${JSON.stringify(protocolSteps.map((s) => `${s.id}. ${s.description}`))}`,
+    req.clipId.startsWith("DJI")
+      ? `Reference protocol (context only, NOT evidence): ${JSON.stringify(protocolSteps.map((s) => `${s.id}. ${s.description}`))}`
+      : `Procedure being performed (dataset metadata, context only): ${req.procedure ?? "unknown wet-lab procedure"}. There is no numbered reference protocol: set protocolStep to null.`,
     `Earlier windows observed: ${req.context || "nothing yet (this is the start)"}. Tip state entering this window: ${req.tipStateIn}.`,
     "Return the visible manipulations in this window as events with absolute timestamps (merge with nothing outside the window). Report tipState continuity carefully: a tip change requires a visible ejection or mounting of a new tip.",
     "Add a tip_reuse flag only if a pipette with the same tip moves between different reagent sources/tubes without a visible change. Add unknown_sample where container identity matters but is unreadable. Phrase flags as possible issues needing review.",
     "Quantities: report the pipette type/size only if visible; report volumeReadingUl only if the volume dial digits are actually legible, otherwise null. Never infer volumes from the protocol.",
+    req.clipId.startsWith("DJI") ? "" : "Name actions specifically (e.g. 'Aspirate media', 'Transfer to cryovial', 'Serial dilution 1:10').",
+    "Always assign protocolStep to lab-relevant events, using the sequence so far: successive reagent additions into the EP tube are steps 1, 2, 3 in order (a new addition after a previous one advances the step); pipetting up and down / flicking the tube is step 4; adding the mixture to the culture dish is step 6; rocking the dish is step 7. Never go backwards unless clearly repeated. Use null only for setup or idle moments.",
     "Return an empty events list if nothing lab-relevant happens.",
   ].join("\n");
 }

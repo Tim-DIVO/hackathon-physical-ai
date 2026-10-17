@@ -7,7 +7,6 @@ import type { LabEvent } from "@/lib/types";
 import { protocolSteps, sampleRegistry } from "@/lib/reference";
 import { applySupervisor } from "@/lib/supervisor";
 import { VoiceAssistant } from "@/components/voice-assistant";
-import { CellAtlas } from "@/components/cell-atlas";
 import { downloadNotebook } from "@/lib/export";
 
 interface Clip {
@@ -26,11 +25,14 @@ const WINDOW_S = 4;
 const fmt = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
 
 function contextOf(events: LabEvent[]) {
-  return events
-    .filter((e) => e.origin === "model")
+  const model = events.filter((e) => e.origin === "model");
+  const step = [...model].reverse().find((e) => e.protocolStep)?.protocolStep;
+  const additions = model.filter((e) => e.actionLabel === "dispense" && (e.protocolStep ?? 0) <= 3).length;
+  const recent = model
     .slice(-6)
-    .map((e) => `${fmt(e.start)} ${e.action} (tip: ${e.tipState ?? "unclear"})`)
+    .map((e) => `${fmt(e.start)} ${e.action} (step ${e.protocolStep ?? "?"}, tip: ${e.tipState ?? "unclear"})`)
     .join("; ");
+  return `Protocol step reached so far: ${step ?? "none yet"}. Dispenses into the EP tube so far: ${additions}. Recent: ${recent}`;
 }
 
 export default function LivePage() {
@@ -48,6 +50,7 @@ export default function LivePage() {
   const eventsRef = useRef<LabEvent[]>([]);
   eventsRef.current = events;
   const clip = clips.find((c) => c.id === clipId);
+  const crispr = clipId.startsWith("DJI");
 
   useEffect(() => {
     fetch("/api/library")
@@ -186,12 +189,35 @@ export default function LivePage() {
   const setFlag = (event: LabEvent, index: number, status: "confirmed" | "dismissed") =>
     update(event.id, { flags: event.flags.map((f, i) => (i === index ? { ...f, status } : f)), verification: "corrected" });
 
-  const now = visible.filter((e) => e.origin === "model").find((e) => e.start <= current && e.end + 2 >= current);
+  // Live annotations land a few seconds after the action; show the latest recent one.
+  const now = [...visible].reverse().find((e) => e.origin === "model" && current - e.end < 10);
   const latestStep = [...visible].reverse().find((e) => e.protocolStep)?.protocolStep ?? null;
   const alert = [...visible]
     .reverse()
     .flatMap((e) => e.flags.filter((f) => f.status === "needs_review" && f.type !== "unknown_sample").map((f, i) => ({ e, f, i: e.flags.indexOf(f) })))
     .find(({ e }) => current - e.end < 12);
+  const stepFacts = useMemo(() => {
+    const stepStart = latestStep ? (visible.find((e) => e.protocolStep === latestStep)?.start ?? 0) : 0;
+    const inStep = visible.filter((e) => e.start >= stepStart);
+    const last = <T,>(pick: (e: LabEvent) => T | null | undefined) =>
+      [...inStep].reverse().map(pick).find((v) => v !== null && v !== undefined) ?? null;
+    const source = last((e) => e.sourceSampleId);
+    const destination = last((e) => e.destinationSampleId);
+    const volume = last((e) => e.volumeUl);
+    const concentration = last((e) => e.concentration);
+    const pipette = last((e) => (e.origin === "model" ? e.visualQuantity : null));
+    const tip = last((e) => (e.origin === "model" && e.tipState && e.tipState !== "unclear" ? e.tipState : null));
+    const transfer = !clipId.startsWith("DJI") || !latestStep || [1, 2, 3, 6].includes(latestStep);
+    const rows: { label: string; value: string | null; missing: string }[] = transfer
+      ? [
+          { label: "Sample", value: source || destination ? `${source ?? "?"} → ${destination ?? "?"}` : null, missing: "Unidentified · say which tube" },
+          { label: "Volume", value: volume ? `${volume} µL${pipette ? ` · ${pipette}` : ""}` : null, missing: pipette ? `Not stated · ${pipette}` : "Not stated" },
+          { label: "Concentration", value: concentration, missing: "Not recorded" },
+          { label: "Tip", value: tip ? tip.replaceAll("_", " ") : null, missing: "Not seen" },
+        ]
+      : [];
+    return { rows };
+  }, [visible, latestStep, clipId]);
   const samplesSeen = sampleRegistry.map((s) => ({
     ...s,
     links: visible.filter((e) => e.sourceSampleId === s.id || e.destinationSampleId === s.id),
@@ -270,8 +296,9 @@ export default function LivePage() {
         </div>
       </header>
 
-      {/* Protocol guidance, in the field of view; deviations are marked on their step. */}
+      {/* Protocol guidance + what is needed for this step, in the field of view. Gaps are highlighted. */}
       <div className="hud-protocol">
+        {crispr && (
         <div className="hud-protocol-steps">
           {protocolSteps.map((st) => {
             const deviation = all.some(
@@ -285,10 +312,26 @@ export default function LivePage() {
             );
           })}
         </div>
+        )}
         <strong>
-          {latestStep ? `Step ${latestStep} · ${protocolSteps[latestStep - 1].title}` : "Waiting for step 1 · Add reagent 1"}
+          {!crispr
+            ? clip?.protocol ?? "Bench procedure"
+            : latestStep
+              ? `Step ${latestStep} · ${protocolSteps[latestStep - 1].title}`
+              : "Step 1 · Add reagent 1"}
         </strong>
-        {latestStep && latestStep < 7 && <small>Next: {protocolSteps[latestStep].description}</small>}
+        {now && <span className="hud-now">Now: {now.action}</span>}
+        {stepFacts.rows.length > 0 && (
+          <dl className="hud-facts-grid">
+            {stepFacts.rows.map((r) => (
+              <div key={r.label} className={r.value ? (r.value.startsWith("same tip") ? "warn" : "ok") : "missing"}>
+                <dt>{r.label}</dt>
+                <dd>{r.value ?? r.missing}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+        {crispr && latestStep && latestStep < 7 && <small>Next: {protocolSteps[latestStep].description}</small>}
       </div>
 
       {/* Annotations float in view and fade; the full record is in the workspace notebook. */}
@@ -323,23 +366,12 @@ export default function LivePage() {
       )}
       {error && <div className="hud-error">{error}</div>}
 
-      <aside className="hud-mini">
-        <div className="hud-samples">
-          {samplesSeen.map((s) => (
-            <span key={s.id} className={s.links.length ? "linked" : ""} title={`${s.name} (synthetic)`}>
-              {s.id}
-            </span>
-          ))}
-        </div>
-        <div className="hud-atlas">
-          <CellAtlas events={all} samples={sampleRegistry} compact />
-        </div>
-      </aside>
 
       <VoiceAssistant
         key={clipId}
         variant="hud"
         autoConnect={mode === "live"}
+        procedure={clip?.protocol}
         clipId={clipId}
         events={visible}
         currentTime={current}

@@ -31,6 +31,8 @@ export interface VoiceAssistantProps {
   onSeek?: (seconds: number) => void;
   onGenerateReport: (format: "md" | "json") => void;
   variant?: "dock" | "panel" | "hud";
+  /** What is being performed; grounds phrasing and the voice agent for non-CRISPR clips. */
+  procedure?: string;
   /** HUD: connect hands-free when true (no tap-to-talk). */
   autoConnect?: boolean;
 }
@@ -68,15 +70,18 @@ function currentEventOf(events: LabEvent[], t: number) {
   return model.find((e) => e.start <= t && e.end >= t) ?? model.filter((e) => e.start <= t).at(-1);
 }
 
-/** Short spoken text for a flag; keeps TTS usage low. */
-function alertText(event: LabEvent, flag: LabEvent["flags"][number]) {
-  if (flag.type === "tip_reuse")
-    return `Heads up: possible pipette tip reuse at ${fmt(event.start)}. Did you change tips?`;
-  if (flag.type === "missing_step")
-    return flag.source === "supervisor"
-      ? "Wait: the protocol needs a 20 minute incubation before adding to the dish. Did that happen?"
-      : `Possible missing protocol step before ${fmt(event.start)}. Please confirm.`;
-  return "I can't read the tube labels. Tell me which samples you're using.";
+/**
+ * Raw facts for a proactive alert. Wording is left to the language model so the
+ * supervisor speaks naturally instead of reading canned sentences.
+ */
+function alertFacts(event: LabEvent, flag: LabEvent["flags"][number]) {
+  return [
+    `At ${fmt(event.start)}-${fmt(event.end)} the camera shows: ${event.action}. ${event.description}`,
+    event.visualQuantity ? `Visible: ${event.visualQuantity}.` : "",
+    `Concern (${flag.type.replace("_", " ")}): ${flag.message}`,
+  ]
+    .filter(Boolean)
+    .join(" ");
 }
 
 export function VoiceAssistant(props: VoiceAssistantProps) {
@@ -91,6 +96,7 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
   const [listening, setListening] = useState(false);
   const [spokenAlerts, setSpokenAlerts] = useState(true);
   const [coach, setCoach] = useState(false);
+  const [micMuted, setMicMuted] = useState(false);
   const recognition = useRef<Recognition | null>(null);
   const active = useRef(true);
   const playback = useRef<HTMLAudioElement | null>(null);
@@ -178,11 +184,12 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
           number: i + 1,
           time: fmt(e.start),
           action: e.action,
-          origin: e.origin === "model" ? "model observation" : "operator note",
+          origin: e.origin === "model" ? "seen on camera" : "operator said",
           verification: e.verification,
           source: e.sourceSampleId ?? "unknown",
           destination: e.destinationSampleId ?? "unknown",
           operator_volume_ul: e.volumeUl ?? "unknown",
+          concentration: e.concentration ?? "unknown",
         })),
         open_flags: visible.flatMap((e) =>
           e.flags.filter((f) => f.status === "needs_review").map((f) => ({ at: fmt(e.start), type: f.type, message: f.message })),
@@ -195,6 +202,7 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
       source_sample_id?: string;
       destination_sample_id?: string;
       volume_ul?: number;
+      concentration?: string;
       tip_changed?: boolean;
       confirm?: boolean;
     }) => {
@@ -210,6 +218,8 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
       if (destination) done.push(`destination ${destination}`);
       const volume = typeof args.volume_ul === "number" && args.volume_ul > 0 ? args.volume_ul : null;
       if (volume) done.push(`${volume} µL`);
+      const concentration = args.concentration?.trim().slice(0, 80) || null;
+      if (concentration) done.push(`at ${concentration}`);
       if (args.tip_changed) done.push("tip changed");
       if (args.confirm) done.push("observation confirmed");
       if (!done.length) return "Nothing to record. Tell me a sample, volume, or tip change.";
@@ -222,6 +232,7 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
           ...(source ? { sourceSampleId: source } : {}),
           ...(destination ? { destinationSampleId: destination } : {}),
           ...(volume ? { volumeUl: volume } : {}),
+          ...(concentration ? { concentration } : {}),
           flags,
           verification: "corrected",
         });
@@ -231,6 +242,7 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
           sourceSampleId: source ?? null,
           destinationSampleId: destination ?? null,
           volumeUl: volume,
+          concentration,
         }),
       );
       const summary = `Recorded${target ? ` on "${target.action}"` : ""}: ${done.join(", ")}.`;
@@ -285,6 +297,7 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
   };
 
   const conversation = useConversation({
+    micMuted,
     clientTools: tools as unknown as Record<string, (p: unknown) => string>,
     onMessage: ({ message, source }) => {
       if (!message || message.startsWith(ALERT_PREFIX)) return;
@@ -318,14 +331,16 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
     else {
       const { p, visible, step } = state();
       const result = interpretCommand(text, visible.filter((e) => e.origin === "model"), p.samples, p.protocol, step);
-      if (result.patch) {
-        const s = result.patch.sourceSampleId ?? undefined;
-        const d = result.patch.destinationSampleId ?? undefined;
-        const tipChanged = result.patch.flags?.some((f) => f.type === "tip_reuse" && f.status === "dismissed");
+      const conc = text.match(/(\d+(?:\.\d+)?\s*(?:µg\/µl|ug\/ul|ng\/µl|ng\/ul|mg\/ml|µm|um|nm|mm|x))/i)?.[1];
+      if (result.patch || conc) {
+        const s = result.patch?.sourceSampleId ?? undefined;
+        const d = result.patch?.destinationSampleId ?? undefined;
+        const tipChanged = result.patch?.flags?.some((f) => f.type === "tip_reuse" && f.status === "dismissed");
         reply = tools.update_event({
           source_sample_id: s,
           destination_sample_id: d,
-          volume_ul: result.patch.volumeUl ?? undefined,
+          volume_ul: result.patch?.volumeUl ?? undefined,
+          concentration: conc,
           tip_changed: tipChanged,
         });
       } else if (/mistake|warning|flag|problem|wrong/.test(lower)) {
@@ -341,21 +356,69 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
     if (audible) void speakTts(reply);
   }
 
-  // Supervisor: speak up when playback reaches an open flag.
+  /** Speaks a proactive message phrased by the LLM from raw facts. */
+  async function speakUp(facts: string, kind: "alert" | "coach") {
+    const instruction =
+      kind === "alert"
+        ? "Speak up now about this, directly to the operator."
+        : "The operator just reached this step. Give one short, practical tip for it.";
+    if (connected) {
+      conversation.sendUserMessage(`${ALERT_PREFIX} ${instruction} Facts: ${facts}`);
+      return;
+    }
+    try {
+      const response = await fetch("/api/voice/phrase", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ facts: `Procedure: ${props.procedure ?? "CRISPR-Cas9 lipofection into HEK293T"}. ${facts}`, kind }),
+      });
+      const data = await response.json();
+      if (!response.ok || !data.text || !active.current) return;
+      add({ role: "assistant", text: data.text, tag: kind === "alert" ? "Supervisor" : "Reference protocol" });
+      void speakTts(data.text);
+    } catch {
+      // Proactive speech is best-effort; the flag stays visible in the HUD.
+    }
+  }
+
+  // Keep the voice agent's context current so it can answer immediately, without
+  // spending an extra LLM + tool round-trip on get_lab_state.
+  const lastContext = useRef("");
+  useEffect(() => {
+    if (!connected) return;
+    const { current, step, visible } = state();
+    const latestFacts = [...visible].reverse();
+    const pick = <T,>(f: (e: LabEvent) => T | null | undefined) => latestFacts.map(f).find((v) => v != null) ?? "unknown";
+    const open = visible
+      .flatMap((e) => e.flags.filter((f) => f.status === "needs_review").map((f) => `${f.type.replace("_", " ")} at ${fmt(e.start)}`))
+      .slice(-4);
+    const summary = [
+      `Procedure: ${props.procedure ?? "CRISPR-Cas9 lipofection into HEK293T"}.`,
+      `Time ${fmt(props.currentTime)}.`,
+      step ? `Protocol step ${step}.` : "",
+      current ? `Right now: ${current.action}${current.visualQuantity ? ` (${current.visualQuantity})` : ""}, tip ${current.tipState ?? "unclear"}.` : "",
+      `Last sample: ${pick((e) => e.sourceSampleId)} -> ${pick((e) => e.destinationSampleId)}, volume ${pick((e) => e.volumeUl)} uL, concentration ${pick((e) => e.concentration)}.`,
+      open.length ? `Open issues: ${open.join("; ")}.` : "No open issues.",
+    ]
+      .filter(Boolean)
+      .join(" ");
+    if (summary === lastContext.current) return;
+    lastContext.current = summary;
+    conversation.sendContextualUpdate(`[Live bench state] ${summary}`);
+  }, [props.events, Math.floor(props.currentTime / 3), connected]);
+
+  // Supervisor: speak up when an open concern appears near the playhead. Live
+  // annotations arrive a few seconds after the action, so recent events count too.
   useEffect(() => {
     const t = props.currentTime;
     for (const event of props.events) {
-      if (event.start > t || event.end + 1 < t) continue;
+      if (event.start > t + 0.5 || t - event.end > 12) continue;
       for (const flag of event.flags) {
         if (flag.status !== "needs_review") continue;
         const key = flag.type === "unknown_sample" ? "unknown_sample" : flag.type === "tip_reuse" ? "tip_reuse" : `${event.id}:${flag.type}`;
-        if (alerted.current.has(key)) continue;
+        if (alerted.current.has(key) || !spokenAlerts) continue;
         alerted.current.add(key);
-        const text = alertText(event, flag);
-        add({ role: "assistant", text: `${text} — ${flag.message}`, tag: "Supervisor" });
-        if (!spokenAlerts) continue;
-        if (connected) conversation.sendUserMessage(`${ALERT_PREFIX} ${text}`);
-        else void speakTts(text);
+        void speakUp(alertFacts(event, flag), "alert");
       }
     }
   }, [props.currentTime, props.events, spokenAlerts, connected]);
@@ -366,10 +429,7 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
     const step = currentEventOf(props.events, props.currentTime)?.protocolStep;
     if (!step || step === coachedStep.current) return;
     coachedStep.current = step;
-    const text = protocolGuidance(props.protocol, step, "current");
-    add({ role: "assistant", text, tag: "Reference protocol" });
-    if (connected) conversation.sendContextualUpdate(`Operator is now on: ${text}`);
-    else void speakTts(text);
+    void speakUp(protocolGuidance(props.protocol, step, "current"), "coach");
   }, [props.currentTime, props.events, coach, connected]);
 
   useEffect(() => {
@@ -435,13 +495,27 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
 
   const orbState = connected ? (conversation.isSpeaking ? "speaking" : "listening") : listening ? "listening" : "idle";
   const send = (text: string) => (connected ? conversation.sendUserMessage(text) : execute(text, spokenAlerts));
-  if (props.variant === "hud")
+  if (props.variant === "hud") {
+    const live = connected || listening;
+    const label = orbState === "speaking" ? "Supervisor speaking" : live ? (micMuted ? "Mic off · supervisor can still warn you" : "Listening") : mode === "Ready" ? "Supervisor standby" : mode;
     return (
-      <div className={`hud-voice-pill ${orbState}`} role="status" aria-live="polite">
-        <i />
-        {orbState === "speaking" ? "Supervisor speaking" : connected || listening ? "Supervisor listening" : mode === "Ready" ? "Supervisor standby" : mode}
-      </div>
+      <>
+        <div className={`hud-voice-pill ${micMuted ? "muted" : orbState}`} role="status" aria-live="polite">
+          <i />
+          {label}
+        </div>
+        <button
+          type="button"
+          className={`hud-mic ${live && !micMuted ? "on" : "off"}`}
+          onClick={() => (connected ? setMicMuted((m) => !m) : void toggleMic())}
+          aria-label={live && !micMuted ? "Turn microphone off" : "Turn microphone on"}
+          aria-pressed={live && !micMuted}
+        >
+          {live && !micMuted ? <Mic size={16} /> : <MicOff size={16} />}
+        </button>
+      </>
     );
+  }
   return (
     <section className={`voice-panel ${props.variant ?? "dock"}`} aria-label="Lab supervisor">
       <div className="vp-control">

@@ -41,3 +41,5 @@ artifacts/
 data/eval/clips/
 public/videos/lsv/*.mp4
 QUESTIONS-FOR-TIM.md
+
+data/eval/long/

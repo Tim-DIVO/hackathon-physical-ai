@@ -31,6 +31,7 @@ export const eventSchema = z.object({
   sourceSampleId: z.string().nullable(),
   destinationSampleId: z.string().nullable(),
   volumeUl: z.number().nonnegative().nullable(),
+  concentration: z.string().max(80).nullable().optional(),
   protocolStep: z.number().int().min(1).max(7).nullable(),
   confidence: z.number().min(0).max(1).optional(),
   visualQuantity: z.string().nullable().optional(),
