@@ -8,7 +8,6 @@ import { protocolSteps, sampleRegistry } from "@/lib/reference";
 import { applySupervisor } from "@/lib/supervisor";
 import { VoiceAssistant } from "@/components/voice-assistant";
 import { downloadNotebook } from "@/lib/export";
-import { sayIdeas } from "@/lib/say-ideas";
 import { LabNotebook, notebookLines } from "@/components/lab-notebook";
 
 /** The supervisor's yes/no question for an open flag, as shown in view and answered by voice. */
@@ -278,18 +277,11 @@ export default function LivePage() {
       : [];
     return { rows };
   }, [visible, latestStep, clipId]);
-  const ideas = sayIdeas(clip?.protocol, latestStep, crispr);
   // A flagged check outranks a free-form question from the voice supervisor; only one card is ever shown.
   const centre = pendingCheck
-    ? { key: pendingCheck.key, kind: "check", label: "Check", text: pendingCheck.question, hint: "Say “that's fine” or “log it”" }
+    ? { key: pendingCheck.key, kind: "check", label: "Check", text: pendingCheck.question }
     : agentAsk
-      ? {
-          key: agentAsk.text,
-          kind: agentAsk.kind,
-          label: agentAsk.kind === "question" ? "Question" : "Heads up",
-          text: agentAsk.text,
-          hint: `Answer out loud · e.g. ${ideas[0]}`,
-        }
+      ? { key: agentAsk.text, kind: agentAsk.kind, label: agentAsk.kind === "question" ? "Question" : "Heads up", text: agentAsk.text }
       : null;
   const stepNow = steps.length ? steps[Math.min(latestStep ?? 1, steps.length) - 1] : undefined;
   const stepNext = steps.length && latestStep ? steps[latestStep] : steps[1];
@@ -411,7 +403,6 @@ export default function LivePage() {
               ))}
             </dl>
           )}
-          <span>{centre.hint}</span>
         </div>
       )}
       {error && <div className="hud-error">{error}</div>}

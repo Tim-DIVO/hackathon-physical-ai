@@ -578,7 +578,6 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
           <div className={`hud-ask ${ask.kind}`} role="status" key={ask.text}>
             <small>{ask.kind === "question" ? "Supervisor asks" : "Heads up"}</small>
             <b>{ask.text}</b>
-            <span>Answer out loud</span>
           </div>
         )}
         <div className={`hud-voice-pill ${micMuted ? "muted" : orbState}`} role="status" aria-live="polite">
