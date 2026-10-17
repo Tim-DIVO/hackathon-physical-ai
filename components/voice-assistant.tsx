@@ -31,6 +31,8 @@ export interface VoiceAssistantProps {
   onSeek?: (seconds: number) => void;
   onGenerateReport: (format: "md" | "json") => void;
   variant?: "dock" | "panel" | "hud";
+  /** HUD: connect hands-free when true (no tap-to-talk). */
+  autoConnect?: boolean;
 }
 
 type Tag = "Model observation" | "Operator fact" | "Reference protocol" | "Supervisor" | "Action";
@@ -425,40 +427,20 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
     }
   }
 
+  useEffect(() => {
+    if (props.variant !== "hud") return;
+    if (props.autoConnect && !connected && !listening) void toggleMic();
+    if (!props.autoConnect && (connected || listening)) void toggleMic();
+  }, [props.autoConnect]);
+
   const orbState = connected ? (conversation.isSpeaking ? "speaking" : "listening") : listening ? "listening" : "idle";
   const send = (text: string) => (connected ? conversation.sendUserMessage(text) : execute(text, spokenAlerts));
   if (props.variant === "hud")
     return (
-      <section className="hud-voice" aria-label="Lab supervisor">
-        <div className="hud-captions" role="log" aria-live="polite">
-          {messages.slice(-3).map((m, i) => (
-            <p key={`${messages.length}-${i}`} className={`hud-caption ${m.role}`}>
-              {m.tag && <span className={`vp-tag ${m.tag.split(" ")[0].toLowerCase()}`}>{m.tag}</span>}
-              {m.role === "you" ? `“${m.text}”` : m.text}
-            </p>
-          ))}
-        </div>
-        <div className="hud-voice-row">
-          <button
-            type="button"
-            className={`vp-orb ${orbState}`}
-            onClick={() => void toggleMic()}
-            aria-label={listening || connected ? "Stop voice supervisor" : "Start voice supervisor"}
-            aria-pressed={listening || connected}
-          >
-            {listening || connected ? <MicOff size={22} /> : <Mic size={22} />}
-          </button>
-          <div className="hud-voice-meta">
-            <strong>Supervisor</strong>
-            <span role="status">
-              {orbState === "speaking" ? "Speaking…" : orbState === "listening" ? "Listening — just talk" : mode === "Ready" ? "Tap to talk" : mode}
-            </span>
-            <label>
-              <input type="checkbox" checked={coach} onChange={(e) => setCoach(e.target.checked)} /> Coach me through steps
-            </label>
-          </div>
-        </div>
-      </section>
+      <div className={`hud-voice-pill ${orbState}`} role="status" aria-live="polite">
+        <i />
+        {orbState === "speaking" ? "Supervisor speaking" : connected || listening ? "Supervisor listening" : mode === "Ready" ? "Supervisor standby" : mode}
+      </div>
     );
   return (
     <section className={`voice-panel ${props.variant ?? "dock"}`} aria-label="Lab supervisor">

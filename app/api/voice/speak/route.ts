@@ -28,7 +28,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           text: body.text,
-          model_id: "eleven_multilingual_v2",
+          model_id: "eleven_flash_v2_5",
         }),
         signal: AbortSignal.timeout(60000),
       },

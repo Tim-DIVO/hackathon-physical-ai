@@ -38,9 +38,9 @@
   pointer-events: none;
 }
 .hud-corners i:nth-child(1) { top: 64px; left: 18px; border-right: 0; border-bottom: 0; border-radius: 10px 0 0 0; }
-.hud-corners i:nth-child(2) { top: 64px; right: 418px; border-left: 0; border-bottom: 0; border-radius: 0 10px 0 0; }
+.hud-corners i:nth-child(2) { top: 64px; right: 18px; border-left: 0; border-bottom: 0; border-radius: 0 10px 0 0; }
 .hud-corners i:nth-child(3) { bottom: 92px; left: 18px; border-right: 0; border-top: 0; border-radius: 0 0 0 10px; }
-.hud-corners i:nth-child(4) { bottom: 92px; right: 418px; border-left: 0; border-top: 0; border-radius: 0 0 10px 0; }
+.hud-corners i:nth-child(4) { bottom: 92px; right: 18px; border-left: 0; border-top: 0; border-radius: 0 0 10px 0; }
 
 .hud-top {
   position: absolute;
@@ -121,7 +121,7 @@
   position: absolute;
   left: 50%;
   top: 92px;
-  transform: translateX(calc(-50% - 200px));
+  transform: translateX(-50%);
   display: grid;
   gap: 6px;
   width: min(460px, 40vw);
@@ -299,3 +299,114 @@
 .hud-track i.flagged { background: var(--warn); }
 .hud-track b { position: absolute; top: -4px; width: 3px; height: 14px; border-radius: 2px; background: #fff; }
 .hud-credit { margin: 0; color: rgba(238, 246, 242, 0.55); font-size: 10.5px; }
+
+/* In-view protocol guidance (top-left under the status pill). */
+.hud-protocol {
+  position: absolute;
+  top: 70px;
+  left: 34px;
+  display: grid;
+  gap: 4px;
+  max-width: 440px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+}
+.hud-protocol-steps { display: flex; gap: 5px; margin-bottom: 2px; }
+.hud-protocol-steps span {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: var(--dim);
+  font-size: 10.5px;
+}
+.hud-protocol-steps span.past { border-color: var(--accent); color: var(--accent); }
+.hud-protocol-steps span.now { background: var(--accent); border-color: var(--accent); color: #062a1d; font-weight: 700; }
+.hud-protocol-steps span.deviation { background: var(--warn); border-color: var(--warn); color: #2a1803; font-weight: 800; }
+.hud-protocol strong { font-size: 16px; letter-spacing: -0.01em; }
+.hud-protocol small { color: var(--dim); font-size: 12px; line-height: 1.4; }
+
+/* Floating annotations anchored in the lower-left of the field of view. */
+.hud-annotations {
+  position: absolute;
+  left: 34px;
+  bottom: 48px;
+  display: grid;
+  gap: 6px;
+  max-width: 460px;
+}
+.hud-tag {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--accent);
+  border-radius: 4px 12px 12px 4px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  animation: hud-tag 9s ease forwards;
+}
+.hud-tag.operator { border-left-color: #7db4ff; }
+.hud-tag time { grid-row: span 3; color: var(--dim); font-family: ui-monospace, Menlo, monospace; font-size: 11px; padding-top: 2px; }
+.hud-tag b { font-size: 14px; font-weight: 600; }
+.hud-tag em { color: var(--dim); font-style: normal; font-size: 12px; }
+@keyframes hud-tag {
+  0% { opacity: 0; transform: translateY(6px); }
+  6% { opacity: 1; transform: none; }
+  80% { opacity: 1; }
+  100% { opacity: 0.15; }
+}
+
+/* Minimal corner card: sample chips + simulated atlas. */
+.hud-mini {
+  position: absolute;
+  right: 18px;
+  bottom: 30px;
+  width: 280px;
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--edge);
+  border-radius: 16px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+}
+.hud-mini .hud-samples { gap: 4px; }
+.hud-mini .hud-samples span { padding: 1px 7px; font-size: 10px; }
+.hud-mini .hud-atlas .ca-head,
+.hud-mini .hud-atlas .ca-banner { display: none; }
+.hud-mini .hud-atlas .ca-plot { height: 150px; }
+.hud-mini .hud-atlas::after {
+  content: "Cell atlas · simulated";
+  display: block;
+  margin-top: 4px;
+  color: var(--dim);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hud-voice-pill {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 14px;
+  border: 1px solid var(--edge);
+  border-radius: 99px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  color: var(--dim);
+  font-size: 12px;
+}
+.hud-voice-pill i { width: 8px; height: 8px; border-radius: 50%; background: #6b7f77; }
+.hud-voice-pill.listening i { background: var(--accent); animation: hud-blink 1.4s infinite; }
+.hud-voice-pill.speaking { color: var(--text); border-color: rgba(246, 176, 74, 0.6); }
+.hud-voice-pill.speaking i { background: var(--warn); animation: hud-blink 0.6s infinite; }
+.hud > .hud-track { position: absolute; left: 18px; right: 316px; bottom: 16px; }

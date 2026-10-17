@@ -192,7 +192,6 @@ export default function LivePage() {
     .reverse()
     .flatMap((e) => e.flags.filter((f) => f.status === "needs_review" && f.type !== "unknown_sample").map((f, i) => ({ e, f, i: e.flags.indexOf(f) })))
     .find(({ e }) => current - e.end < 12);
-  const feed = [...visible].reverse().slice(0, 7);
   const samplesSeen = sampleRegistry.map((s) => ({
     ...s,
     links: visible.filter((e) => e.sourceSampleId === s.id || e.destinationSampleId === s.id),
@@ -262,19 +261,56 @@ export default function LivePage() {
               <RotateCcw size={13} /> Replay
             </button>
           )}
+          <button onClick={() => downloadNotebook(all, sampleRegistry, protocolSteps, "md")} disabled={!events.length}>
+            Export
+          </button>
           <Link href="/" className="hud-exit" aria-label="Exit to workspace">
             <X size={15} />
           </Link>
         </div>
       </header>
 
-      {now && (
-        <div className="hud-observation" key={now.id}>
-          <small>Seen {fmt(now.start)} · model observation</small>
-          <strong>{now.action}</strong>
-          {now.visualQuantity && <em>{now.visualQuantity}</em>}
+      {/* Protocol guidance, in the field of view; deviations are marked on their step. */}
+      <div className="hud-protocol">
+        <div className="hud-protocol-steps">
+          {protocolSteps.map((st) => {
+            const deviation = all.some(
+              (e) => e.protocolStep === st.id && e.flags.some((f) => f.type !== "unknown_sample" && f.status !== "dismissed"),
+            );
+            const cls = st.id === latestStep ? "now" : latestStep && st.id < latestStep ? "past" : "";
+            return (
+              <span key={st.id} className={`${cls} ${deviation ? "deviation" : ""}`} title={st.description}>
+                {deviation ? "!" : st.id}
+              </span>
+            );
+          })}
         </div>
-      )}
+        <strong>
+          {latestStep ? `Step ${latestStep} · ${protocolSteps[latestStep - 1].title}` : "Waiting for step 1 · Add reagent 1"}
+        </strong>
+        {latestStep && latestStep < 7 && <small>Next: {protocolSteps[latestStep].description}</small>}
+      </div>
+
+      {/* Annotations float in view and fade; the full record is in the workspace notebook. */}
+      <div className="hud-annotations" aria-live="polite">
+        {visible
+          .filter((e) => current - e.start < 9)
+          .slice(-3)
+          .map((e) => (
+            <div key={e.id} className={`hud-tag ${e.origin}`}>
+              <time>{fmt(e.start)}</time>
+              <b>{e.origin === "model" ? e.action : e.description}</b>
+              {e.visualQuantity && <em>{e.visualQuantity}</em>}
+              {(e.sourceSampleId || e.volumeUl) && (
+                <em>
+                  {e.sourceSampleId ?? "?"} → {e.destinationSampleId ?? "?"}
+                  {e.volumeUl ? ` · ${e.volumeUl} µL` : ""}
+                </em>
+              )}
+            </div>
+          ))}
+      </div>
+
       {alert && (
         <div className="hud-alert" role="alert" key={`${alert.e.id}-${alert.f.type}`}>
           <b>{alert.f.type === "tip_reuse" ? "Possible tip reuse" : "Protocol check"}</b>
@@ -287,98 +323,43 @@ export default function LivePage() {
       )}
       {error && <div className="hud-error">{error}</div>}
 
-      <aside className="hud-panel">
-        <section>
-          <h4>Protocol · CRISPR delivery</h4>
-          <ol className="hud-steps">
-            {protocolSteps.map((s) => (
-              <li key={s.id} className={s.id === latestStep ? "now" : latestStep && s.id < latestStep ? "past" : ""}>
-                <span>{s.id}</span>
-                {s.title}
-              </li>
-            ))}
-          </ol>
-        </section>
-        <section className="hud-feed-wrap">
-          <h4>
-            Annotations <span>{visible.length}</span>
-            <button onClick={() => downloadNotebook(all, sampleRegistry, protocolSteps, "md")} disabled={!events.length}>
-              Export
-            </button>
-          </h4>
-          <div className="hud-feed">
-            {!feed.length && <p className="hud-empty">Start the session. Annotations appear seconds after each action, and whenever you speak.</p>}
-            {feed.map((e) => (
-              <article key={e.id} className={`hud-note ${e.origin}`}>
-                <header>
-                  <time>{fmt(e.start)}</time>
-                  <span>{e.origin === "model" ? "Seen" : "You"}</span>
-                  {e.protocolStep && <span>Step {e.protocolStep}</span>}
-                </header>
-                <p>{e.origin === "model" ? e.action : e.description}</p>
-                {e.visualQuantity && <small>{e.visualQuantity}</small>}
-                {(e.sourceSampleId || e.destinationSampleId || e.volumeUl) && (
-                  <small className="hud-facts">
-                    {e.sourceSampleId ?? "?"} → {e.destinationSampleId ?? "?"}
-                    {e.volumeUl ? ` · ${e.volumeUl} µL` : ""}
-                  </small>
-                )}
-                {e.flags
-                  .filter((f) => f.type !== "unknown_sample")
-                  .map((f, i) => (
-                    <small key={i} className={`hud-flag ${f.status}`}>
-                      {f.source === "supervisor" ? "Rule" : "Model"} · {f.type.replace("_", " ")} · {f.status.replace("_", " ")}
-                    </small>
-                  ))}
-              </article>
-            ))}
-          </div>
-        </section>
-        <section>
-          <h4>Samples · synthetic registry</h4>
-          <div className="hud-samples">
-            {samplesSeen.map((s) => (
-              <span key={s.id} className={s.links.length ? "linked" : ""} title={s.name}>
-                {s.id}
-                {s.links.length ? ` · ${s.links.length}` : ""}
-              </span>
-            ))}
-          </div>
-        </section>
-        <section className="hud-atlas">
+      <aside className="hud-mini">
+        <div className="hud-samples">
+          {samplesSeen.map((s) => (
+            <span key={s.id} className={s.links.length ? "linked" : ""} title={`${s.name} (synthetic)`}>
+              {s.id}
+            </span>
+          ))}
+        </div>
+        <div className="hud-atlas">
           <CellAtlas events={all} samples={sampleRegistry} compact />
-        </section>
+        </div>
       </aside>
 
-      <div className="hud-bottom">
-        <VoiceAssistant
-          key={clipId}
-          variant="hud"
-          clipId={clipId}
-          events={visible}
-          currentTime={current}
-          samples={sampleRegistry}
-          protocol={protocolSteps}
-          onUpdateEvent={update}
-          onAddEvent={(e) => setEvents((old) => [...old, e].sort((a, b) => a.start - b.start))}
-          onSeek={(s) => video.current && (video.current.currentTime = s)}
-          onGenerateReport={(format) => downloadNotebook(all, sampleRegistry, protocolSteps, format)}
-        />
-        <div className="hud-track">
-          {clip &&
-            all.map((e) => (
-              <i
-                key={e.id}
-                className={`${e.origin} ${e.flags.some((f) => f.status === "needs_review" && f.type !== "unknown_sample") ? "flagged" : ""}`}
-                style={{ left: `${(e.start / clip.duration) * 100}%`, width: `${Math.max(0.5, ((e.end - e.start) / clip.duration) * 100)}%` }}
-              />
-            ))}
-          {clip && <b style={{ left: `${(current / clip.duration) * 100}%` }} />}
-        </div>
-        <p className="hud-credit">
-          {clip?.viewpoint} · Footage: LSV (cong-lab), CC BY-NC 4.0 · Live GPT-5.5 on {WINDOW_S} s windows after they play · Rules:
-          deterministic · Cell atlas: simulated
-        </p>
+      <VoiceAssistant
+        key={clipId}
+        variant="hud"
+        autoConnect={mode === "live"}
+        clipId={clipId}
+        events={visible}
+        currentTime={current}
+        samples={sampleRegistry}
+        protocol={protocolSteps}
+        onUpdateEvent={update}
+        onAddEvent={(e) => setEvents((old) => [...old, e].sort((a, b) => a.start - b.start))}
+        onSeek={(s) => video.current && (video.current.currentTime = s)}
+        onGenerateReport={(format) => downloadNotebook(all, sampleRegistry, protocolSteps, format)}
+      />
+      <div className="hud-track">
+        {clip &&
+          all.map((e) => (
+            <i
+              key={e.id}
+              className={`${e.origin} ${e.flags.some((f) => f.status === "needs_review" && f.type !== "unknown_sample") ? "flagged" : ""}`}
+              style={{ left: `${(e.start / clip.duration) * 100}%`, width: `${Math.max(0.5, ((e.end - e.start) / clip.duration) * 100)}%` }}
+            />
+          ))}
+        {clip && <b style={{ left: `${(current / clip.duration) * 100}%` }} />}
       </div>
     </div>
   );
