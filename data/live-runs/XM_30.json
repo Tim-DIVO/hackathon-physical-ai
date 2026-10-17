@@ -1,6 +1,6 @@
 {
-  "runId": "run-mvceumz7",
-  "startedAt": "2026-10-17T13:06:45.793Z",
+  "runId": "run-mvch8vun",
+  "startedAt": "2026-10-17T14:14:00.079Z",
   "windows": [
     {
       "start": 0,
@@ -9,26 +9,25 @@
         {
           "id": "XM_30-live-0-0",
           "clipId": "XM_30",
-          "start": 0,
+          "start": 0.3,
           "end": 1.5,
-          "action": "Move pipette near tip box",
+          "action": "Move pipette near tips",
           "actionLabel": "other",
           "tipState": "unclear",
-          "description": "A handheld micropipette is visible at the right side near the blue tip box, but no clear aspiration, dispense, tip pickup, or tip ejection is visible.",
+          "description": "A handheld Eppendorf-style pipette is moved near the blue tip box on the right side of the hood; no aspiration, dispense, or clearly visible tip mounting/ejection is confirmed.",
           "objects": [
-            "handheld micropipette",
+            "handheld pipette",
             "blue tip box"
           ],
           "sourceSampleId": null,
           "destinationSampleId": null,
           "volumeUl": null,
-          "visualQuantity": null,
+          "visualQuantity": "Eppendorf-style pipette",
           "protocolStep": null,
           "verification": "pending",
           "origin": "model",
           "flags": [],
           "evidenceFrames": [
-            0,
             0.5,
             1,
             1.5
@@ -38,13 +37,13 @@
           "id": "XM_30-live-0-1",
           "clipId": "XM_30",
           "start": 2,
-          "end": 3.5,
-          "action": "Handle conical tube",
-          "actionLabel": "open_container",
+          "end": 2.7,
+          "action": "Pick up conical tube",
+          "actionLabel": "other",
           "tipState": "unclear",
-          "description": "The operator grasps and lifts a capped 15 mL conical tube containing pink liquid from the tube rack, brings it into view, and manipulates the cap/tube by hand. No pipetting transfer is visible.",
+          "description": "A gloved hand grasps and lifts a capped conical tube containing pink liquid from the rack.",
           "objects": [
-            "15 mL conical tube with pink liquid",
+            "capped conical tube with pink liquid",
             "tube rack"
           ],
           "sourceSampleId": null,
@@ -57,32 +56,61 @@
           "flags": [
             {
               "type": "unknown_sample",
-              "message": "The conical tube label/sample identity is not readable and may need review.",
+              "message": "Tube/sample identity is not fully readable and may need review.",
               "status": "needs_review"
             }
           ],
           "evidenceFrames": [
             2,
-            2.5,
+            2.5
+          ]
+        },
+        {
+          "id": "XM_30-live-0-2",
+          "clipId": "XM_30",
+          "start": 2.7,
+          "end": 4,
+          "action": "Manipulate conical tube",
+          "actionLabel": "other",
+          "tipState": "unclear",
+          "description": "The capped conical tube is held with both hands and rotated/handled near the cap area; no clear opening, transfer, or pipetting is visible within this window.",
+          "objects": [
+            "capped conical tube with pink liquid"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Tube/sample identity is not fully readable and may need review.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
             3,
             3.5
           ]
         }
       ],
-      "tipStateAtEnd": "unknown at start; no active pipette manipulation by end (no tip change observed)",
+      "tipStateAtEnd": "unknown",
       "frames": 8,
       "model": "gpt-5.5",
       "usage": {
         "input_tokens": 3670,
         "input_tokens_details": {
           "cache_write_tokens": 0,
-          "cached_tokens": 0
+          "cached_tokens": 3328
         },
-        "output_tokens": 302,
+        "output_tokens": 871,
         "output_tokens_details": {
-          "reasoning_tokens": 0
+          "reasoning_tokens": 483
         },
-        "total_tokens": 3972
+        "total_tokens": 4541
       }
     },
     {
@@ -93,14 +121,14 @@
           "id": "XM_30-live-40-0",
           "clipId": "XM_30",
           "start": 4,
-          "end": 5,
-          "action": "Open conical tube",
+          "end": 4.5,
+          "action": "Open sample tube",
           "actionLabel": "open_container",
           "tipState": "no_tip",
-          "description": "The operator holds a conical tube containing pink liquid and unscrews/removes the turquoise cap, then sets the cap down on the work surface.",
+          "description": "The user unscrews/removes the teal cap from a conical tube containing pink liquid held over the tube rack.",
           "objects": [
             "conical tube with pink liquid",
-            "turquoise cap",
+            "teal screw cap",
             "tube rack"
           ],
           "sourceSampleId": null,
@@ -113,28 +141,54 @@
           "flags": [
             {
               "type": "unknown_sample",
-              "message": "Tube/sample identity is not readable; confirm this is the intended cell suspension or reagent before further handling.",
+              "message": "Tube identity/label is not readable enough to confirm the sample or reagent being opened; review may be needed.",
               "status": "needs_review"
             }
           ],
           "evidenceFrames": [
             4,
-            4.5,
-            5
+            4.5
           ]
         },
         {
           "id": "XM_30-live-40-1",
           "clipId": "XM_30",
-          "start": 6.5,
-          "end": 7.5,
-          "action": "Handle open tube and sterile item",
+          "start": 4.5,
+          "end": 5.5,
+          "action": "Set cap down",
           "actionLabel": "other",
           "tipState": "no_tip",
-          "description": "The open tube is moved toward the right side of the biosafety cabinet while the operator handles a long sterile item or packaging near the work surface; no aspiration or dispensing is visible.",
+          "description": "The removed teal cap is placed on the work surface beside the rack while the tube remains in hand/open nearby.",
+          "objects": [
+            "teal screw cap",
+            "conical tube",
+            "work surface"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            4.5,
+            5,
+            5.5
+          ]
+        },
+        {
+          "id": "XM_30-live-40-2",
+          "clipId": "XM_30",
+          "start": 6.5,
+          "end": 7.5,
+          "action": "Handle open tube",
+          "actionLabel": "other",
+          "tipState": "no_tip",
+          "description": "The user continues holding/manipulating the open conical tube near the right side of the hood, apparently preparing for a subsequent transfer; no aspiration or dispense is visible.",
           "objects": [
             "open conical tube",
-            "sterile-looking long item or wrapper",
             "biosafety cabinet work surface"
           ],
           "sourceSampleId": null,
@@ -147,7 +201,7 @@
           "flags": [
             {
               "type": "unknown_sample",
-              "message": "Open container/sample identity remains unreadable; review to ensure the correct material is being prepared.",
+              "message": "Open tube identity remains unreadable; confirm contents before any subsequent transfer.",
               "status": "needs_review"
             }
           ],
@@ -158,20 +212,20 @@
           ]
         }
       ],
-      "tipStateAtEnd": "No active micropipette manipulation observed; tip state remains unknown from prior window (no visible tip pickup/ejection).",
+      "tipStateAtEnd": "no_tip",
       "frames": 8,
       "model": "gpt-5.5",
       "usage": {
-        "input_tokens": 3722,
+        "input_tokens": 3670,
         "input_tokens_details": {
           "cache_write_tokens": 0,
           "cached_tokens": 0
         },
-        "output_tokens": 673,
+        "output_tokens": 627,
         "output_tokens_details": {
-          "reasoning_tokens": 340
+          "reasoning_tokens": 234
         },
-        "total_tokens": 4395
+        "total_tokens": 4297
       }
     },
     {
@@ -181,41 +235,16 @@
         {
           "id": "XM_30-live-80-0",
           "clipId": "XM_30",
-          "start": 8,
-          "end": 8.5,
-          "action": "Pick up pipette",
-          "actionLabel": "other",
-          "tipState": "unclear",
-          "description": "Gloved right hand lifts or repositions a handheld adjustable pipette from the work surface near the rack/cryovial area. No tip mounting or ejection is visible.",
-          "objects": [
-            "handheld adjustable pipette",
-            "work surface"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "adjustable micropipette, size not identifiable",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [],
-          "evidenceFrames": [
-            8,
-            8.5
-          ]
-        },
-        {
-          "id": "XM_30-live-80-1",
-          "clipId": "XM_30",
-          "start": 9,
-          "end": 10.5,
-          "action": "Open cryovial",
+          "start": 8.8,
+          "end": 9.3,
+          "action": "Position open cryovial",
           "actionLabel": "open_container",
           "tipState": "unclear",
-          "description": "A small screw-cap tube/cryovial is held in the left hand while the right hand twists/removes the cap. The tube identity/label is not readable.",
+          "description": "Gloved hands bring an open small vial/cryovial containing dark suspension into the work area and position it near the clear pipette.",
           "objects": [
-            "cryovial or small screw-cap tube",
-            "cap"
+            "open cryovial or small tube",
+            "dark liquid/suspension",
+            "gloved hands"
           ],
           "sourceSampleId": null,
           "destinationSampleId": null,
@@ -227,66 +256,66 @@
           "flags": [
             {
               "type": "unknown_sample",
-              "message": "Possible issue needing review: the opened cryovial/tube label or sample identity is not readable.",
+              "message": "Possible issue needing review: the vial/tube label and sample identity are not readable.",
               "status": "needs_review"
             }
           ],
           "evidenceFrames": [
             9,
-            9.5,
-            10,
-            10.5
+            9.5
           ]
         },
         {
-          "id": "XM_30-live-80-2",
+          "id": "XM_30-live-80-1",
           "clipId": "XM_30",
-          "start": 10.5,
+          "start": 9.5,
           "end": 11.5,
-          "action": "Handle open cryovial",
-          "actionLabel": "other",
-          "tipState": "unclear",
-          "description": "The open cryovial/small tube is held above the pink tube rack while the other hand remains near the pipette/work area. No clear aspiration, dispense, transfer, or tip change is visible.",
+          "action": "Transfer suspension to cryovial",
+          "actionLabel": "transfer",
+          "tipState": "same_tip_continued",
+          "description": "A clear pipette is held at or inside the open cryovial/small tube while the operator appears to dispense or transfer liquid into it. Exact volume and sample identity are not legible.",
           "objects": [
-            "open cryovial or small screw-cap tube",
-            "pink tube rack",
-            "handheld adjustable pipette"
+            "clear pipette",
+            "open cryovial or small tube",
+            "dark liquid/suspension"
           ],
           "sourceSampleId": null,
           "destinationSampleId": null,
           "volumeUl": null,
-          "visualQuantity": "adjustable micropipette, size not identifiable",
+          "visualQuantity": null,
           "protocolStep": null,
           "verification": "pending",
           "origin": "model",
           "flags": [
             {
               "type": "unknown_sample",
-              "message": "Possible issue needing review: the open tube/cryovial identity is not readable while being handled.",
+              "message": "Possible issue needing review: the receiving container/sample identity is unreadable, so the aliquot identity cannot be confirmed from the video.",
               "status": "needs_review"
             }
           ],
           "evidenceFrames": [
+            9.5,
+            10,
             10.5,
             11,
             11.5
           ]
         }
       ],
-      "tipStateAtEnd": "unknown at start; no active pipette tip change observed. A handheld pipette is used, but tip presence/continuity is unclear by the end.",
+      "tipStateAtEnd": "same_tip_continued; a clear pipette/serological pipette remains in use with no visible tip ejection or new mounting",
       "frames": 8,
       "model": "gpt-5.5",
       "usage": {
-        "input_tokens": 3722,
+        "input_tokens": 3670,
         "input_tokens_details": {
           "cache_write_tokens": 0,
           "cached_tokens": 0
         },
-        "output_tokens": 475,
+        "output_tokens": 761,
         "output_tokens_details": {
-          "reasoning_tokens": 0
+          "reasoning_tokens": 403
         },
-        "total_tokens": 4197
+        "total_tokens": 4431
       }
     },
     {
@@ -298,29 +327,21 @@
           "clipId": "XM_30",
           "start": 12,
           "end": 13.5,
-          "action": "Aspirate cell suspension",
-          "actionLabel": "aspirate",
-          "tipState": "same_tip_continued",
-          "description": "Operator holds a rectangular vessel containing pink liquid and positions a long serological pipette into/over it, consistent with aspirating cell suspension or medium. Container identity/label is not readable.",
+          "action": "Handle culture flask",
+          "actionLabel": "handle_dish",
+          "tipState": "unclear",
+          "description": "The operator holds and tilts a rectangular cell culture flask/dish containing pink medium, manipulating it inside the hood. No pipette aspiration or dispense is clearly visible.",
           "objects": [
-            "rectangular culture vessel with pink liquid",
-            "serological pipette",
-            "pipette controller/handheld pipette"
+            "cell culture flask/dish with pink medium"
           ],
           "sourceSampleId": null,
           "destinationSampleId": null,
           "volumeUl": null,
-          "visualQuantity": "serological pipette",
+          "visualQuantity": null,
           "protocolStep": null,
           "verification": "pending",
           "origin": "model",
-          "flags": [
-            {
-              "type": "unknown_sample",
-              "message": "Source vessel label/content is not readable; confirm the aspirated sample is the intended cell suspension/freezing mixture.",
-              "status": "needs_review"
-            }
-          ],
+          "flags": [],
           "evidenceFrames": [
             12,
             12.5,
@@ -331,49 +352,14 @@
         {
           "id": "XM_30-live-120-1",
           "clipId": "XM_30",
-          "start": 13.5,
-          "end": 15,
-          "action": "Transfer to cryovial",
-          "actionLabel": "dispense",
-          "tipState": "same_tip_continued",
-          "description": "Using the same serological pipette, the operator moves from the pink-liquid vessel toward a small open screw-cap tube/cryovial held in the left hand and appears to dispense/transfer liquid into it. No tip or pipette change is visible between source and destination.",
-          "objects": [
-            "serological pipette",
-            "open cryovial or screw-cap tube",
-            "rectangular culture vessel with pink liquid"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "serological pipette",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "unknown_sample",
-              "message": "Destination tube/cryovial label is not readable; confirm the aliquot is going into the intended cryovial.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            13.5,
-            14,
-            14.5,
-            15
-          ]
-        },
-        {
-          "id": "XM_30-live-120-2",
-          "clipId": "XM_30",
-          "start": 15,
+          "start": 14,
           "end": 15.5,
-          "action": "Place cryovial in rack",
-          "actionLabel": "other",
-          "tipState": "no_tip",
-          "description": "The filled small tube/cryovial with pink liquid is held over the work area and moved toward the tube rack containing labeled tubes.",
+          "action": "Pick up cryovial",
+          "actionLabel": "open_container",
+          "tipState": "unclear",
+          "description": "The operator holds a small screw-cap tube/cryovial with pink liquid and moves it toward the tube rack. The cap appears off or loosened; no liquid transfer is visible in this window.",
           "objects": [
-            "cryovial or screw-cap tube with pink liquid",
+            "cryovial or small screw-cap tube with pink liquid",
             "tube rack"
           ],
           "sourceSampleId": null,
@@ -386,17 +372,19 @@
           "flags": [
             {
               "type": "unknown_sample",
-              "message": "Tube label is not readable during placement; confirm correct cryovial identity/location in the rack.",
+              "message": "Small tube/cryovial identity and sample label are not readable; review to confirm the correct cell suspension/freezing aliquot.",
               "status": "needs_review"
             }
           ],
           "evidenceFrames": [
+            14,
+            14.5,
             15,
             15.5
           ]
         }
       ],
-      "tipStateAtEnd": "same serological pipette/tip continued; no visible ejection or new attachment",
+      "tipStateAtEnd": "unknown",
       "frames": 8,
       "model": "gpt-5.5",
       "usage": {
@@ -405,11 +393,11 @@
           "cache_write_tokens": 0,
           "cached_tokens": 0
         },
-        "output_tokens": 831,
+        "output_tokens": 292,
         "output_tokens_details": {
-          "reasoning_tokens": 305
+          "reasoning_tokens": 0
         },
-        "total_tokens": 4553
+        "total_tokens": 4014
       }
     },
     {
@@ -420,15 +408,14 @@
           "id": "XM_30-live-160-0",
           "clipId": "XM_30",
           "start": 16,
-          "end": 19.5,
-          "action": "Pipette into open tube",
-          "actionLabel": "transfer",
-          "tipState": "same_tip_continued",
-          "description": "A gloved left hand holds an open conical/centrifuge tube while the right hand operates a handheld pipette with a tip inserted into the tube opening. The plunger appears to be manipulated, consistent with a pipetting transfer or resuspension into/from this open tube, but the liquid movement and source/destination identity are not clearly visible.",
+          "end": 16.5,
+          "action": "Open tube cap",
+          "actionLabel": "open_container",
+          "tipState": "no_tip",
+          "description": "Left gloved hand holds a small conical/centrifuge tube near the blue rack while its cap is open/manipulated. Container identity is not clearly readable.",
           "objects": [
-            "open conical/centrifuge tube",
-            "handheld pipette",
-            "pipette tip"
+            "small conical/centrifuge tube",
+            "blue tube rack"
           ],
           "sourceSampleId": null,
           "destinationSampleId": null,
@@ -440,12 +427,43 @@
           "flags": [
             {
               "type": "unknown_sample",
-              "message": "Container/sample identity for the open tube being pipetted is not fully readable and should be reviewed.",
+              "message": "Tube identity/contents are not readable; review which sample or reagent is being handled.",
               "status": "needs_review"
             }
           ],
           "evidenceFrames": [
             16,
+            16.5
+          ]
+        },
+        {
+          "id": "XM_30-live-160-1",
+          "clipId": "XM_30",
+          "start": 16.5,
+          "end": 19.5,
+          "action": "Pipette into open tube",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "A pipette with a clear tip is brought from the right and inserted into the open tube held in the left hand. The operator appears to dispense or manipulate liquid in the tube; exact liquid identity and volume are not visible.",
+          "objects": [
+            "pipette with clear tip",
+            "open small conical/centrifuge tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The open tube identity/contents and pipetted material are not readable; review this transfer/manipulation.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
             16.5,
             17,
             17.5,
@@ -460,16 +478,16 @@
       "frames": 8,
       "model": "gpt-5.5",
       "usage": {
-        "input_tokens": 3799,
+        "input_tokens": 3768,
         "input_tokens_details": {
           "cache_write_tokens": 0,
           "cached_tokens": 0
         },
-        "output_tokens": 226,
+        "output_tokens": 337,
         "output_tokens_details": {
           "reasoning_tokens": 0
         },
-        "total_tokens": 4025
+        "total_tokens": 4105
       }
     },
     {
@@ -480,51 +498,16 @@
           "id": "XM_30-live-200-0",
           "clipId": "XM_30",
           "start": 20,
-          "end": 22.5,
-          "action": "Pipette in tube",
-          "actionLabel": "aspirate",
-          "tipState": "same_tip_continued",
-          "description": "A pipette with an attached tip is held at the mouth/interior of a clear conical tube at the lower right; the plunger hand appears to operate the pipette, consistent with aspirating or pipetting liquid from the tube. Container identity/sample label is not readable in this view.",
-          "objects": [
-            "pipette with attached tip",
-            "clear conical tube"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": null,
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "unknown_sample",
-              "message": "Possible issue needing review: the tube being pipetted from/to is partially out of frame and its identity is unreadable.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            20,
-            20.5,
-            21,
-            21.5,
-            22,
-            22.5
-          ]
-        },
-        {
-          "id": "XM_30-live-200-1",
-          "clipId": "XM_30",
-          "start": 22.5,
           "end": 23.5,
-          "action": "Move pipette away",
-          "actionLabel": "transfer",
+          "action": "Handle serological pipette",
+          "actionLabel": "other",
           "tipState": "same_tip_continued",
-          "description": "The same pipette tip remains attached while the pipette is withdrawn from the clear tube and moved rightward across the workspace; no dispense into another container is visible before the end of the window.",
+          "description": "Gloved hands hold and reposition a clear serological pipette or pipette-like transfer device near the tube rack area. No clear aspiration, dispense, tip ejection, or new tip attachment is visible in this window.",
           "objects": [
-            "pipette with attached tip",
-            "clear conical tube",
-            "tube rack"
+            "serological pipette",
+            "gloved hands",
+            "tube rack",
+            "cryovials/tubes"
           ],
           "sourceSampleId": null,
           "destinationSampleId": null,
@@ -535,6 +518,11 @@
           "origin": "model",
           "flags": [],
           "evidenceFrames": [
+            20,
+            20.5,
+            21,
+            21.5,
+            22,
             22.5,
             23,
             23.5
@@ -545,16 +533,16 @@
       "frames": 8,
       "model": "gpt-5.5",
       "usage": {
-        "input_tokens": 3778,
+        "input_tokens": 3797,
         "input_tokens_details": {
           "cache_write_tokens": 0,
           "cached_tokens": 0
         },
-        "output_tokens": 332,
+        "output_tokens": 170,
         "output_tokens_details": {
           "reasoning_tokens": 0
         },
-        "total_tokens": 4110
+        "total_tokens": 3967
       }
     },
     {
@@ -565,61 +553,61 @@
           "id": "XM_30-live-240-0",
           "clipId": "XM_30",
           "start": 24,
-          "end": 25.5,
-          "action": "Open cryovial",
+          "end": 25,
+          "action": "Handle open cryovial",
           "actionLabel": "open_container",
           "tipState": "same_tip_continued",
-          "description": "Gloved hand manipulates and removes a teal screw cap from a small tube/cryovial near the blue rack, leaving the cap on the work surface.",
+          "description": "A gloved hand holds a small cryovial/tube near the rack while its turquoise cap is off and visible on the work surface. No pipetting or tip change is visible.",
           "objects": [
-            "teal-capped small tube/cryovial",
-            "teal screw cap",
-            "blue tube rack"
+            "open cryovial/tube",
+            "turquoise cap",
+            "tube rack"
           ],
           "sourceSampleId": null,
           "destinationSampleId": null,
           "volumeUl": null,
-          "visualQuantity": "serological pipette",
+          "visualQuantity": null,
           "protocolStep": null,
           "verification": "pending",
           "origin": "model",
           "flags": [
             {
               "type": "unknown_sample",
-              "message": "Container identity/contents are not fully readable; review which cryovial or sample is being opened.",
+              "message": "Open cryovial/tube identity is only partially readable and may need review.",
               "status": "needs_review"
             }
           ],
           "evidenceFrames": [
             24,
             24.5,
-            25,
-            25.5
+            25
           ]
         },
         {
           "id": "XM_30-live-240-1",
           "clipId": "XM_30",
-          "start": 25.5,
-          "end": 27,
-          "action": "Handle open cryovial",
-          "actionLabel": "open_container",
+          "start": 25,
+          "end": 27.5,
+          "action": "Move open cryovial",
+          "actionLabel": "handle_dish",
           "tipState": "same_tip_continued",
-          "description": "The now-open small tube/cryovial is held and moved in front of the rack; no dispensing or aspiration is visible.",
+          "description": "The open cryovial/tube is carried across the work area toward/over the tube racks while remaining uncapped. No aspirate/dispense action is visible.",
           "objects": [
-            "open small tube/cryovial",
-            "blue tube rack"
+            "open cryovial/tube",
+            "tube rack",
+            "green rack"
           ],
           "sourceSampleId": null,
           "destinationSampleId": null,
           "volumeUl": null,
-          "visualQuantity": "serological pipette",
+          "visualQuantity": null,
           "protocolStep": null,
           "verification": "pending",
           "origin": "model",
           "flags": [
             {
               "type": "unknown_sample",
-              "message": "Open container identity/contents are not fully readable; review sample identity.",
+              "message": "The handled open cryovial/tube label is not clearly readable; sample identity may need review.",
               "status": "needs_review"
             }
           ],
@@ -627,659 +615,25 @@
             25.5,
             26,
             26.5,
-            27
-          ]
-        },
-        {
-          "id": "XM_30-live-240-2",
-          "clipId": "XM_30",
-          "start": 27,
-          "end": 28,
-          "action": "Reach toward rack",
-          "actionLabel": "other",
-          "tipState": "same_tip_continued",
-          "description": "The other hand reaches toward the rack/work area while the open tube is still held; no clear transfer, aspiration, or cap replacement occurs within this window.",
-          "objects": [
-            "open small tube/cryovial",
-            "blue tube rack",
-            "work surface"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "serological pipette",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [],
-          "evidenceFrames": [
             27,
             27.5
           ]
         }
       ],
-      "tipStateAtEnd": "same serological pipette/tip continued; no ejection or new attachment visible",
-      "frames": 8,
-      "model": "gpt-5.5",
-      "usage": {
-        "input_tokens": 3797,
-        "input_tokens_details": {
-          "cache_write_tokens": 0,
-          "cached_tokens": 0
-        },
-        "output_tokens": 441,
-        "output_tokens_details": {
-          "reasoning_tokens": 0
-        },
-        "total_tokens": 4238
-      }
-    },
-    {
-      "start": 28,
-      "end": 32,
-      "events": [
-        {
-          "id": "XM_30-live-280-0",
-          "clipId": "XM_30",
-          "start": 28.5,
-          "end": 29.5,
-          "action": "Pick up pipette",
-          "actionLabel": "other",
-          "tipState": "same_tip_continued",
-          "description": "Right gloved hand picks up/holds a large adjustable pipette near the work area; no tip mounting or ejection is visible.",
-          "objects": [
-            "adjustable pipette"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "large adjustable pipette, blue plunger",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [],
-          "evidenceFrames": [
-            28.5,
-            29,
-            29.5
-          ]
-        },
-        {
-          "id": "XM_30-live-280-1",
-          "clipId": "XM_30",
-          "start": 29.5,
-          "end": 31.5,
-          "action": "Hold open tube",
-          "actionLabel": "open_container",
-          "tipState": "same_tip_continued",
-          "description": "Left hand holds an open conical tube or vial next to the pipette while the right hand reaches toward and rests on a blue tip box. No aspiration or dispense is visible in this window.",
-          "objects": [
-            "open tube",
-            "adjustable pipette",
-            "blue tip box"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "large adjustable pipette, blue plunger",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "unknown_sample",
-              "message": "Open tube identity/contents are unreadable; review if container identity matters for the next transfer.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            29.5,
-            30,
-            30.5,
-            31,
-            31.5
-          ]
-        }
-      ],
       "tipStateAtEnd": "same_tip_continued",
       "frames": 8,
       "model": "gpt-5.5",
       "usage": {
-        "input_tokens": 3793,
+        "input_tokens": 3784,
         "input_tokens_details": {
           "cache_write_tokens": 0,
           "cached_tokens": 0
         },
-        "output_tokens": 559,
+        "output_tokens": 697,
         "output_tokens_details": {
-          "reasoning_tokens": 259
+          "reasoning_tokens": 373
         },
-        "total_tokens": 4352
-      }
-    },
-    {
-      "start": 32,
-      "end": 36,
-      "events": [
-        {
-          "id": "XM_30-live-320-0",
-          "clipId": "XM_30",
-          "start": 32,
-          "end": 35.5,
-          "action": "Dispense into open vial",
-          "actionLabel": "dispense",
-          "tipState": "same_tip_continued",
-          "description": "A gloved hand holds an open small vial/tube while the same pipette/tip is positioned at the mouth/inside the container; the operator presses the pipette control, consistent with dispensing or transferring liquid into the open vial. Container label/content is not readable.",
-          "objects": [
-            "open vial/tube",
-            "pipette",
-            "purple tube rack"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "serological pipette/controller, size not legible",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "tip_reuse",
-              "message": "Possible issue needing review: the same visible pipette/tip appears to be used across different tubes/containers without a visible tip change.",
-              "status": "needs_review"
-            },
-            {
-              "type": "unknown_sample",
-              "message": "Possible issue needing review: the open vial/tube identity and contents are not readable during the transfer.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            32,
-            32.5,
-            33,
-            33.5,
-            34,
-            34.5,
-            35,
-            35.5
-          ]
-        }
-      ],
-      "tipStateAtEnd": "same serological pipette/tip continued; no visible ejection or new tip attachment",
-      "frames": 8,
-      "model": "gpt-5.5",
-      "usage": {
-        "input_tokens": 3804,
-        "input_tokens_details": {
-          "cache_write_tokens": 0,
-          "cached_tokens": 0
-        },
-        "output_tokens": 708,
-        "output_tokens_details": {
-          "reasoning_tokens": 445
-        },
-        "total_tokens": 4512
-      }
-    },
-    {
-      "start": 36,
-      "end": 40,
-      "events": [
-        {
-          "id": "XM_30-live-360-0",
-          "clipId": "XM_30",
-          "start": 36,
-          "end": 39.5,
-          "action": "Pipette into open tube",
-          "actionLabel": "dispense",
-          "tipState": "same_tip_continued",
-          "description": "The gloved user holds an open tube/vial in the left hand while placing the same attached blue pipette tip into or just above the opening and operating the plunger. The pipette is then withdrawn at the end of the window. The exact container identity and liquid/sample are not readable.",
-          "objects": [
-            "micropipette with blue tip",
-            "open tube/vial"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "micropipette, blue tip",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "unknown_sample",
-              "message": "Container label/sample identity is not readable while material is being pipetted; review may be needed to confirm the target tube/vial.",
-              "status": "needs_review"
-            },
-            {
-              "type": "tip_reuse",
-              "message": "Same attached tip appears to be continued from earlier handling with no visible tip change before pipetting into this open tube/vial; review if different containers or samples were involved.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            36,
-            36.5,
-            37,
-            37.5,
-            38,
-            38.5,
-            39,
-            39.5
-          ]
-        }
-      ],
-      "tipStateAtEnd": "same serological/micropipette tip continued; tip still attached, no ejection or new tip pickup visible",
-      "frames": 8,
-      "model": "gpt-5.5",
-      "usage": {
-        "input_tokens": 3804,
-        "input_tokens_details": {
-          "cache_write_tokens": 0,
-          "cached_tokens": 0
-        },
-        "output_tokens": 685,
-        "output_tokens_details": {
-          "reasoning_tokens": 399
-        },
-        "total_tokens": 4489
-      }
-    },
-    {
-      "start": 40,
-      "end": 44,
-      "events": [
-        {
-          "id": "XM_30-live-400-0",
-          "clipId": "XM_30",
-          "start": 40,
-          "end": 41.5,
-          "action": "Position pipette and cryovial",
-          "actionLabel": "other",
-          "tipState": "same_tip_continued",
-          "description": "Operator holds an open cryovial/tube in the left hand while the right hand holds a pipette with the existing tip; no liquid transfer is visible yet.",
-          "objects": [
-            "open cryovial/tube",
-            "pipette",
-            "tube rack"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": null,
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "unknown_sample",
-              "message": "Open tube identity/contents are not fully readable and may need review.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            40,
-            40.5,
-            41,
-            41.5
-          ]
-        },
-        {
-          "id": "XM_30-live-400-1",
-          "clipId": "XM_30",
-          "start": 42,
-          "end": 43.5,
-          "action": "Aspirate from cryovial",
-          "actionLabel": "aspirate",
-          "tipState": "same_tip_continued",
-          "description": "Pipette tip is inserted into a red-liquid tube/cryovial held in the rack/hand, consistent with aspirating cell suspension or freezing mixture; plunger/meniscus details are not legible.",
-          "objects": [
-            "pipette",
-            "red-liquid tube/cryovial",
-            "tube rack"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": null,
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "unknown_sample",
-              "message": "Source tube identity and contents are not fully readable and may need review.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            42,
-            42.5,
-            43,
-            43.5
-          ]
-        }
-      ],
-      "tipStateAtEnd": "same_tip_continued",
-      "frames": 8,
-      "model": "gpt-5.5",
-      "usage": {
-        "input_tokens": 3791,
-        "input_tokens_details": {
-          "cache_write_tokens": 0,
-          "cached_tokens": 0
-        },
-        "output_tokens": 324,
-        "output_tokens_details": {
-          "reasoning_tokens": 0
-        },
-        "total_tokens": 4115
-      }
-    },
-    {
-      "start": 44,
-      "end": 48,
-      "events": [
-        {
-          "id": "XM_30-live-440-0",
-          "clipId": "XM_30",
-          "start": 44,
-          "end": 45.5,
-          "action": "Reposition open tubes",
-          "actionLabel": "other",
-          "tipState": "same_tip_continued",
-          "description": "The operator holds an open white tube and an open red/pink cell suspension tube while moving a P1000-style pipette with a blue tip into position; no liquid transfer is visible yet.",
-          "objects": [
-            "open white tube",
-            "open red/pink tube",
-            "P1000 pipette with blue tip"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "P1000, blue tip",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [],
-          "evidenceFrames": [
-            44,
-            44.5,
-            45,
-            45.5
-          ]
-        },
-        {
-          "id": "XM_30-live-440-1",
-          "clipId": "XM_30",
-          "start": 46,
-          "end": 47.5,
-          "action": "Aspirate from red tube",
-          "actionLabel": "aspirate",
-          "tipState": "same_tip_continued",
-          "description": "The blue pipette tip is lowered into the open red/pink tube containing red liquid, consistent with aspirating or drawing up cell suspension. The tube label/sample identity is not fully readable.",
-          "objects": [
-            "open red/pink tube",
-            "red liquid",
-            "P1000 pipette with blue tip"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "P1000, blue tip",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "unknown_sample",
-              "message": "The red/pink tube appears to contain the working sample/cell suspension, but its label is not fully readable; verify tube identity.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            46,
-            46.5,
-            47,
-            47.5
-          ]
-        }
-      ],
-      "tipStateAtEnd": "same_tip_continued",
-      "frames": 8,
-      "model": "gpt-5.5",
-      "usage": {
-        "input_tokens": 3804,
-        "input_tokens_details": {
-          "cache_write_tokens": 0,
-          "cached_tokens": 0
-        },
-        "output_tokens": 331,
-        "output_tokens_details": {
-          "reasoning_tokens": 0
-        },
-        "total_tokens": 4135
-      }
-    },
-    {
-      "start": 48,
-      "end": 52,
-      "events": [
-        {
-          "id": "XM_30-live-480-0",
-          "clipId": "XM_30",
-          "start": 48,
-          "end": 48.5,
-          "action": "Move loaded pipette",
-          "actionLabel": "other",
-          "tipState": "same_tip_continued",
-          "description": "A P1000 micropipette with a blue tip containing red liquid is lifted/positioned between open cryovials/tubes held in the gloved hand. No dispensing is clearly visible in this interval.",
-          "objects": [
-            "P1000 micropipette",
-            "blue pipette tip",
-            "open cryovials/tubes",
-            "red cell suspension"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "P1000, blue tip",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "unknown_sample",
-              "message": "Tube identities/handwritten labels are not fully readable; confirm which sample is being transferred.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            48,
-            48.5
-          ]
-        },
-        {
-          "id": "XM_30-live-480-1",
-          "clipId": "XM_30",
-          "start": 49,
-          "end": 51,
-          "action": "Dispense into cryovial",
-          "actionLabel": "dispense",
-          "tipState": "same_tip_continued",
-          "description": "The same blue tip is inserted into the open clear/white-labeled cryovial/tube while the P1000 is held vertically, consistent with dispensing or transferring red cell suspension into that tube. No tip change is visible before this transfer.",
-          "objects": [
-            "P1000 micropipette",
-            "blue pipette tip",
-            "open clear cryovial/tube",
-            "red cell suspension"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "P1000, blue tip",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "tip_reuse",
-              "message": "Same tip appears to be used while moving between different open tubes; review whether this is intended for the aliquoting step.",
-              "status": "needs_review"
-            },
-            {
-              "type": "unknown_sample",
-              "message": "Destination tube identity/label is partially obscured and not fully readable.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            49,
-            49.5,
-            50,
-            50.5,
-            51
-          ]
-        },
-        {
-          "id": "XM_30-live-480-2",
-          "clipId": "XM_30",
-          "start": 51,
-          "end": 51.5,
-          "action": "Withdraw pipette tip",
-          "actionLabel": "other",
-          "tipState": "same_tip_continued",
-          "description": "The P1000 tip is withdrawn from the open tube and moved away; the same tip remains attached with no visible ejection.",
-          "objects": [
-            "P1000 micropipette",
-            "blue pipette tip",
-            "open cryovial/tube"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": "P1000, blue tip",
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [],
-          "evidenceFrames": [
-            51,
-            51.5
-          ]
-        }
-      ],
-      "tipStateAtEnd": "same serological/micropipette tip still attached; no visible ejection or new tip pickup",
-      "frames": 8,
-      "model": "gpt-5.5",
-      "usage": {
-        "input_tokens": 3816,
-        "input_tokens_details": {
-          "cache_write_tokens": 0,
-          "cached_tokens": 0
-        },
-        "output_tokens": 946,
-        "output_tokens_details": {
-          "reasoning_tokens": 418
-        },
-        "total_tokens": 4762
-      }
-    },
-    {
-      "start": 52,
-      "end": 56,
-      "events": [
-        {
-          "id": "XM_30-live-520-0",
-          "clipId": "XM_30",
-          "start": 52,
-          "end": 54,
-          "action": "Aspirate from red tube",
-          "actionLabel": "aspirate",
-          "tipState": "same_tip_continued",
-          "description": "The blue-tipped pipette remains inserted in the open red-liquid tube while the gloved hand holds the red tube and an adjacent open clear/white tube.",
-          "objects": [
-            "blue-tipped pipette",
-            "open red-liquid tube",
-            "open clear/white tube"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": null,
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "unknown_sample",
-              "message": "The identity of the red-liquid tube is not readable and may need review.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            52,
-            52.5,
-            53,
-            53.5,
-            54
-          ]
-        },
-        {
-          "id": "XM_30-live-520-1",
-          "clipId": "XM_30",
-          "start": 54.5,
-          "end": 55.5,
-          "action": "Transfer to open tube",
-          "actionLabel": "dispense",
-          "tipState": "same_tip_continued",
-          "description": "Without a visible tip change, the same blue-tipped pipette is moved from the red-liquid tube into/over the adjacent open clear/white tube, consistent with dispensing or transferring liquid into that tube.",
-          "objects": [
-            "blue-tipped pipette",
-            "open clear/white tube",
-            "open red-liquid tube"
-          ],
-          "sourceSampleId": null,
-          "destinationSampleId": null,
-          "volumeUl": null,
-          "visualQuantity": null,
-          "protocolStep": null,
-          "verification": "pending",
-          "origin": "model",
-          "flags": [
-            {
-              "type": "tip_reuse",
-              "message": "The same pipette tip appears to move from the red-liquid tube to a different open tube without a visible tip change; confirm this is intended for the transfer.",
-              "status": "needs_review"
-            },
-            {
-              "type": "unknown_sample",
-              "message": "The destination tube identity/label is not readable and may need review.",
-              "status": "needs_review"
-            }
-          ],
-          "evidenceFrames": [
-            54.5,
-            55,
-            55.5
-          ]
-        }
-      ],
-      "tipStateAtEnd": "same_tip_continued",
-      "frames": 8,
-      "model": "gpt-5.5",
-      "usage": {
-        "input_tokens": 3800,
-        "input_tokens_details": {
-          "cache_write_tokens": 0,
-          "cached_tokens": 0
-        },
-        "output_tokens": 712,
-        "output_tokens_details": {
-          "reasoning_tokens": 343
-        },
-        "total_tokens": 4512
+        "total_tokens": 4481
       }
     }
   ]

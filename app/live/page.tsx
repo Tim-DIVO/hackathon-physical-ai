@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Dices, Play, RotateCcw, Square, X } from "lucide-react";
-import type { LabEvent } from "@/lib/types";
+import type { LabEvent, ProtocolStep } from "@/lib/types";
 import { protocolSteps, sampleRegistry } from "@/lib/reference";
 import { applySupervisor } from "@/lib/supervisor";
 import { VoiceAssistant } from "@/components/voice-assistant";
@@ -33,6 +33,7 @@ interface Clip {
   viewpoint: string;
   protocol?: string;
   unseen: boolean;
+  steps?: ProtocolStep[];
 }
 type Mode = "idle" | "live" | "replay";
 
@@ -68,6 +69,8 @@ export default function LivePage() {
   eventsRef.current = events;
   const clip = clips.find((c) => c.id === clipId);
   const crispr = clipId.startsWith("DJI");
+  // The clip's own protocol: the CRISPR reference for DJI clips, the dataset's steps for the others.
+  const steps: ProtocolStep[] = crispr ? protocolSteps : (clip?.steps ?? []);
 
   useEffect(() => {
     fetch("/api/library")
@@ -203,8 +206,6 @@ export default function LivePage() {
       return old.map((e) => (e.id === id ? { ...(derived ?? e), ...patch } : e));
     });
   }
-  const setFlag = (event: LabEvent, index: number, status: "confirmed" | "dismissed") =>
-    update(event.id, { flags: event.flags.map((f, i) => (i === index ? { ...f, status } : f)), verification: "corrected" });
 
   // Live annotations land a few seconds after the action; show the latest recent one.
   const now = [...visible].reverse().find((e) => e.origin === "model" && current - e.end < 10);
@@ -217,7 +218,23 @@ export default function LivePage() {
   const pendingCheck = alert ? { key: `${alert.e.id}:${alert.f.type}`, question: checkQuestion(alert.f) } : null;
   function answerCheck(ok: boolean, words: string) {
     if (!alert) return;
-    setFlag(alert.e, alert.i, ok ? "dismissed" : "confirmed");
+    // One answer settles every open flag of this kind so far (the tip rule flags each addition separately,
+    // and the same question must not pop straight back up).
+    const type = alert.f.type;
+    const status = ok ? ("dismissed" as const) : ("confirmed" as const);
+    const upTo = current + 0.5;
+    setEvents((old) => {
+      const derived = applySupervisor(old);
+      return old.map((e) => {
+        const d = derived.find((x) => x.id === e.id);
+        if (!d || d.start > upTo || !d.flags.some((f) => f.type === type && f.status === "needs_review")) return e;
+        return {
+          ...d,
+          flags: d.flags.map((f) => (f.type === type && f.status === "needs_review" ? { ...f, status } : f)),
+          verification: "corrected" as const,
+        };
+      });
+    });
     const t = Math.round(current * 10) / 10;
     const note: LabEvent = {
       id: `check-${Date.now()}`,
@@ -274,8 +291,8 @@ export default function LivePage() {
           hint: `Answer out loud · e.g. ${ideas[0]}`,
         }
       : null;
-  const stepNow = crispr ? protocolSteps[(latestStep ?? 1) - 1] : undefined;
-  const stepNext = crispr ? protocolSteps[latestStep ?? 1] : undefined;
+  const stepNow = steps.length ? steps[Math.min(latestStep ?? 1, steps.length) - 1] : undefined;
+  const stepNext = steps.length && latestStep ? steps[latestStep] : steps[1];
   const status =
     mode === "live"
       ? inFlight.length
@@ -352,9 +369,9 @@ export default function LivePage() {
 
       {/* Step-by-step guide in view: what's done, what to do now (in the protocol's words), what's next. */}
       <div className="hud-guide">
-        {crispr && (
+        {steps.length > 0 && (
           <div className="hud-protocol-steps" aria-hidden>
-            {protocolSteps.map((st) => {
+            {steps.map((st) => {
               const deviation = all.some(
                 (e) => e.protocolStep === st.id && e.flags.some((f) => f.type !== "unknown_sample" && f.status !== "dismissed"),
               );
@@ -367,9 +384,9 @@ export default function LivePage() {
             })}
           </div>
         )}
-        {crispr && latestStep && latestStep > 1 && <div className="g-done">✓ {protocolSteps[latestStep - 2].title}</div>}
+        {latestStep && latestStep > 1 && steps[latestStep - 2] && <div className="g-done">✓ {steps[latestStep - 2].title}</div>}
         <div className="g-now">
-          <span>{stepNow ? `Step ${stepNow.id} of ${protocolSteps.length} · do now` : "Procedure"}</span>
+          <span>{stepNow ? `Step ${stepNow.id} of ${steps.length} · do now` : "Procedure"}</span>
           <b>{stepNow ? stepNow.description : (clip?.protocol ?? "Bench procedure")}</b>
         </div>
         {stepNext && <div className="g-next">Next · {stepNext.description}</div>}
@@ -410,7 +427,7 @@ export default function LivePage() {
         events={visible}
         currentTime={current}
         samples={sampleRegistry}
-        protocol={crispr ? protocolSteps : []}
+        protocol={steps}
         pendingCheck={pendingCheck}
         onAnswerCheck={answerCheck}
         onAsk={setAgentAsk}

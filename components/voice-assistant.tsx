@@ -45,7 +45,8 @@ export interface VoiceAssistantProps {
 
 const LAB_CONTENT =
   /\d|µ|\b(ul|ml|mg|ug|ng|mm|nm|x)\b|%|reagent|tube|tip|plasmid|cell|buffer|medi(a|um)|dmso|pbs|fbs|virus|moi|polybrene|incubat|mix|dilut|lipofect|opti-?mem|dna|rna|cas9|guide|dish|vial|confluen|aliquot|label|spun|centrifug|pellet|wash/i;
-const YES =/\b(yes|yeah|yep|yup|sure|fine|ok(ay)?|that'?s (fine|ok(ay)?|intended|right)|it'?s (fine|ok(ay)?|intended)|go ahead|all good|no problem|same reagent|intended|correct)\b/i;
+const YES =
+  /\b(yes|yeah|yep|yup|ya|sure|fine|ok(ay)?|confirm(ed|s)?|affirmative|right|correct|good|intended|on purpose|deliberate(ly)?|that'?s (fine|ok(ay)?|intended|right)|it'?s (fine|ok(ay)?|intended)|go ahead|all good|no problem|same reagent)\b/i;
 const NO = /\b(no|nope|nah|log it|my bad|mistake|oops|wrong|didn'?t mean|not intended|i forgot|deviation)\b/i;
 
 /** Classifies a reply to a yes/no check. "No problem" is a yes; anything ambiguous is null. */

@@ -1,0 +1,25 @@
+{
+  "title": "Lentivirus Infection Protocol",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Seed target cells in a 6cm dish one day prior…",
+      "description": "Seed target cells in a 6cm dish one day prior to infection to reach ~50% confluency."
+    },
+    {
+      "id": 2,
+      "title": "Add polybrene to the culture medium at a final…",
+      "description": "Add polybrene to the culture medium at a final concentration of 8 µg/mL."
+    },
+    {
+      "id": 3,
+      "title": "Add the lentivirus suspension to the cells at…",
+      "description": "Add the lentivirus suspension to the cells at the desired MOI (multiplicity of infection). Gently swirl the plate to ensure even distribution."
+    },
+    {
+      "id": 4,
+      "title": "Incubate the cells under standard culture…",
+      "description": "Incubate the cells under standard culture conditions (37°C, 5% CO₂) overnight."
+    }
+  ]
+}

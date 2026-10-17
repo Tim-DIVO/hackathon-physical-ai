@@ -1,0 +1,35 @@
+{
+  "title": "RNA Extraction - Cell Lysis and Homogenization",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Aspirate and discard the culture medium from…",
+      "description": "Aspirate and discard the culture medium from the cells."
+    },
+    {
+      "id": 2,
+      "title": "Wash the cells once with 1 mL sterile PBS to…",
+      "description": "Wash the cells once with 1 mL sterile PBS to remove residual medium."
+    },
+    {
+      "id": 3,
+      "title": "Add 500 µL of RNA lysis buffer directly onto…",
+      "description": "Add 500 µL of RNA lysis buffer directly onto the cells in the dish."
+    },
+    {
+      "id": 4,
+      "title": "Pipette up and down 5–10 times to lyse and…",
+      "description": "Pipette up and down 5–10 times to lyse and homogenize the cells completely."
+    },
+    {
+      "id": 5,
+      "title": "Transfer the lysate into a sterile RNase-free…",
+      "description": "Transfer the lysate into a sterile RNase-free 1.5 mL microcentrifuge tube."
+    },
+    {
+      "id": 6,
+      "title": "Add an equal volume of 70% ethanol to the…",
+      "description": "Add an equal volume of 70% ethanol to the lysate and mix gently by pipetting."
+    }
+  ]
+}

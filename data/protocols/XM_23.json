@@ -1,0 +1,70 @@
+{
+  "title": "PCR Reaction Setup",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Thaw all reagents (Master Mix, primers, DNA…",
+      "description": "Thaw all reagents (Master Mix, primers, DNA template, nuclease-free water) and keep them on ice."
+    },
+    {
+      "id": 2,
+      "title": "In a sterile 0.2 mL PCR tube, add 12.5 μL of 2x…",
+      "description": "In a sterile 0.2 mL PCR tube, add 12.5 μL of 2x Master Mix."
+    },
+    {
+      "id": 3,
+      "title": "Add 1 μL of Forward Primer (10 μM stock)",
+      "description": "Add 1 μL of Forward Primer (10 μM stock)."
+    },
+    {
+      "id": 4,
+      "title": "Add 1 μL of Reverse Primer (10 μM stock)",
+      "description": "Add 1 μL of Reverse Primer (10 μM stock)."
+    },
+    {
+      "id": 5,
+      "title": "Add 2 μL of template DNA (concentration approx…",
+      "description": "Add 2 μL of template DNA (concentration approx. 20 ng/μL)."
+    },
+    {
+      "id": 6,
+      "title": "Add 8.5 μL of nuclease-free water to reach a…",
+      "description": "Add 8.5 μL of nuclease-free water to reach a final volume of 25 μL."
+    },
+    {
+      "id": 7,
+      "title": "Mix contents by gently flicking the tube, then…",
+      "description": "Mix contents by gently flicking the tube, then perform a quick spin in a microcentrifuge to collect the liquid at the bottom."
+    },
+    {
+      "id": 8,
+      "title": "Place the tube into the thermocycler",
+      "description": "Place the tube into the thermocycler."
+    },
+    {
+      "id": 9,
+      "title": "Program the cycler or load pre-configured…",
+      "description": "Program the cycler or load pre-configured program:"
+    },
+    {
+      "id": 10,
+      "title": "o Initial denaturation at 95°C for 3 minutes",
+      "description": "o Initial denaturation at 95°C for 3 minutes"
+    },
+    {
+      "id": 11,
+      "title": "o 30 cycles of: 95°C for 30 sec, 55°C for 30…",
+      "description": "o 30 cycles of: 95°C for 30 sec, 55°C for 30 sec, 72°C for 1 min"
+    },
+    {
+      "id": 12,
+      "title": "o Final extension at 72°C for 5 minutes",
+      "description": "o Final extension at 72°C for 5 minutes"
+    },
+    {
+      "id": 13,
+      "title": "Start the program",
+      "description": "Start the program."
+    }
+  ]
+}

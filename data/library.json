@@ -48,5 +48,105 @@
     "viewpoint": "First-person · smart glasses",
     "protocol": "Lentiviral infection of iPSC-derived fibroblasts: reagent additions to cultured cells (LSV XMglass)",
     "referenceLabel": "correct"
+  },
+  {
+    "id": "XM_35",
+    "title": "Lab bench procedure · glasses 06",
+    "duration": 156.7,
+    "videoUrl": "/videos/lsv/XM_35.mp4",
+    "sourcePath": "data/eval/long/XM_35.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Virus Packaging Transfection of 293T Cells: This protocol describes the transfection of HEK293T cells with a mixture of lentiviral backbone, packaging, and envelope plasmids using a transfection reagent to produce viral particles. (LSV XMglass)",
+    "referenceLabel": "correct"
+  },
+  {
+    "id": "XM_27",
+    "title": "Lab bench procedure · glasses 07",
+    "duration": 145.1,
+    "videoUrl": "/videos/lsv/XM_27.mp4",
+    "sourcePath": "data/eval/long/XM_27.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "RNA Extraction Cell Lysis and Preparation: This procedure involves lysing cultured cells directly in a dish using lysis buffer, followed by homogenization and preparation for RNA extraction by adding ethanol. (LSV XMglass)",
+    "referenceLabel": "error: Mix vigrously (instead of gently) after adding ethanol"
+  },
+  {
+    "id": "XM_26",
+    "title": "Lab bench procedure · glasses 08",
+    "duration": 122.8,
+    "videoUrl": "/videos/lsv/XM_26.mp4",
+    "sourcePath": "data/eval/long/XM_26.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "RNA Extraction - Cell Lysis and Homogenization: This protocol describes the initial steps of RNA extraction from adherent cells, including medium removal, washing, lysis with buffer, and preparation for binding with ethanol. (LSV XMglass)",
+    "referenceLabel": "correct"
+  },
+  {
+    "id": "XM_23",
+    "title": "Lab bench procedure · glasses 09",
+    "duration": 120.2,
+    "videoUrl": "/videos/lsv/XM_23.mp4",
+    "sourcePath": "data/eval/long/XM_23.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "PCR Reaction Setup: This protocol describes the preparation of a 25 μL PCR reaction, including reagent addition on ice, mixing, and thermal cycling. (LSV XMglass)",
+    "referenceLabel": "correct"
+  },
+  {
+    "id": "XM_25",
+    "title": "Lab bench procedure · glasses 10",
+    "duration": 118.6,
+    "videoUrl": "/videos/lsv/XM_25.mp4",
+    "sourcePath": "data/eval/long/XM_25.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Serial Dilution of a Sample: This procedure describes the preparation of a serial dilution series (1, 10⁻¹, 10⁻², 10⁻³) using PCR tubes, a sample, and buffer. (LSV XMglass)",
+    "referenceLabel": "correct"
+  },
+  {
+    "id": "XM_29",
+    "title": "Lab bench procedure · glasses 11",
+    "duration": 110.0,
+    "videoUrl": "/videos/lsv/XM_29.mp4",
+    "sourcePath": "data/eval/long/XM_29.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Cell Suspension Transfer and Centrifugation: This procedure involves transferring a cell suspension from a culture vessel into a conical tube followed by centrifugation to pellet the cells. (LSV XMglass)",
+    "referenceLabel": "correct"
+  },
+  {
+    "id": "XM_22",
+    "title": "Lab bench procedure · glasses 12",
+    "duration": 95.2,
+    "videoUrl": "/videos/lsv/XM_22.mp4",
+    "sourcePath": "data/eval/long/XM_22.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "PCR Reaction Setup: Preparation of a 25 μL PCR reaction by combining Master Mix, primers, DNA template, and water, followed by centrifugation and thermal cycling. (LSV XMglass)",
+    "referenceLabel": "correct"
+  },
+  {
+    "id": "XM_36",
+    "title": "Lab bench procedure · glasses 13",
+    "duration": 94.4,
+    "videoUrl": "/videos/lsv/XM_36.mp4",
+    "sourcePath": "data/eval/long/XM_36.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Virus Collecting and Filtration: Collect viral supernatant from producer cells, filter it through a 0.45 µm syringe filter to remove debris, and aliquot into microcentrifuge tubes. (LSV XMglass)",
+    "referenceLabel": "correct"
+  },
+  {
+    "id": "XM_28",
+    "title": "Lab bench procedure · glasses 14",
+    "duration": 90.5,
+    "videoUrl": "/videos/lsv/XM_28.mp4",
+    "sourcePath": "data/eval/long/XM_28.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Cell Harvesting by Trypsinization: The procedure involves harvesting adherent cells from a culture dish using trypsinization, including medium removal, washing, and collection into a centrifuge tube. (LSV XMglass)",
+    "referenceLabel": "correct"
+  },
+  {
+    "id": "XM_31",
+    "title": "Lab bench procedure · glasses 15",
+    "duration": 62.0,
+    "videoUrl": "/videos/lsv/XM_31.mp4",
+    "sourcePath": "data/eval/long/XM_31.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Cell Freezing and Aliquoting: This procedure involves resuspending a cell pellet in freezing medium and aliquoting the resulting cell suspension into sterile cryovials for long-term storage. (LSV XMglass)",
+    "referenceLabel": "error: Do not mix gently before aliquoting"
   }
 ]

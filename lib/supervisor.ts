@@ -29,9 +29,12 @@ function tipChangedBetween(events: LabEvent[], from: number, to: number) {
 export function applySupervisor(input: LabEvent[]): LabEvent[] {
   const events = [...input].sort((a, b) => a.start - b.start);
   const out = [...events];
+  // Step numbers 1-3 (reagent additions), 4 (mix) and 6 (delivery) mean that only in the CRISPR reference
+  // protocol; other clips number their own dataset protocol differently.
+  const crispr = events.some((e) => e.clipId.startsWith("DJI"));
   const additions = events
     .map((e, i) => ({ e, i }))
-    .filter(({ e }) => e.origin === "model" && ADDITION.has(e.actionLabel ?? "") && (e.protocolStep ?? 0) <= 3);
+    .filter(({ e }) => e.origin === "model" && ADDITION.has(e.actionLabel ?? "") && (!crispr || (e.protocolStep ?? 0) <= 3));
 
   // Rule 1: two reagent additions with no observed tip change in between.
   for (let k = 1; k < additions.length; k++) {
@@ -50,7 +53,7 @@ export function applySupervisor(input: LabEvent[]): LabEvent[] {
   // Rule 2: reference protocol requires a 20 min incubation between mixing and delivery.
   const mix = events.filter((e) => e.protocolStep === 4 || e.actionLabel === "mix").at(-1);
   const deliveryIndex = events.findIndex((e) => e.protocolStep === 6);
-  if (mix && deliveryIndex >= 0) {
+  if (crispr && mix && deliveryIndex >= 0) {
     const gap = events[deliveryIndex].start - mix.end;
     if (gap >= 0 && gap < INCUBATION_S)
       out[deliveryIndex] = withFlag(out[deliveryIndex], {

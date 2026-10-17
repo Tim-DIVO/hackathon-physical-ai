@@ -1,0 +1,35 @@
+{
+  "title": "Cell Harvesting by Trypsinization",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Harvest cells at ~80% confluency by…",
+      "description": "Harvest cells at ~80% confluency by trypsinization or scraping as appropriate."
+    },
+    {
+      "id": 2,
+      "title": "Aspirate culture medium from the petri dish",
+      "description": "Aspirate culture medium from the petri dish."
+    },
+    {
+      "id": 3,
+      "title": "Add PBS wash buffer to the dish",
+      "description": "Add PBS wash buffer to the dish."
+    },
+    {
+      "id": 4,
+      "title": "Swirl the dish to wash the cell monolayer",
+      "description": "Swirl the dish to wash the cell monolayer."
+    },
+    {
+      "id": 5,
+      "title": "Add trypsin solution to the dish to detach…",
+      "description": "Add trypsin solution to the dish to detach cells."
+    },
+    {
+      "id": 6,
+      "title": "Collect the cell suspension into a centrifuge…",
+      "description": "Collect the cell suspension into a centrifuge tube."
+    }
+  ]
+}

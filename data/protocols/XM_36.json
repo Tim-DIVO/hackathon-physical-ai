@@ -1,0 +1,20 @@
+{
+  "title": "Virus Collecting and Filtration",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Prepare 15 ml centrifuge tube, 6 ml syringe and…",
+      "description": "Prepare 15 ml centrifuge tube, 6 ml syringe and 0.45 um filter."
+    },
+    {
+      "id": 2,
+      "title": "Carefully collect the viral supernatant from…",
+      "description": "Carefully collect the viral supernatant from the producer cells and pass it through the 0.45 µm syringe filter into the 15 mL centrifuge tube to remove cell debris."
+    },
+    {
+      "id": 3,
+      "title": "Dispense the filtered viral solution into 1.5…",
+      "description": "Dispense the filtered viral solution into 1.5 mL microcentrifuge tubes."
+    }
+  ]
+}

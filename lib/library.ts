@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { clips } from "./reference";
+import type { ProtocolStep } from "./types";
 
 export interface LibraryClip {
   id: string;
@@ -13,6 +14,17 @@ export interface LibraryClip {
   referenceLabel?: string;
   sourcePath: string;
   unseen: boolean;
+  /** The clip's protocol steps from the dataset metadata (data/protocols/<id>.json), when available. */
+  steps?: ProtocolStep[];
+}
+
+async function stepsFor(id: string): Promise<ProtocolStep[] | undefined> {
+  try {
+    const file = JSON.parse(await readFile(path.join(process.cwd(), "data", "protocols", `${id}.json`), "utf8"));
+    return Array.isArray(file.steps) && file.steps.length ? file.steps : undefined;
+  } catch {
+    return undefined;
+  }
 }
 
 /** Reference clips plus unseen LSV clips listed in data/library.json. */
@@ -27,7 +39,8 @@ export async function listClips(): Promise<LibraryClip[]> {
     const extra = JSON.parse(
       await readFile(path.join(process.cwd(), "data", "library.json"), "utf8"),
     ) as Omit<LibraryClip, "unseen">[];
-    return [...base, ...extra.map((c) => ({ ...c, unseen: true }))];
+    const withSteps = await Promise.all(extra.map(async (c) => ({ ...c, unseen: true, steps: await stepsFor(c.id) })));
+    return [...base, ...withSteps];
   } catch {
     return base;
   }

@@ -1,0 +1,26 @@
+{
+  "runId": "debug-run2",
+  "startedAt": "2026-10-17T14:12:10.889Z",
+  "windows": [
+    {
+      "start": 0,
+      "end": 4,
+      "events": [],
+      "tipStateAtEnd": "unknown",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3644,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 57,
+        "output_tokens_details": {
+          "reasoning_tokens": 36
+        },
+        "total_tokens": 3701
+      }
+    }
+  ]
+}

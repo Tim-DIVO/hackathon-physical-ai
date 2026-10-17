@@ -42,6 +42,7 @@ export async function POST(request: Request) {
       context,
       tipStateIn,
       procedure: resolved.clip.protocol,
+      steps: resolved.clip.steps,
     });
     // The run log only enables free replays; a failed write must not discard the analysis.
     await appendRun(clipId, runId, { start, end, ...result }).catch(() => undefined);

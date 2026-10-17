@@ -1,0 +1,15 @@
+{
+  "title": "Cell Freezing and Aliquoting",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Aspirate the supernatant and gently resuspend…",
+      "description": "Aspirate the supernatant and gently resuspend the pellet in freezing medium (90% FBS + 10% DMSO)."
+    },
+    {
+      "id": 2,
+      "title": "Aliquot 1 mL of cell suspension into sterile…",
+      "description": "Aliquot 1 mL of cell suspension into sterile cryovials."
+    }
+  ]
+}

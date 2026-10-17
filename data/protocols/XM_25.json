@@ -1,0 +1,25 @@
+{
+  "title": "Serial Dilution of a Sample",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Mark four sterile PCR tubes as 1, 10⁻¹ 10⁻² and…",
+      "description": "Mark four sterile PCR tubes as 1, 10⁻¹ 10⁻² and 10⁻³."
+    },
+    {
+      "id": 2,
+      "title": "Add 90 µL of original sample to the first tube…",
+      "description": "Add 90 µL of original sample to the first tube. Add 90 µL of buffer to rest tubes."
+    },
+    {
+      "id": 3,
+      "title": "Add 10 µL of the original sample into the 10⁻¹…",
+      "description": "Add 10 µL of the original sample into the 10⁻¹ tube and mix well by pipetting."
+    },
+    {
+      "id": 4,
+      "title": "Transfer 10 µL from the 10⁻¹ tube into the 10⁻²…",
+      "description": "Transfer 10 µL from the 10⁻¹ tube into the 10⁻² tube, mix well. Repeat the process sequentially for 10⁻³ tubes."
+    }
+  ]
+}

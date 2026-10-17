@@ -1,0 +1,1688 @@
+{
+  "runId": "run-mvchs7o4",
+  "startedAt": "2026-10-17T14:28:53.941Z",
+  "windows": [
+    {
+      "start": 0,
+      "end": 4,
+      "events": [],
+      "tipStateAtEnd": "unknown; no active pipette manipulation visible",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3135,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2048
+        },
+        "output_tokens": 100,
+        "output_tokens_details": {
+          "reasoning_tokens": 72
+        },
+        "total_tokens": 3235
+      }
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "events": [],
+      "tipStateAtEnd": "unknown",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3147,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 19,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3166
+      }
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "events": [],
+      "tipStateAtEnd": "unknown",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3140,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2048
+        },
+        "output_tokens": 119,
+        "output_tokens_details": {
+          "reasoning_tokens": 98
+        },
+        "total_tokens": 3259
+      }
+    },
+    {
+      "start": 12,
+      "end": 16,
+      "events": [
+        {
+          "id": "DJI_09-live-120-0",
+          "clipId": "DJI_09",
+          "start": 12.5,
+          "end": 15.5,
+          "action": "Position culture dish",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "Left gloved hand holds and steadies the 10 cm culture dish/lid while the right hand brings a pipette with an attached yellow tip toward the dish area.",
+          "objects": [
+            "10 cm culture dish",
+            "pipette with yellow tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            12.5,
+            13,
+            13.5,
+            14,
+            14.5,
+            15,
+            15.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-120-1",
+          "clipId": "DJI_09",
+          "start": 14.5,
+          "end": 15.5,
+          "action": "Pipette over dish",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "The pipette tip is lowered over/into the culture dish area, consistent with adding liquid dropwise to the dish, but the liquid and pipette contents are not visually identifiable.",
+          "objects": [
+            "pipette with yellow tip",
+            "10 cm culture dish"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 6,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Pipette contents/source are not visible or readable before addition to the dish; confirm the sample is the intended mixture.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            14.5,
+            15,
+            15.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same tip remains attached; no visible ejection or new tip mounting in this window",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3140,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 833,
+        "output_tokens_details": {
+          "reasoning_tokens": 513
+        },
+        "total_tokens": 3973
+      }
+    },
+    {
+      "start": 16,
+      "end": 20,
+      "events": [
+        {
+          "id": "DJI_09-live-160-0",
+          "clipId": "DJI_09",
+          "start": 16,
+          "end": 17.5,
+          "action": "Position pipette at source",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The right hand holds a single-channel pipette with a yellow tip and moves it toward an open rack/container area on the right side of the hood, apparently preparing to take liquid. No tip change is visible.",
+          "objects": [
+            "single-channel pipette with yellow tip",
+            "open rack/container area"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "single-channel pipette with yellow tip",
+          "protocolStep": 1,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The source container/reagent identity is not readable and should be reviewed.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            16,
+            16.5,
+            17,
+            17.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-160-1",
+          "clipId": "DJI_09",
+          "start": 17.5,
+          "end": 18.5,
+          "action": "Aspirate from source",
+          "actionLabel": "aspirate",
+          "tipState": "same_tip_continued",
+          "description": "The pipette tip is lowered into a right-side container/rack area and the plunger is operated, consistent with aspirating liquid. The reagent/source identity is not legible.",
+          "objects": [
+            "pipette with yellow tip",
+            "right-side container/rack area"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "single-channel pipette with yellow tip",
+          "protocolStep": 1,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The aspirated sample/reagent source is not identifiable from the frames and should be reviewed.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            17.5,
+            18,
+            18.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-160-2",
+          "clipId": "DJI_09",
+          "start": 18.5,
+          "end": 20,
+          "action": "Move toward EP tube",
+          "actionLabel": "transfer",
+          "tipState": "same_tip_continued",
+          "description": "With the same tip attached, the pipette is lifted and moved leftward while the other hand reaches toward and then holds a small tube from the blue rack, consistent with preparing to dispense into an EP tube. No actual dispense is clearly visible before 20 s.",
+          "objects": [
+            "pipette with yellow tip",
+            "blue tube rack",
+            "small EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "single-channel pipette with yellow tip",
+          "protocolStep": 1,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The target tube/sample identity is not readable and should be reviewed.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            18.5,
+            19,
+            19.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "A yellow tip remains attached to the active pipette; no visible tip pickup or ejection occurs in this window.",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3140,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2048
+        },
+        "output_tokens": 1017,
+        "output_tokens_details": {
+          "reasoning_tokens": 496
+        },
+        "total_tokens": 4157
+      }
+    },
+    {
+      "start": 20,
+      "end": 24,
+      "events": [
+        {
+          "id": "DJI_09-live-200-0",
+          "clipId": "DJI_09",
+          "start": 20,
+          "end": 23.5,
+          "action": "Pipette into EP tube",
+          "actionLabel": "dispense",
+          "tipState": "unclear",
+          "description": "A gloved hand holds a small microcentrifuge/EP tube while a handheld pipette with a tip is brought to the tube opening and the tip is inserted/held inside, consistent with dispensing liquid into the EP tube. The liquid/reagent identity is not readable in the frames.",
+          "objects": [
+            "handheld pipette",
+            "pipette tip",
+            "EP tube/microcentrifuge tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 1,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: the reagent or sample being pipetted into the EP tube is not identifiable from the visible frames.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            20,
+            20.5,
+            21,
+            21.5,
+            22,
+            22.5,
+            23,
+            23.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "tip attached; no visible tip ejection or tip change during this window",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3140,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 555,
+        "output_tokens_details": {
+          "reasoning_tokens": 328
+        },
+        "total_tokens": 3695
+      }
+    },
+    {
+      "start": 24,
+      "end": 28,
+      "events": [
+        {
+          "id": "DJI_09-live-240-0",
+          "clipId": "DJI_09",
+          "start": 24,
+          "end": 25.5,
+          "action": "Pipette near held tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "A pipette with an attached tip is held near a small tube or vessel in the operator's other hand; no clear aspiration or dispensing is visible.",
+          "objects": [
+            "pipette with attached tip",
+            "held tube/vessel"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P1000, blue/yellow plunger pipette",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The identity of the held tube/vessel or sample is unreadable, and no liquid transfer is clearly visible; review if this was part of the mixture addition workflow.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            24,
+            24.5,
+            25,
+            25.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-240-1",
+          "clipId": "DJI_09",
+          "start": 26,
+          "end": 27.5,
+          "action": "Move pipette away",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The pipette tip is withdrawn and held above the work area while the other hand lowers or repositions a purple-capped rack/tube holder; no visible dispense, aspiration, tip ejection, or new tip attachment occurs.",
+          "objects": [
+            "pipette with attached tip",
+            "purple-capped rack/tube holder",
+            "tube racks"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P1000, blue/yellow plunger pipette",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            26,
+            26.5,
+            27,
+            27.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3193,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 334,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3527
+      }
+    },
+    {
+      "start": 28,
+      "end": 32,
+      "events": [
+        {
+          "id": "DJI_09-live-280-0",
+          "clipId": "DJI_09",
+          "start": 28,
+          "end": 30.5,
+          "action": "Retrieve EP tube",
+          "actionLabel": "open_container",
+          "tipState": "same_tip_continued",
+          "description": "Left gloved hand lifts/positions a small microcentrifuge/EP tube from the blue tube rack and appears to open or hold it ready near the work area while the pipette with the existing tip remains in the right hand.",
+          "objects": [
+            "EP tube",
+            "blue tube rack",
+            "pipette with attached tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 6,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The tube label/content is not readable; presumed mixture identity should be reviewed.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            28,
+            28.5,
+            29,
+            29.5,
+            30,
+            30.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-280-1",
+          "clipId": "DJI_09",
+          "start": 30.5,
+          "end": 31.5,
+          "action": "Aspirate from EP tube",
+          "actionLabel": "aspirate",
+          "tipState": "same_tip_continued",
+          "description": "The held EP tube is brought up toward the pipette tip, and the tip appears to enter or contact the tube opening, consistent with drawing more mixture before continuing addition to the culture dish.",
+          "objects": [
+            "EP tube",
+            "pipette tip",
+            "pipette"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 6,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The sample/container identity is not legible in the frames; confirm this is the intended mixture for step 6.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            31,
+            31.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same tip remains attached; no visible ejection or new tip mounting",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3193,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 863,
+        "output_tokens_details": {
+          "reasoning_tokens": 516
+        },
+        "total_tokens": 4056
+      }
+    },
+    {
+      "start": 32,
+      "end": 36,
+      "events": [
+        {
+          "id": "DJI_09-live-320-0",
+          "clipId": "DJI_09",
+          "start": 32,
+          "end": 34,
+          "action": "Pipette at EP tube",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "The pipette with a yellow tip is positioned at/inside a small clear tube held by the left hand, consistent with adding liquid into the EP tube. The plunger action is not directly visible, but the tip remains in the tube for several seconds before being withdrawn.",
+          "objects": [
+            "pipette with yellow tip",
+            "small clear EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200/P20-style pipette with yellow tip",
+          "protocolStep": 2,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "tip_reuse",
+              "message": "Possible issue needing review: the same yellow tip appears to be used for this subsequent reagent addition without a visible tip change since the prior addition.",
+              "status": "needs_review"
+            },
+            {
+              "type": "unknown_sample",
+              "message": "Container/sample identity matters for this reagent addition, but the held tube/source identity is not readable.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            32,
+            32.5,
+            33,
+            33.5,
+            34
+          ]
+        },
+        {
+          "id": "DJI_09-live-320-1",
+          "clipId": "DJI_09",
+          "start": 34,
+          "end": 35.5,
+          "action": "Return tube to rack",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "After the pipette is withdrawn, the left hand moves the small clear tube away and places it back into the blue/purple tube rack area.",
+          "objects": [
+            "small clear EP tube",
+            "blue tube rack",
+            "purple rack insert",
+            "pipette with yellow tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200/P20-style pipette with yellow tip",
+          "protocolStep": 2,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            34,
+            34.5,
+            35,
+            35.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same yellow tip remains attached to the active pipette; no visible tip pickup or ejection",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3282,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 379,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3661
+      }
+    },
+    {
+      "start": 36,
+      "end": 40,
+      "events": [
+        {
+          "id": "DJI_09-live-360-0",
+          "clipId": "DJI_09",
+          "start": 36,
+          "end": 39.5,
+          "action": "Pipette into held tube",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "A gloved hand holds a small tube/container while the active pipette with the pre-existing yellow tip is brought to the opening and the tip is positioned inside/at the tube, consistent with dispensing into the held tube. No volume dial digits are legible.",
+          "objects": [
+            "manual pipette with yellow tip",
+            "held small tube/container"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "manual pipette, yellow tip",
+          "protocolStep": 2,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The identity of the held tube/container is not readable; review whether this is the intended EP tube/reagent addition.",
+              "status": "needs_review"
+            },
+            {
+              "type": "tip_reuse",
+              "message": "The same yellow tip appears to be used after the prior observed reagent addition, with no visible tip change before this tube contact; review for possible tip reuse between additions.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            36,
+            36.5,
+            37,
+            37.5,
+            38,
+            38.5,
+            39,
+            39.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "Yellow tip remains attached to the active pipette; no visible tip pickup or ejection occurs.",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3282,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 730,
+        "output_tokens_details": {
+          "reasoning_tokens": 462
+        },
+        "total_tokens": 4012
+      }
+    },
+    {
+      "start": 40,
+      "end": 44,
+      "events": [
+        {
+          "id": "DJI_09-live-400-0",
+          "clipId": "DJI_09",
+          "start": 40,
+          "end": 41,
+          "action": "Pipette at held tube",
+          "actionLabel": "aspirate",
+          "tipState": "same_tip_continued",
+          "description": "Pipette with the same attached yellow tip is positioned into or at the mouth of a small tube held in the left hand, consistent with withdrawing or handling reagent for the next addition. The tube/source identity is not readable.",
+          "objects": [
+            "pipette with yellow tip",
+            "held microtube or reagent tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": 3,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "tip_reuse",
+              "message": "Possible issue needing review: the same yellow tip appears to be used for a subsequent reagent/source without a visible tip change.",
+              "status": "needs_review"
+            },
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: the held tube/source identity is not readable.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            40,
+            40.5,
+            41
+          ]
+        },
+        {
+          "id": "DJI_09-live-400-1",
+          "clipId": "DJI_09",
+          "start": 41.5,
+          "end": 43.5,
+          "action": "Move tube to rack",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The left hand moves the small tube away from the pipette area and places or returns it near the tube rack/bench area while the pipette remains held to the right with the same yellow tip attached.",
+          "objects": [
+            "held microtube or reagent tube",
+            "tube rack",
+            "pipette with yellow tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": 3,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: the moved tube/container identity is not readable.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            41.5,
+            42,
+            42.5,
+            43,
+            43.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same yellow tip remains attached; no visible tip pickup or ejection",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3277,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 381,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3658
+      }
+    },
+    {
+      "start": 44,
+      "end": 48,
+      "events": [
+        {
+          "id": "DJI_09-live-440-0",
+          "clipId": "DJI_09",
+          "start": 44,
+          "end": 47.5,
+          "action": "Pipette into held tube",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "A gloved hand holds a small tube while the pipette with the previously attached tip is positioned at/inside the tube opening for a likely addition. No tip ejection or new tip attachment is visible, and the tube label/identity is not readable.",
+          "objects": [
+            "single-channel pipette",
+            "attached pipette tip",
+            "held microtube/EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 3,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The held tube/container identity is not readable; confirm this is the intended EP tube/reagent addition for step 3.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            44,
+            44.5,
+            45,
+            45.5,
+            46,
+            46.5,
+            47,
+            47.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3275,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 555,
+        "output_tokens_details": {
+          "reasoning_tokens": 342
+        },
+        "total_tokens": 3830
+      }
+    },
+    {
+      "start": 48,
+      "end": 52,
+      "events": [
+        {
+          "id": "DJI_09-live-480-0",
+          "clipId": "DJI_09",
+          "start": 48,
+          "end": 49.5,
+          "action": "Return EP tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Gloved left hand moves a small clear tube toward the blue rack and places it into a rack position while the pipette with an attached tip remains held to the right.",
+          "objects": [
+            "EP tube",
+            "blue tube rack",
+            "pipette"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 2,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            48,
+            48.5,
+            49,
+            49.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-480-1",
+          "clipId": "DJI_09",
+          "start": 49.5,
+          "end": 51.5,
+          "action": "Retrieve EP tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The left hand lifts a small clear tube from the blue rack and brings it back toward the pipette tip; no aspiration or dispensing is clearly visible in this window.",
+          "objects": [
+            "EP tube",
+            "blue tube rack",
+            "pipette"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 2,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            49.5,
+            50,
+            50.5,
+            51,
+            51.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3275,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 258,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3533
+      }
+    },
+    {
+      "start": 52,
+      "end": 56,
+      "events": [
+        {
+          "id": "DJI_09-live-520-0",
+          "clipId": "DJI_09",
+          "start": 52,
+          "end": 54.5,
+          "action": "Pipette-mix tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "The active pipette with the existing yellow tip is held in a small tube while the tube is held by the other hand, consistent with pipetting up/down to mix the contents. No volume dial reading is legible.",
+          "objects": [
+            "yellow-tip micropipette",
+            "held small tube/EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "yellow-tip micropipette",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The held tube appears to be the mixture tube, but its label/identity is not readable and may need review.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            52,
+            52.5,
+            53,
+            53.5,
+            54
+          ]
+        },
+        {
+          "id": "DJI_09-live-520-1",
+          "clipId": "DJI_09",
+          "start": 54.5,
+          "end": 55.5,
+          "action": "Withdraw pipette",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The pipette tip is withdrawn from the held tube and moved away while the tube/hand is lowered toward the rack area. The same yellow tip remains attached.",
+          "objects": [
+            "yellow-tip micropipette",
+            "held small tube/EP tube",
+            "tube rack area"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "yellow-tip micropipette",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The handled tube's label/identity is not readable and may need review.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            54.5,
+            55,
+            55.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "Yellow tip remains attached to the active pipette; no visible tip pickup or ejection occurs.",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3287,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 630,
+        "output_tokens_details": {
+          "reasoning_tokens": 275
+        },
+        "total_tokens": 3917
+      }
+    },
+    {
+      "start": 56,
+      "end": 60,
+      "events": [
+        {
+          "id": "DJI_09-live-560-0",
+          "clipId": "DJI_09",
+          "start": 56,
+          "end": 57.5,
+          "action": "Lift EP tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The left hand removes a small clear EP tube from the blue rack and brings it toward the pipette tip.",
+          "objects": [
+            "clear EP tube",
+            "blue tube rack",
+            "pipette with attached tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            56,
+            56.5,
+            57,
+            57.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-560-1",
+          "clipId": "DJI_09",
+          "start": 57.5,
+          "end": 59.5,
+          "action": "Pipette mix tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "The pipette tip is inserted into or held at the opening of the held clear EP tube, consistent with pipetting/mixing the tube contents. No tip change is visible.",
+          "objects": [
+            "clear EP tube",
+            "pipette with attached tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P200, yellow tip",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            57.5,
+            58,
+            58.5,
+            59,
+            59.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3273,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 262,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3535
+      }
+    },
+    {
+      "start": 60,
+      "end": 64,
+      "events": [
+        {
+          "id": "DJI_09-live-600-0",
+          "clipId": "DJI_09",
+          "start": 60,
+          "end": 60.5,
+          "action": "Pipette into held tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "Pipette tip is positioned in or immediately at the opening of a small held microcentrifuge tube, consistent with pipetting/mixing the contents. The pipette then withdraws to the right; no tip ejection or new tip pickup is visible.",
+          "objects": [
+            "held microcentrifuge tube",
+            "pipette with yellow tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Held tube identity/label is not readable; likely the EP tube mixture but should be reviewed.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            60,
+            60.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-600-1",
+          "clipId": "DJI_09",
+          "start": 60.5,
+          "end": 63.5,
+          "action": "Hold EP tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Gloved hand continues holding the capped/partly capped microcentrifuge tube near the rack after the pipette withdraws. No clear dispense, aspiration, tip change, or dish handling is visible.",
+          "objects": [
+            "held microcentrifuge tube",
+            "tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The held tube's label is unreadable; container identity should be confirmed.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            61,
+            61.5,
+            62,
+            62.5,
+            63,
+            63.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3273,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 750,
+        "output_tokens_details": {
+          "reasoning_tokens": 410
+        },
+        "total_tokens": 4023
+      }
+    },
+    {
+      "start": 64,
+      "end": 68,
+      "events": [
+        {
+          "id": "DJI_09-live-640-0",
+          "clipId": "DJI_09",
+          "start": 64,
+          "end": 65,
+          "action": "Hold EP tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Gloved left hand holds a small tube near the racks, positioning it for pipetting. No tip change is visible.",
+          "objects": [
+            "held EP tube",
+            "tube racks"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            64,
+            64.5,
+            65
+          ]
+        },
+        {
+          "id": "DJI_09-live-640-1",
+          "clipId": "DJI_09",
+          "start": 65,
+          "end": 66.5,
+          "action": "Pipette in tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "A pipette with a blue tip is brought to the held tube and the tip is placed at or inside the tube opening, consistent with pipetting/mixing the contents. The volume setting is not legible.",
+          "objects": [
+            "pipette with blue tip",
+            "held EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P1000, blue tip",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            65,
+            65.5,
+            66,
+            66.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-640-2",
+          "clipId": "DJI_09",
+          "start": 67,
+          "end": 67.5,
+          "action": "Pipette into reservoir",
+          "actionLabel": "aspirate",
+          "tipState": "same_tip_continued",
+          "description": "The same blue-tipped pipette is moved away from the held tube and inserted into a clear/yellow reagent reservoir or container. Container identity is not readable, and no tip ejection or new tip mounting is visible.",
+          "objects": [
+            "pipette with blue tip",
+            "unknown reservoir/container",
+            "held EP tube"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "P1000, blue tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "tip_reuse",
+              "message": "Possible issue needing review: the same visible pipette tip appears to move from the held EP tube to a different reservoir/container without a visible tip change.",
+              "status": "needs_review"
+            },
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: the reservoir/container identity is not readable, but it matters for interpreting what was aspirated or contacted.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            67,
+            67.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3273,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 822,
+        "output_tokens_details": {
+          "reasoning_tokens": 366
+        },
+        "total_tokens": 4095
+      }
+    },
+    {
+      "start": 68,
+      "end": 72,
+      "events": [
+        {
+          "id": "DJI_09-live-680-0",
+          "clipId": "DJI_09",
+          "start": 68,
+          "end": 69.5,
+          "action": "Pipette in reservoir",
+          "actionLabel": "aspirate",
+          "tipState": "same_tip_continued",
+          "description": "The pipette with the previously attached tip is held down into a small clear reservoir/tube area in the rack; liquid handling appears to occur, but the container contents/identity are not readable.",
+          "objects": [
+            "pipette with attached tip",
+            "clear reservoir/tube in rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "white micropipette, clear tip",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Container/sample identity is unreadable and should be reviewed.",
+              "status": "needs_review"
+            },
+            {
+              "type": "tip_reuse",
+              "message": "Possible issue: the same visible tip appears to contact a different container after prior EP-tube mixing without a visible tip change.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            68,
+            68.5,
+            69,
+            69.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-680-1",
+          "clipId": "DJI_09",
+          "start": 70,
+          "end": 71,
+          "action": "Position EP tube",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "The left hand brings/holds a small tube with a purple/magenta cap near the pipette tip, positioning it for pipetting.",
+          "objects": [
+            "small tube with purple/magenta cap",
+            "pipette with attached tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "white micropipette, clear tip",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The held tube likely contains the mixed sample, but its identity is not readable and should be reviewed.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            70,
+            70.5,
+            71
+          ]
+        },
+        {
+          "id": "DJI_09-live-680-2",
+          "clipId": "DJI_09",
+          "start": 71,
+          "end": 71.5,
+          "action": "Pipette into tube",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "The pipette tip is inserted into the held small tube with the purple/magenta cap, consistent with continued pipetting/mixing in the tube.",
+          "objects": [
+            "pipette with attached tip",
+            "held small tube with purple/magenta cap"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "white micropipette, clear tip",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The tube/sample identity is not readable and should be reviewed.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            71,
+            71.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3267,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1014,
+        "output_tokens_details": {
+          "reasoning_tokens": 516
+        },
+        "total_tokens": 4281
+      }
+    },
+    {
+      "start": 72,
+      "end": 76,
+      "events": [
+        {
+          "id": "DJI_09-live-720-0",
+          "clipId": "DJI_09",
+          "start": 72,
+          "end": 75.5,
+          "action": "Pipette mix tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "The operator holds a 1.5 mL EP tube and keeps the yellow-tipped pipette inserted in the tube, consistent with continued pipette mixing of the tube contents.",
+          "objects": [
+            "EP tube",
+            "micropipette with yellow tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            72,
+            72.5,
+            73,
+            73.5,
+            74,
+            74.5,
+            75,
+            75.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "Yellow tip remains attached to the active pipette; no visible tip pickup or ejection occurs.",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3280,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 397,
+        "output_tokens_details": {
+          "reasoning_tokens": 227
+        },
+        "total_tokens": 3677
+      }
+    },
+    {
+      "start": 76,
+      "end": 80,
+      "events": [
+        {
+          "id": "DJI_09-live-760-0",
+          "clipId": "DJI_09",
+          "start": 76,
+          "end": 78,
+          "action": "Pipette mix tube",
+          "actionLabel": "mix",
+          "tipState": "same_tip_continued",
+          "description": "The pipette tip remains inserted in or at the mouth of the held EP tube while the operator continues pipetting/mixing the contents.",
+          "objects": [
+            "EP tube",
+            "pipette with yellow tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "single-channel pipette with yellow tip",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            76,
+            76.5,
+            77,
+            77.5,
+            78
+          ]
+        },
+        {
+          "id": "DJI_09-live-760-1",
+          "clipId": "DJI_09",
+          "start": 78,
+          "end": 78.5,
+          "action": "Withdraw pipette",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The pipette is pulled away from the EP tube after mixing; the same yellow tip remains attached.",
+          "objects": [
+            "EP tube",
+            "pipette with yellow tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "single-channel pipette with yellow tip",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            78,
+            78.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-760-2",
+          "clipId": "DJI_09",
+          "start": 78.5,
+          "end": 79.5,
+          "action": "Return EP tube",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The operator moves the EP tube away from the pipette and places/sets it into the rack area.",
+          "objects": [
+            "EP tube",
+            "tube rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "single-channel pipette with yellow tip",
+          "protocolStep": 4,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            78.5,
+            79,
+            79.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "Yellow tip remains attached to the active pipette; no visible tip pickup or ejection occurs.",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3280,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 564,
+        "output_tokens_details": {
+          "reasoning_tokens": 207
+        },
+        "total_tokens": 3844
+      }
+    },
+    {
+      "start": 80,
+      "end": 84,
+      "events": [
+        {
+          "id": "DJI_09-live-800-0",
+          "clipId": "DJI_09",
+          "start": 80,
+          "end": 80.8,
+          "action": "Position culture dish",
+          "actionLabel": "handle_dish",
+          "tipState": "same_tip_continued",
+          "description": "Left gloved hand moves/steadies the open culture dish on the biosafety cabinet surface while the pipette remains in the right hand with the previously attached tip.",
+          "objects": [
+            "open culture dish",
+            "pipette with attached tip"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 6,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            80,
+            80.5
+          ]
+        },
+        {
+          "id": "DJI_09-live-800-1",
+          "clipId": "DJI_09",
+          "start": 81,
+          "end": 83.5,
+          "action": "Dispense into dish",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "Pipette tip is lowered into/over the open culture dish containing pink medium, consistent with adding the prepared mixture dropwise to the cells. No tip ejection or new tip attachment is visible.",
+          "objects": [
+            "pipette with attached tip",
+            "open culture dish with pink medium/cells"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 6,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            81,
+            81.5,
+            82,
+            82.5,
+            83,
+            83.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3268,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 647,
+        "output_tokens_details": {
+          "reasoning_tokens": 378
+        },
+        "total_tokens": 3915
+      }
+    },
+    {
+      "start": 84,
+      "end": 88,
+      "events": [
+        {
+          "id": "DJI_09-live-840-0",
+          "clipId": "DJI_09",
+          "start": 84,
+          "end": 87.5,
+          "action": "Dispense into dish",
+          "actionLabel": "dispense",
+          "tipState": "same_tip_continued",
+          "description": "Pipette with the previously attached tip is positioned over/in the open 10 cm culture dish and appears to add liquid dropwise, then begins to withdraw from the dish area.",
+          "objects": [
+            "pipette",
+            "attached tip",
+            "open culture dish"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": 6,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Culture dish/sample identity is not readable in the frames; confirm this is the intended 293T cell dish.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            84,
+            84.5,
+            85,
+            85.5,
+            86,
+            86.5,
+            87,
+            87.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3266,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 528,
+        "output_tokens_details": {
+          "reasoning_tokens": 341
+        },
+        "total_tokens": 3794
+      }
+    }
+  ]
+}

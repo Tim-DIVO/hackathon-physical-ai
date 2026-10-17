@@ -1,0 +1,40 @@
+{
+  "title": "Virus Packaging Transfection of 293T Cells",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Take HEK293T cells and culture them to ~70%…",
+      "description": "Take HEK293T cells and culture them to ~70% confluency in a 10 cm dish."
+    },
+    {
+      "id": 2,
+      "title": "In a sterile 1.5 mL tube, mix 10 µg lentiviral…",
+      "description": "In a sterile 1.5 mL tube, mix 10 µg lentiviral backbone plasmid, 7.5 µg packaging plasmid, and 5 µg envelope plasmid."
+    },
+    {
+      "id": 3,
+      "title": "Add 60 µL of transfection reagent and bring the…",
+      "description": "Add 60 µL of transfection reagent and bring the volume up to 300 µL with serum-free medium."
+    },
+    {
+      "id": 4,
+      "title": "Incubate the mixture at room temperature for 15…",
+      "description": "Incubate the mixture at room temperature for 15 minutes."
+    },
+    {
+      "id": 5,
+      "title": "Add the transfection mi x dropwise to the…",
+      "description": "Add the transfection mi x dropwise to the HEK293T cells."
+    },
+    {
+      "id": 6,
+      "title": "Gently swirl the dish to evenly distribute the…",
+      "description": "Gently swirl the dish to evenly distribute the complex."
+    },
+    {
+      "id": 7,
+      "title": "Incubate cells for 48–72 hours and harvest the…",
+      "description": "Incubate cells for 48–72 hours and harvest the viral supernatant."
+    }
+  ]
+}

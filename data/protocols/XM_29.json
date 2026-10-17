@@ -1,0 +1,15 @@
+{
+  "title": "Cell Suspension Transfer and Centrifugation",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Transfer the cell suspension into a 15 mL…",
+      "description": "Transfer the cell suspension into a 15 mL conical tube."
+    },
+    {
+      "id": 2,
+      "title": "Centrifuge at 300 × g for 5 minutes at room…",
+      "description": "Centrifuge at 300 × g for 5 minutes at room temperature."
+    }
+  ]
+}

@@ -22,6 +22,8 @@ export interface WindowRequest {
   tipStateIn: string;
   /** Procedure description from dataset metadata; the CRISPR reference steps apply only to DJI clips. */
   procedure?: string;
+  /** The clip's own protocol steps from the dataset metadata (data/protocols), when it has them. */
+  steps?: { id: number; description: string }[];
 }
 
 const windowSchema = {
@@ -143,13 +145,19 @@ function prompt(req: WindowRequest, frames: number) {
     `You are the live perception module of a smart-glasses wet-lab copilot. These ${frames} frames cover t=${req.start}s to t=${req.end}s of a lab recording (${WINDOW_FPS} fps).`,
     req.clipId.startsWith("DJI")
       ? `Reference protocol (context only, NOT evidence): ${JSON.stringify(protocolSteps.map((s) => `${s.id}. ${s.description}`))}`
-      : `Procedure being performed (dataset metadata, context only): ${req.procedure ?? "unknown wet-lab procedure"}. There is no numbered reference protocol: set protocolStep to null.`,
+      : req.steps?.length
+        ? `Procedure (dataset metadata, context only): ${req.procedure ?? "wet-lab procedure"}. Its reference protocol (context only, NOT evidence; some steps happen off camera): ${JSON.stringify(req.steps.map((s) => `${s.id}. ${s.description}`))}`
+        : `Procedure being performed (dataset metadata, context only): ${req.procedure ?? "unknown wet-lab procedure"}. There is no numbered reference protocol: set protocolStep to null.`,
     `Earlier windows observed: ${req.context || "nothing yet (this is the start)"}. Tip state entering this window: ${req.tipStateIn}.`,
     "Return the visible manipulations in this window as events with absolute timestamps (merge with nothing outside the window). Report tipState continuity carefully: a tip change requires a visible ejection or mounting of a new tip.",
     "Add a tip_reuse flag only if a pipette with the same tip moves between different reagent sources/tubes without a visible change. Add unknown_sample where container identity matters but is unreadable. Phrase flags as possible issues needing review.",
     "Quantities: report the pipette type/size only if visible; report volumeReadingUl only if the volume dial digits are actually legible, otherwise null. Never infer volumes from the protocol.",
     req.clipId.startsWith("DJI") ? "" : "Name actions specifically (e.g. 'Aspirate media', 'Transfer to cryovial', 'Serial dilution 1:10').",
-    "Always assign protocolStep to lab-relevant events, using the sequence so far: successive reagent additions into the EP tube are steps 1, 2, 3 in order (a new addition after a previous one advances the step); pipetting up and down / flicking the tube is step 4; adding the mixture to the culture dish is step 6; rocking the dish is step 7. Never go backwards unless clearly repeated. Use null only for setup or idle moments.",
+    req.clipId.startsWith("DJI")
+      ? "Always assign protocolStep to lab-relevant events, using the sequence so far: successive reagent additions into the EP tube are steps 1, 2, 3 in order (a new addition after a previous one advances the step); pipetting up and down / flicking the tube is step 4; adding the mixture to the culture dish is step 6; rocking the dish is step 7. Never go backwards unless clearly repeated. Use null only for setup or idle moments."
+      : req.steps?.length
+        ? `Assign protocolStep = the number (1-${req.steps.length}) of the reference step the visible action carries out, using the sequence so far; steps progress forward and never go backwards unless clearly repeated. Use null for setup, idle moments, or actions that match no step.`
+        : "",
     "Return an empty events list if nothing lab-relevant happens.",
   ].join("\n");
 }
@@ -159,6 +167,7 @@ const nearest = (value: number, options: number[]) =>
 
 export async function analyzeWindow(req: WindowRequest) {
   if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is not configured.");
+  const maxStep = req.clipId.startsWith("DJI") ? protocolSteps.length : (req.steps?.length ?? 0);
   const folder = await mkdtemp(path.join(os.tmpdir(), "lablens-live-"));
   try {
     const { files, times } = await extractWindow(req, folder);
@@ -221,7 +230,7 @@ export async function analyzeWindow(req: WindowRequest) {
         destinationSampleId: null,
         volumeUl: null,
         visualQuantity: visualQuantity || null,
-        protocolStep: e.protocolStep && e.protocolStep >= 1 && e.protocolStep <= 7 ? e.protocolStep : null,
+        protocolStep: e.protocolStep && e.protocolStep >= 1 && e.protocolStep <= maxStep ? e.protocolStep : null,
         verification: "pending",
         origin: "model",
         flags: e.flags.map((f) => ({ ...f, status: "needs_review" as const })),

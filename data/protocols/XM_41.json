@@ -1,0 +1,40 @@
+{
+  "title": "Lentiviral Infection of iPSC-Fibroblast",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Thaw purified Lenti-Cas12a-U6-TGFBR1 and…",
+      "description": "Thaw purified Lenti-Cas12a-U6-TGFBR1 and control lentivirus on ice."
+    },
+    {
+      "id": 2,
+      "title": "Retrieve pre-seeded iPSC-fibroblast plates from…",
+      "description": "Retrieve pre-seeded iPSC-fibroblast plates from the incubator."
+    },
+    {
+      "id": 3,
+      "title": "(Optional) Replace culture medium with fresh…",
+      "description": "(Optional) Replace culture medium with fresh infection medium as needed."
+    },
+    {
+      "id": 4,
+      "title": "Add 20 µL of the appropriate virus to each well",
+      "description": "Add 20 µL of the appropriate virus to each well."
+    },
+    {
+      "id": 5,
+      "title": "Gently rock the plate to evenly distribute the…",
+      "description": "Gently rock the plate to evenly distribute the virus."
+    },
+    {
+      "id": 6,
+      "title": "Record the infection start time and group…",
+      "description": "Record the infection start time and group assignments on the plate and in your log."
+    },
+    {
+      "id": 7,
+      "title": "Return plates to the incubator and culture for…",
+      "description": "Return plates to the incubator and culture for 72 hours."
+    }
+  ]
+}
