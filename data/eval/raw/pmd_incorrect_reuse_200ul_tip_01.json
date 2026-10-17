@@ -1,0 +1,91 @@
+{
+ "clip_id": "pmd_incorrect_reuse_200ul_tip_01",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.9,
+  1.5,
+  2,
+  2.6,
+  3.2,
+  3.8,
+  4.4,
+  5,
+  5.5,
+  6.1,
+  6.7,
+  7.3,
+  7.9,
+  8.5,
+  9,
+  9.6,
+  10.2,
+  10.8,
+  11.4,
+  12,
+  12.5,
+  13.1,
+  13.7
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7636,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 384,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8020
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 1.5,
+    "end": 2.6,
+    "description": "Pipette with tip is positioned into/over the yellow tip rack area; appears to contact or enter a rack well/tip area."
+   },
+   {
+    "start": 3.2,
+    "end": 3.8,
+    "description": "Pipette is lifted and moved from the yellow rack toward a white multiwell plate/tray."
+   },
+   {
+    "start": 4.4,
+    "end": 13.7,
+    "description": "Pipette tip is held over or into wells of the white plate/tray with repeated vertical positioning, consistent with dispensing/aspirating across wells; exact plunger action is not clearly visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "The same tip appears to be used across multiple wells, but the contents/media and whether these are different samples/reagents are not visible."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the tip with bench, glove, hand, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible tip drop, ejection, or unexpected release."
+   },
+   "install": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     1.5,
+     2,
+     2.6
+    ],
+    "evidence": "The pipette contacts the yellow tip rack, but frames do not clearly show whether a new tip is being attached or whether it is properly seated; no obvious wrong-size tip is visible."
+   }
+  },
+  "overall_summary": "The clip shows a gloved person using a pipette with a tip over a white multiwell plate after moving from a yellow rack. No clear surface contamination or tip release is visible. Reuse and tip installation correctness cannot be determined from the sampled frames."
+ }
+}

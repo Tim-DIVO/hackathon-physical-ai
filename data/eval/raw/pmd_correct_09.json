@@ -1,0 +1,112 @@
+{
+ "clip_id": "pmd_correct_09",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.9,
+  1.4,
+  2,
+  2.6,
+  3.2,
+  3.7,
+  4.3,
+  4.9,
+  5.5,
+  6.1,
+  6.6,
+  7.2,
+  7.8,
+  8.4,
+  8.9,
+  9.5,
+  10.1,
+  10.7,
+  11.2,
+  11.8,
+  12.4,
+  13,
+  13.5
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7640,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 481,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8121
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 2.6,
+    "description": "Pipette tip is positioned in/over a well of the blue tube rack; likely aspirating or dispensing, exact plunger action not visible."
+   },
+   {
+    "start": 3.2,
+    "end": 4.9,
+    "description": "Pipette is lifted and moved away from the blue rack toward the right, over the bench/white tray area."
+   },
+   {
+    "start": 5.5,
+    "end": 9.5,
+    "description": "Tip is held over/near the white tray area; no clear aspiration/dispense visible."
+   },
+   {
+    "start": 10.1,
+    "end": 12.4,
+    "description": "Pipette moves to the purple waste container; tip is positioned inside/over the container."
+   },
+   {
+    "start": 13,
+    "end": 13,
+    "description": "Pipette withdraws from the waste container with tip still attached."
+   },
+   {
+    "start": 13.5,
+    "end": 13.5,
+    "description": "Pipette returns to the blue rack with the same visible tip and is positioned in/over a well again."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "present",
+    "evidence_timestamps": [
+     10.1,
+     10.7,
+     11.2,
+     11.8,
+     12.4,
+     13.5
+    ],
+    "evidence": "The same tip is placed into/over the purple waste container and then returned to the blue rack/well without visible tip change."
+   },
+   "surface": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "The tip passes near bench/tray surfaces, but visible contact with a non-sterile surface is not clear."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible unexpected tip drop/ejection; the tip remains attached after the waste-container movement."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [
+     0.3,
+     13.5
+    ],
+    "evidence": "Tip appears attached and seated on the pipette; no visible wrong-size or loose fit."
+   }
+  },
+  "overall_summary": "The clip shows the pipette using a single attached tip at the blue rack, moving to a waste container, then returning to the blue rack with the same tip. This visibly indicates tip reuse after it should have been discarded; no clear surface touch, premature release, or installation problem is visible."
+ }
+}

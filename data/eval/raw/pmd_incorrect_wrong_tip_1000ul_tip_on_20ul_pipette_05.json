@@ -1,0 +1,91 @@
+{
+ "clip_id": "pmd_incorrect_wrong_tip_1000ul_tip_on_20ul_pipette_05",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 13,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 4399,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 424,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 4823
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.3,
+    "description": "Pipettes are hanging on rack; no active pipetting visible."
+   },
+   {
+    "start": 1.8,
+    "end": 2.8,
+    "description": "Gloved hand removes/selects a pipette from the rack and moves it toward the bench."
+   },
+   {
+    "start": 3.3,
+    "end": 3.8,
+    "description": "Pipette tip is positioned into a well/slot of a blue tip box or rack."
+   },
+   {
+    "start": 3.8,
+    "end": 4.8,
+    "description": "Pipette remains inserted in the blue rack/box; possible tip attachment, but exact seating/attachment action is not fully clear."
+   },
+   {
+    "start": 5.3,
+    "end": 6.3,
+    "description": "Pipette is withdrawn and returned to the hanging rack."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No aspiration/dispense into different samples or reagents is visible, and no used tip is visibly reused."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is not visibly touching a bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip is visibly dropped, ejected, or released unexpectedly."
+   },
+   "install": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     3.3,
+     3.8,
+     4.3,
+     4.8
+    ],
+    "evidence": "The pipette tip is inserted into a blue rack/box, but the frames do not clearly show whether the tip is correctly fitted/seated or whether the tip size is appropriate."
+   }
+  },
+  "overall_summary": "A pipette is taken from the rack, placed into a blue tip box/rack area as if to attach a tip, then removed and returned to the rack. No clear pipetting into samples or visible contamination/reuse/release error is shown. Tip installation correctness is unclear from the frames."
+ }
+}

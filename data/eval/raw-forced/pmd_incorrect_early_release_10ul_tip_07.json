@@ -1,0 +1,77 @@
+{
+ "clip_id": "pmd_incorrect_early_release_10ul_tip_07",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 10,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 3572,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 480,
+  "output_tokens_details": {
+   "reasoning_tokens": 164
+  },
+  "total_tokens": 4052
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 0.3,
+    "description": "Pipette already has a tip attached; held above bench/plate area."
+   },
+   {
+    "start": 0.8,
+    "end": 2.3,
+    "description": "Pipette moves/positions over the right-side red rack/box area; no clear aspiration, dispensing, or contact visible."
+   },
+   {
+    "start": 2.8,
+    "end": 4.8,
+    "description": "Pipette moves toward and hovers above the central clear plate/tube area; no clear aspiration or dispensing visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible reuse of the same tip between different samples/reagents; no clear liquid handling occurs."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip remains visibly above surfaces; no contact with bench, glove, tube exterior, or other non-sterile surface is shown."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip stays attached throughout; no drop/ejection/release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [
+     0.3,
+     4.8
+    ],
+    "evidence": "Tip appears attached and aligned on the pipette; no visible wrong size or poor seating."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip being moved over labware, but no visible pipetting error is shown."
+ }
+}

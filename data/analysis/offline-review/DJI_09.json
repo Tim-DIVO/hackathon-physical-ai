@@ -1,0 +1,293 @@
+{
+  "clipId": "DJI_09",
+  "events": [
+    {
+      "id": "DJI_09-visual-1",
+      "clipId": "DJI_09",
+      "start": 0,
+      "end": 12,
+      "action": "Prepare workspace",
+      "description": "Gloved hands move across the hood and lift a micropipette. A tube rack, tip boxes and culture dish are visible.",
+      "objects": [
+        "micropipette",
+        "tube",
+        "gloves"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "confidence": 0.95,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        2,
+        6,
+        10
+      ]
+    },
+    {
+      "id": "DJI_09-visual-2",
+      "clipId": "DJI_09",
+      "start": 12,
+      "end": 32,
+      "action": "Pipette into handheld tube",
+      "description": "A micropipette tip is repeatedly positioned at a small tube held in the left hand. Liquid volume and tube identity are unreadable.",
+      "objects": [
+        "micropipette",
+        "tube",
+        "gloves"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "confidence": 0.89,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "unknown_sample",
+          "message": "Tube labels and liquid volumes are not readable in sampled video. Link samples after operator review.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        14,
+        18,
+        22,
+        26,
+        30
+      ]
+    },
+    {
+      "id": "DJI_09-visual-3",
+      "clipId": "DJI_09",
+      "start": 32,
+      "end": 60,
+      "action": "Continue tube handling",
+      "description": "The left hand returns toward the rack and then holds a tube beneath the pipette again. The sampled views do not establish reagent identity or tip replacement.",
+      "objects": [
+        "micropipette",
+        "tube",
+        "gloves"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "confidence": 0.84,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "tip_reuse",
+          "message": "Possible tip reuse: the pipette stays raised with a tip attached while the left hand returns to the rack and presents a tube again. No tip discard is visible in the 1-second samples; tube identity and any action between frames need operator review.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        34.5,
+        35.5,
+        36.5,
+        37.5,
+        38.5,
+        39.5,
+        40.5,
+        41.5,
+        42.5,
+        43.5,
+        44.5,
+        45.5,
+        46.5,
+        47.5,
+        48.5,
+        49.5,
+        50.5,
+        51.5,
+        52.5,
+        53.5,
+        54.5,
+        55.5,
+        56.5,
+        57.5,
+        58.5,
+        59.5
+      ]
+    },
+    {
+      "id": "DJI_09-visual-4",
+      "clipId": "DJI_09",
+      "start": 60,
+      "end": 76,
+      "action": "Manipulate tube and pipette",
+      "description": "The operator moves the pipette away, handles a tube, and lowers the instrument near the tip box area. Mixing and exact tip exchange cannot be confirmed from these frames.",
+      "objects": [
+        "micropipette",
+        "tube",
+        "gloves"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "confidence": 0.8,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "unknown_sample",
+          "message": "Tube labels and liquid volumes are not readable in sampled video. Link samples after operator review.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        62,
+        66,
+        70,
+        74
+      ]
+    },
+    {
+      "id": "DJI_09-visual-5",
+      "clipId": "DJI_09",
+      "start": 76,
+      "end": 88,
+      "action": "Pipette over culture dish",
+      "description": "The pipette moves from a handheld tube toward the open culture dish. Its tip is held over the dish; dispensing volume is not visible.",
+      "objects": [
+        "micropipette",
+        "culture dish",
+        "gloves"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "confidence": 0.88,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "unknown_sample",
+          "message": "Tube labels and liquid volumes are not readable in sampled video. Link samples after operator review.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        78,
+        82,
+        86
+      ]
+    },
+    {
+      "id": "DJI_09-visual-6",
+      "clipId": "DJI_09",
+      "start": 88,
+      "end": 100.1,
+      "action": "Move culture dish",
+      "description": "The operator places the pipette aside and handles the culture dish near the front of the hood.",
+      "objects": [
+        "micropipette",
+        "culture dish",
+        "gloves"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "confidence": 0.91,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        90,
+        94,
+        98
+      ]
+    }
+  ],
+  "model": "gpt-6.1-sol / offline visual review",
+  "generatedAt": "2026-10-17T12:07:18.584Z",
+  "frameTimes": [
+    2,
+    6,
+    10,
+    12.5,
+    13.5,
+    14,
+    14.5,
+    15.5,
+    16.5,
+    17.5,
+    18,
+    18.5,
+    19.5,
+    20.5,
+    21.5,
+    22,
+    22.5,
+    23.5,
+    24.5,
+    25.5,
+    26,
+    26.5,
+    27.5,
+    28.5,
+    29.5,
+    30,
+    30.5,
+    31.5,
+    32.5,
+    33.5,
+    34,
+    34.5,
+    35.5,
+    36.5,
+    37.5,
+    38,
+    38.5,
+    39.5,
+    40.5,
+    41.5,
+    42,
+    42.5,
+    43.5,
+    44.5,
+    45.5,
+    46,
+    46.5,
+    47.5,
+    48.5,
+    49.5,
+    50,
+    50.5,
+    51.5,
+    52.5,
+    53.5,
+    54,
+    54.5,
+    55.5,
+    56.5,
+    57.5,
+    58,
+    58.5,
+    59.5,
+    62,
+    66,
+    70,
+    74,
+    78,
+    82,
+    86,
+    90,
+    94,
+    98
+  ],
+  "source": "model",
+  "analysisMethod": "offline reference-aware visual review",
+  "limitations": "Visual model review of 4-second contact-sheet samples. Reviewer previously saw dataset references; this is not blind evaluation. Events describe visible actions only; reagent identities, volumes, tip reuse and protocol alignment are unconfirmed. Additional 1-second samples from 12?60s support an unconfirmed tip continuity warning in recording 01.",
+  "videoSha256": "b5b3d0801475c1dfcbacc0303168a5219abc4ab50986cc5906bfd97fde0ef098",
+  "promptVersion": "offline-visual-v1"
+}

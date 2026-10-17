@@ -1,0 +1,98 @@
+{
+ "clip_id": "pmd_correct_03",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.9,
+  1.6,
+  2.2,
+  2.8,
+  3.4,
+  4.1,
+  4.7,
+  5.3,
+  5.9,
+  6.6,
+  7.2,
+  7.8,
+  8.5,
+  9.1,
+  9.7,
+  10.3,
+  11,
+  11.6,
+  12.2,
+  12.8,
+  13.5,
+  14.1,
+  14.7
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7700,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 409,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8109
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 3.4,
+    "description": "Pipette with tip positioned in/over red tube rack area; appears to aspirate or dispense from a tube/well, but liquid movement is not visible."
+   },
+   {
+    "start": 4.1,
+    "end": 5.3,
+    "description": "Pipette withdrawn and moved away from red rack toward foreground/plate area."
+   },
+   {
+    "start": 5.9,
+    "end": 11,
+    "description": "Pipette held over blurred foreground plate/tube area; plunger hand position changes slightly, suggesting possible dispense/aspirate, but contact/liquid movement unclear."
+   },
+   {
+    "start": 11.6,
+    "end": 13.5,
+    "description": "Pipette moved rightward away from work area, near waste container area; no visible tip ejection."
+   },
+   {
+    "start": 14.1,
+    "end": 14.7,
+    "description": "Pipette moved back toward red rack area with tip still attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "Same tip appears to remain attached while moving between areas, but the media/samples and any actual aspirate/dispense events are not clearly visible."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the tip with bench, glove, tube exterior, or other non-sterile surface."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip remains attached; no unexpected drop, ejection, or early release visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears seated on the pipette and size mismatch is not visibly apparent."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with a tip moving between work areas and possible pipetting, but no clear visible technique error. Reuse across different media is not determinable from the frames."
+ }
+}

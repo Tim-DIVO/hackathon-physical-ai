@@ -1,0 +1,108 @@
+{
+ "clip_id": "pmd_incorrect_early_release_20ul_tip_09",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 23,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3,
+  6.8,
+  7.3,
+  7.8,
+  8.3,
+  8.8,
+  9.3,
+  9.8,
+  10.3,
+  10.8,
+  11.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7349,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 444,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 7793
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 1.3,
+    "end": 2.3,
+    "description": "Gloved hand picks up/handles a loose small clear item near the center of the bench, likely a tube cap/tip, without pipette."
+   },
+   {
+    "start": 2.8,
+    "end": 4.3,
+    "description": "Hand moves to yellow tip rack and manipulates/takes an item from the rack area."
+   },
+   {
+    "start": 4.8,
+    "end": 7.8,
+    "description": "Hand moves between the bench/central area and the yellow rack, handling small clear items; no liquid transfer visible."
+   },
+   {
+    "start": 8.3,
+    "end": 8.8,
+    "description": "Pipette enters from right with a white tip already attached."
+   },
+   {
+    "start": 9.3,
+    "end": 9.8,
+    "description": "Pipette tip is inserted/pressed into yellow tip rack area; appears to seat or pick up a tip."
+   },
+   {
+    "start": 10.3,
+    "end": 11.3,
+    "description": "Pipette with attached tip moves away across the bench; no aspirate or dispense visibly confirmed."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "No clear aspirate/dispense into different media or reuse after required discard is visible."
+   },
+   "surface": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     10.8,
+     11.3
+    ],
+    "evidence": "Tip is moved close to bench and nearby boxes, but visible frames do not clearly show the tip touching a non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible unexpected dropping/ejection/release of the tip."
+   },
+   "install": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     8.8,
+     9.3,
+     9.8
+    ],
+    "evidence": "Tip is already on the pipette and/or being pressed into the rack, but frames do not clearly show whether the tip is wrong size or incorrectly seated."
+   }
+  },
+  "overall_summary": "The clip mainly shows handling near a tip rack and a pipette with a tip attached. No definite pipetting transfer or definite technique error is visible."
+ }
+}

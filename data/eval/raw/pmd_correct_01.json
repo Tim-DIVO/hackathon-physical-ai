@@ -1,0 +1,118 @@
+{
+ "clip_id": "pmd_correct_01",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.4,
+  1.2,
+  2,
+  2.8,
+  3.6,
+  4.4,
+  5.2,
+  6,
+  6.8,
+  7.5,
+  8.3,
+  9.1,
+  9.9,
+  10.7,
+  11.5,
+  12.3,
+  13.1,
+  13.9,
+  14.7,
+  15.5,
+  16.3,
+  17.1,
+  17.9,
+  18.7
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7640,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 819,
+  "output_tokens_details": {
+   "reasoning_tokens": 323
+  },
+  "total_tokens": 8459
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.4,
+    "end": 2,
+    "description": "Bench setup visible; no pipetting action visible."
+   },
+   {
+    "start": 2.8,
+    "end": 3.6,
+    "description": "Pipette enters frame with a tip already attached; user moves toward red tube/plate rack."
+   },
+   {
+    "start": 4.4,
+    "end": 6.8,
+    "description": "Tip is placed into/over the red tube/plate rack; possible aspirate or dispense, exact plunger action not clear."
+   },
+   {
+    "start": 7.5,
+    "end": 8.3,
+    "description": "Pipette is withdrawn and moved toward the white plate in the foreground with the same tip still attached."
+   },
+   {
+    "start": 9.1,
+    "end": 13.9,
+    "description": "Tip is positioned into/over wells of the white plate; possible dispense/aspirate, exact liquid movement not visible."
+   },
+   {
+    "start": 14.7,
+    "end": 16.3,
+    "description": "Pipette leaves the frame; no tip ejection visible."
+   },
+   {
+    "start": 17.1,
+    "end": 18.7,
+    "description": "Pipette re-enters at right with tip still attached and is moved back toward the work area."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "present",
+    "evidence_timestamps": [
+     4.4,
+     5.2,
+     6.8,
+     9.1,
+     12.3,
+     13.9
+    ],
+    "evidence": "The same attached tip is used at the red rack/wells and then moved to and used at the white plate without any visible tip change or ejection."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the tip with the bench, glove, hand, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible dropped, ejected, or unexpectedly released tip."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [
+     2.8,
+     7.5,
+     18.7
+    ],
+    "evidence": "Tip appears attached and aligned on the pipette; no visible incorrect seating or wrong-size tip."
+   }
+  },
+  "overall_summary": "A pipette with an already attached tip is used first at the red rack/wells and then at a white plate without a visible tip change. No surface contact, premature release, or installation problem is visible."
+ }
+}

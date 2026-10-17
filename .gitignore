@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.next-previous/
+.env*
+!.env.example
+*.tsbuildinfo
+.claude/
+public/videos/*.mp4
+data/cache/
+data/frames/
+artifacts/
+*.log
+data/eval/clips/
+public/videos/lsv/*.mp4

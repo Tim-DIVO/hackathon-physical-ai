@@ -1,0 +1,92 @@
+{
+ "clip_id": "pmd_incorrect_reuse_same_media_20ul_tip_01",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.4,
+  2,
+  2.5,
+  3.1,
+  3.6,
+  4.2,
+  4.7,
+  5.3,
+  5.9,
+  6.4,
+  7,
+  7.5,
+  8.1,
+  8.7,
+  9.2,
+  9.8,
+  10.3,
+  10.9,
+  11.4,
+  12,
+  12.6,
+  13.1
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7638,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 374,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8012
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.8,
+    "end": 1.4,
+    "description": "Pipette with attached white tip enters frame and moves toward yellow tip rack/near open box area."
+   },
+   {
+    "start": 1.4,
+    "end": 2.5,
+    "description": "Tip is positioned over/near the yellow tip rack and open container area; no clear aspiration or dispensing visible."
+   },
+   {
+    "start": 2.5,
+    "end": 3.6,
+    "description": "Pipette moves away from rack area toward the white multiwell plate."
+   },
+   {
+    "start": 3.6,
+    "end": 13.1,
+    "description": "Pipette tip hovers over/enters wells in the white multiwell plate and appears to perform repeated dispensing/aspiration motions across nearby wells; exact liquid transfer is not clearly visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "Same tip appears used over the plate, but different media/samples/reagents or need to discard are not visible."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the tip with bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip remains attached; no visible drop/ejection/release."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears seated on the pipette and not visibly wrong-sized or loose."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip moving from the rack/open box area to a multiwell plate and working over wells. No visible tip drop, surface contact, or incorrect installation is seen. Reuse/cross-contamination cannot be determined from the frames."
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "clip_id": "pmd_incorrect_reuse_20ul_tip_07",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  1,
+  1.7,
+  2.4,
+  3.1,
+  3.8,
+  4.5,
+  5.2,
+  5.9,
+  6.6,
+  7.3,
+  8,
+  8.7,
+  9.4,
+  10.1,
+  10.8,
+  11.5,
+  12.2,
+  12.9,
+  13.6,
+  14.3,
+  15,
+  15.7,
+  16.4
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7638,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 752,
+  "output_tokens_details": {
+   "reasoning_tokens": 320
+  },
+  "total_tokens": 8390
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1,
+    "description": "Bench setup visible; pipette enters frame with a tip already attached."
+   },
+   {
+    "start": 1,
+    "end": 1.7,
+    "description": "Pipette is moved toward the yellow 96-well rack/plate."
+   },
+   {
+    "start": 1.7,
+    "end": 3.1,
+    "description": "Tip is lowered into a well of the yellow rack/plate; likely aspirating or contacting liquid in the well."
+   },
+   {
+    "start": 3.1,
+    "end": 4.5,
+    "description": "Pipette is lifted and moved away from the yellow rack/plate toward a clear multiwell plate/tray."
+   },
+   {
+    "start": 4.5,
+    "end": 16.4,
+    "description": "Pipette tip is positioned over the clear plate/tray and appears to dispense into/near multiple wells while moving between positions. No tip ejection is visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     1.7,
+     3.1,
+     4.5,
+     16.4
+    ],
+    "evidence": "The same tip is used after being in the yellow rack/plate and then over the clear plate/tray, but the frames do not show whether these are different samples/reagents or an intended transfer."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is not visibly touching a non-sterile surface such as the bench, glove, or tube exterior before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No unexpected tip drop, ejection, or early release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip appears seated on the pipette and no wrong-size or loose fit is visible."
+   }
+  },
+  "overall_summary": "A tip is already installed, used in a yellow rack/plate, then moved to a clear plate/tray for apparent dispensing. No visible release, surface contact, or installation error; reuse/cross-contamination cannot be determined from the frames."
+ }
+}

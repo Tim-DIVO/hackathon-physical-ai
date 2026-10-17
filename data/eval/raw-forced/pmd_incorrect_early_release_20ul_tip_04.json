@@ -1,0 +1,71 @@
+{
+ "clip_id": "pmd_incorrect_early_release_20ul_tip_04",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 7,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 2687,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 324,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 3011
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 0.8,
+    "description": "Pipette with attached tip is held above the bench near racks; no contact or liquid transfer visible."
+   },
+   {
+    "start": 0.8,
+    "end": 2.3,
+    "description": "Pipette moves to the right side of the workspace, hovering above/near a yellow tip rack or container area."
+   },
+   {
+    "start": 2.3,
+    "end": 3.3,
+    "description": "Pipette moves back left toward the central/yellow rack area, still with the same visible tip; no aspiration, dispensing, or ejection visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "No aspiration/dispense or change between different samples is visible, so reuse across media cannot be determined."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip appears to hover above the bench/racks and is not visibly touching a non-sterile surface."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip drop, ejection, or unexpected release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "A tip is attached and appears seated; no visible mismatch or loose fit."
+   }
+  },
+  "overall_summary": "The clip only shows a pipette with an attached tip being moved around the workspace without visible liquid transfer or contact with surfaces. No technique error is more likely than not from the frames shown."
+ }
+}

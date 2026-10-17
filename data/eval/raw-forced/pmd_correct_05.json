@@ -1,0 +1,98 @@
+{
+ "clip_id": "pmd_correct_05",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.4,
+  1.1,
+  1.8,
+  2.6,
+  3.3,
+  4,
+  4.8,
+  5.5,
+  6.2,
+  7,
+  7.7,
+  8.4,
+  9.2,
+  9.9,
+  10.6,
+  11.4,
+  12.1,
+  12.8,
+  13.6,
+  14.3,
+  15,
+  15.8,
+  16.5,
+  17.2
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7696,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 399,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8095
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.4,
+    "end": 2.6,
+    "description": "Pipette tip positioned in/over a tube in the blue rack; likely aspirating or dispensing, plunger hand engaged."
+   },
+   {
+    "start": 3.3,
+    "end": 4.8,
+    "description": "Tip withdrawn from blue rack and moved toward the white multiwell/tube strip area."
+   },
+   {
+    "start": 5.5,
+    "end": 12.1,
+    "description": "Tip held over/into wells of the white strip; apparent dispensing/aspirating action across this target area."
+   },
+   {
+    "start": 12.8,
+    "end": 15.8,
+    "description": "Pipette moved to purple waste container; tip inserted into waste, consistent with ejecting/disposing tip or waste liquid."
+   },
+   {
+    "start": 16.5,
+    "end": 17.2,
+    "description": "Pipette withdrawn from waste and moved back toward work area/blue rack."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "Same tip appears used between blue rack and white wells, but the contents/mediums and intended workflow are not visible enough to determine cross-contamination."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the tip with bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No unexpected dropping or premature release of the tip is visible; movement to waste appears controlled."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears seated straight and appropriately sized on the pipette."
+   }
+  },
+  "overall_summary": "The visible motions show routine pipetting between rack/well areas and a controlled move to waste. No technique error is clearly visible; reuse across different materials is not determinable from the frames alone."
+ }
+}

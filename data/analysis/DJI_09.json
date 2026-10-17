@@ -1,0 +1,696 @@
+{
+  "clipId": "DJI_09",
+  "events": [
+    {
+      "id": "DJI_09-model-1",
+      "clipId": "DJI_09",
+      "start": 0,
+      "end": 6,
+      "action": "Camera/phone adjustment at hood",
+      "description": "Gloved hands move near the recording device and adjust the view. No wet-lab manipulation of samples is clearly visible.",
+      "objects": [
+        "phone/camera",
+        "biosafety hood",
+        "gloved hands"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        0,
+        2,
+        5
+      ],
+      "actionLabel": "other",
+      "tipState": "no_tip"
+    },
+    {
+      "id": "DJI_09-model-2",
+      "clipId": "DJI_09",
+      "start": 6,
+      "end": 12,
+      "action": "Hood workspace visible",
+      "description": "The hood workspace with racks, a dish, tubes, tip boxes, and pipettes is visible while the operator prepares to work. No sample transfer is clearly occurring yet.",
+      "objects": [
+        "tube racks",
+        "tip boxes",
+        "culture dish",
+        "pipettes",
+        "reagent bottles"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        7,
+        9,
+        11
+      ],
+      "actionLabel": "other",
+      "tipState": "no_tip"
+    },
+    {
+      "id": "DJI_09-model-3",
+      "clipId": "DJI_09",
+      "start": 12,
+      "end": 16,
+      "action": "Pick up handheld pipette and position workspace",
+      "description": "The right hand brings a handheld pipette into view while the left hand steadies or repositions items near the culture dish and racks. The pipette tip state before the next action is not fully clear.",
+      "objects": [
+        "handheld pipette",
+        "culture dish",
+        "tube rack",
+        "gloved hands"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        12,
+        13,
+        15
+      ],
+      "actionLabel": "pick_up",
+      "tipState": "unclear"
+    },
+    {
+      "id": "DJI_09-model-4",
+      "clipId": "DJI_09",
+      "start": 16,
+      "end": 18,
+      "action": "Mount pipette tip from tip box",
+      "description": "The pipette is pressed into the purple tip rack/tip box area, consistent with attaching a new disposable tip. The pipette is then lifted away with a long clear tip visible.",
+      "objects": [
+        "handheld pipette",
+        "purple tip rack",
+        "pipette tip"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        16,
+        17,
+        18
+      ],
+      "actionLabel": "attach_tip",
+      "tipState": "fresh_tip_attached"
+    },
+    {
+      "id": "DJI_09-model-5",
+      "clipId": "DJI_09",
+      "start": 18,
+      "end": 27,
+      "action": "First apparent addition into handheld EP tube",
+      "description": "The left hand holds a small open EP tube while the right hand positions the pipette tip at or inside the tube opening. This appears to be a reagent addition into the tube, but the tube and reagent identities are not readable.",
+      "objects": [
+        "handheld pipette",
+        "pipette tip",
+        "small EP tube",
+        "gloved hands"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 1,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "unknown_sample",
+          "message": "Tube/reagent identity is not readable for the apparent first addition at 18-27s, so provenance needs review.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        19,
+        21,
+        24,
+        26
+      ],
+      "actionLabel": "dispense",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_09-model-6",
+      "clipId": "DJI_09",
+      "start": 27,
+      "end": 31,
+      "action": "Return/select small tube from rack",
+      "description": "The left hand moves small tubes at the blue rack while the pipette remains in the right hand with the same visible tip. This appears to be tube handling between additions.",
+      "objects": [
+        "blue tube rack",
+        "small EP tubes",
+        "handheld pipette"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        28,
+        29,
+        30
+      ],
+      "actionLabel": "open_container",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_09-model-7",
+      "clipId": "DJI_09",
+      "start": 31,
+      "end": 34,
+      "action": "Second apparent addition into EP tube",
+      "description": "The operator again holds a small EP tube and places the pipette tip at the tube opening. This appears to be another addition, but the reagent/tube identity cannot be read.",
+      "objects": [
+        "handheld pipette",
+        "pipette tip",
+        "small EP tube"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 2,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "tip_reuse",
+          "message": "Possible tip reuse needing review: a tip was mounted at 17s and used for an apparent addition at 18-27s; no tip ejection or fresh tip attachment is visible before the next apparent addition at 31-34s.",
+          "status": "needs_review"
+        },
+        {
+          "type": "unknown_sample",
+          "message": "Tube/reagent identity is not readable for the apparent second addition at 31-34s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        31,
+        32,
+        33
+      ],
+      "actionLabel": "dispense",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_09-model-8",
+      "clipId": "DJI_09",
+      "start": 34,
+      "end": 38,
+      "action": "Handle tube and rack between additions",
+      "description": "The left hand lowers or returns a small tube toward the rack and then brings another small tube into position. The pipette remains visible with the same tip.",
+      "objects": [
+        "small EP tubes",
+        "blue tube rack",
+        "handheld pipette"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "tip_reuse",
+          "message": "Possible tip reuse: dense tip audit found no tip change between reagent additions. The first visible delivery/contact into the held EP tube occurs around t=21-26 with the red/yellow pipette and clear tip. A second distinct delivery/contact into the same held tube occurs around t=31.5-34, still with the same red/yellow pipette tip and with no visible tip ejection or fresh tip mounting between those two additions. Later, before the final addition around t=71-78.5, the operator has switched to a different white/blue pipette with a fresh clear tip. No definite old-tip ejection is directly visible in-frame; the key issue is that at least two additions are visibly performed with the same tip before any visible change. Observed: fresh_tip_attached at 17.5s, fresh_tip_attached at 65s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        35,
+        36,
+        37
+      ],
+      "actionLabel": "open_container",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_09-model-9",
+      "clipId": "DJI_09",
+      "start": 38,
+      "end": 41,
+      "action": "Third apparent addition into EP tube",
+      "description": "The pipette tip is again positioned at or inside a small EP tube held by the left hand. This is consistent with another reagent addition, though identities are unreadable.",
+      "objects": [
+        "handheld pipette",
+        "pipette tip",
+        "small EP tube"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 3,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "tip_reuse",
+          "message": "Possible tip reuse needing review: the same visible tip appears to continue from the prior apparent additions, with no ejection or new tip attachment seen before the apparent addition at 38-41s.",
+          "status": "needs_review"
+        },
+        {
+          "type": "unknown_sample",
+          "message": "Tube/reagent identity is not readable for the apparent third addition at 38-41s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        38,
+        39,
+        40
+      ],
+      "actionLabel": "dispense",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_09-model-10",
+      "clipId": "DJI_09",
+      "start": 41,
+      "end": 45,
+      "action": "Tube handling between pipetting actions",
+      "description": "The left hand moves small tubes near the blue rack while the pipette is held off to the side with the tip still attached. No clear dispensing is visible in this interval.",
+      "objects": [
+        "small EP tubes",
+        "tube rack",
+        "handheld pipette"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        42,
+        43,
+        44
+      ],
+      "actionLabel": "open_container",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_09-model-11",
+      "clipId": "DJI_09",
+      "start": 45,
+      "end": 60,
+      "action": "Repeated pipetting into small EP tube(s)",
+      "description": "The operator repeatedly brings a small tube to the pipette tip and positions the tip at the tube opening. This may be continued additions or transfer steps into EP tube(s), but the exact tube identities and whether this is one destination tube or multiple tubes are unclear.",
+      "objects": [
+        "handheld pipette",
+        "pipette tip",
+        "small EP tubes",
+        "blue tube rack"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 3,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "tip_reuse",
+          "message": "Possible tip reuse needing review: the same tip appears to remain on the pipette from the attachment at 17s through repeated apparent tube pipetting at 45-60s, with no visible tip ejection or new tip attachment.",
+          "status": "needs_review"
+        },
+        {
+          "type": "unknown_sample",
+          "message": "The small tube(s) and reagent identity are not readable during repeated pipetting at 45-60s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        46,
+        49,
+        52,
+        58,
+        60
+      ],
+      "actionLabel": "dispense",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_09-model-12",
+      "clipId": "DJI_09",
+      "start": 60,
+      "end": 65,
+      "action": "Cap or hold small tube after additions",
+      "description": "The pipette moves out of the immediate tube area, and the left hand holds a small tube near the racks, apparently closing or securing it. No clear mixing motion is visible.",
+      "objects": [
+        "small EP tube",
+        "handheld pipette",
+        "tube racks"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        61,
+        62,
+        64
+      ],
+      "actionLabel": "close_container",
+      "tipState": "unclear"
+    },
+    {
+      "id": "DJI_09-model-13",
+      "clipId": "DJI_09",
+      "start": 65,
+      "end": 70,
+      "action": "Aspirate from reservoir or container",
+      "description": "A pipette with a visible tip is placed into a larger liquid-containing reservoir or container. The action is consistent with aspirating liquid, but the source identity is not readable and no tip change is visible immediately beforehand.",
+      "objects": [
+        "handheld pipette",
+        "pipette tip",
+        "liquid reservoir/container"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "tip_reuse",
+          "message": "Possible tip reuse needing review: after apparent EP-tube pipetting through 60s, no visible tip ejection or fresh tip attachment occurs before the pipette enters a reservoir/container at 67-69s.",
+          "status": "needs_review"
+        },
+        {
+          "type": "unknown_sample",
+          "message": "The reservoir/container identity is not readable at 65-70s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        65,
+        67,
+        69
+      ],
+      "actionLabel": "aspirate",
+      "tipState": "unclear"
+    },
+    {
+      "id": "DJI_09-model-14",
+      "clipId": "DJI_09",
+      "start": 70,
+      "end": 79,
+      "action": "Dispense into small purple-capped tube",
+      "description": "The pipette tip is brought to a small tube held by the left hand near a purple cap/holder, and liquid appears to be dispensed or transferred into it. The identity of the tube contents is not readable.",
+      "objects": [
+        "handheld pipette",
+        "pipette tip",
+        "small tube",
+        "purple cap/holder"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 3,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "tip_reuse",
+          "message": "Possible tip reuse needing review: no tip ejection or new tip attachment is visible between aspirating from the reservoir/container at 67-69s and dispensing into the small tube at 71-78s.",
+          "status": "needs_review"
+        },
+        {
+          "type": "unknown_sample",
+          "message": "Tube/source identity is not readable for the transfer at 70-79s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        71,
+        73,
+        76,
+        78
+      ],
+      "actionLabel": "dispense",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_09-model-15",
+      "clipId": "DJI_09",
+      "start": 79,
+      "end": 88,
+      "action": "Deliver liquid dropwise into culture dish",
+      "description": "The pipette is moved over an open culture dish and liquid is delivered into the dish area. This matches delivery of a prepared mixture into a cell culture dish, but the mixture identity cannot be verified visually.",
+      "objects": [
+        "handheld pipette",
+        "pipette tip",
+        "open culture dish",
+        "cell culture dish"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 6,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "missing_step",
+          "message": "Possible missing step needing review: no clear mix-well step is visible before the apparent delivery into the culture dish at 81-87s.",
+          "status": "needs_review"
+        },
+        {
+          "type": "unknown_sample",
+          "message": "The delivered mixture identity is not readable during dish delivery at 81-87s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        81,
+        83,
+        85,
+        87
+      ],
+      "actionLabel": "transfer",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_09-model-16",
+      "clipId": "DJI_09",
+      "start": 88,
+      "end": 97,
+      "action": "Handle and gently rock culture dish",
+      "description": "Both gloved hands handle the culture dish and move it gently on the hood surface, consistent with rocking or distributing liquid across the dish. The pipette is no longer actively used in view.",
+      "objects": [
+        "culture dish",
+        "gloved hands"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 7,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        89,
+        91,
+        94,
+        96
+      ],
+      "actionLabel": "handle_dish",
+      "tipState": "unclear"
+    },
+    {
+      "id": "DJI_09-model-17",
+      "clipId": "DJI_09",
+      "start": 97,
+      "end": 99,
+      "action": "Hands leave workspace",
+      "description": "The operator withdraws from the hood area and the workspace remains visible. No further sample manipulation is evident.",
+      "objects": [
+        "biosafety hood",
+        "racks",
+        "culture dish",
+        "pipettes"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        97,
+        98,
+        99
+      ],
+      "actionLabel": "other",
+      "tipState": "no_tip"
+    }
+  ],
+  "model": "gpt-5.5",
+  "generatedAt": "2026-10-17T12:29:46.786Z",
+  "frameTimes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99
+  ],
+  "source": "model",
+  "analysisMethod": "OpenAI Responses API \u00b7 100 frames @ 1 fps segmentation + 2 fps tip audit \u00b7 structured output",
+  "limitations": "Model summary: The recording shows setup in a biosafety hood, mounting a pipette tip, repeated pipetting involving small EP tubes, later pipetting from a reservoir/tube and delivering liquid into an open culture dish, followed by gentle dish handling/rocking. Reagent/tube identities are not readable, and no clear tip ejection/new tip attachment is visible after the first tip mount despite multiple apparent additions, so several possible tip-reuse issues need review. Frames are sampled every 1s, so brief actions can be missed. Dataset error labels were not provided to the model.",
+  "videoSha256": "b5b3d0801475c1dfcbacc0303168a5219abc4ab50986cc5906bfd97fde0ef098",
+  "promptVersion": "lablens-vision-v3",
+  "tipAudit": {
+    "tipEvents": [
+      {
+        "t": 17.5,
+        "kind": "fresh_tip_attached",
+        "evidence": "Right-hand red/yellow pipette is pressed vertically into the open purple tip box/rack around t=17-18; after withdrawal a long clear conical tip is visible on the pipette."
+      },
+      {
+        "t": 65,
+        "kind": "fresh_tip_attached",
+        "evidence": "After the red/yellow pipette leaves the work area, the operator swaps to a different white/blue pipette entering from the right with a long clear tip already attached."
+      }
+    ],
+    "additions": [
+      {
+        "start": 21,
+        "end": 26
+      },
+      {
+        "start": 31.5,
+        "end": 34
+      },
+      {
+        "start": 71,
+        "end": 78.5
+      }
+    ],
+    "verdict": "tip_reused",
+    "rationale": "The first visible delivery/contact into the held EP tube occurs around t=21-26 with the red/yellow pipette and clear tip. A second distinct delivery/contact into the same held tube occurs around t=31.5-34, still with the same red/yellow pipette tip and with no visible tip ejection or fresh tip mounting between those two additions. Later, before the final addition around t=71-78.5, the operator has switched to a different white/blue pipette with a fresh clear tip. No definite old-tip ejection is directly visible in-frame; the key issue is that at least two additions are visibly performed with the same tip before any visible change.",
+    "windowEnd": 81,
+    "fps": 2
+  }
+}

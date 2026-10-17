@@ -1,0 +1,107 @@
+{
+ "clip_id": "pmd_incorrect_reuse_10ul_tip_02",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.4,
+  1.9,
+  2.4,
+  3,
+  3.5,
+  4.1,
+  4.6,
+  5.2,
+  5.7,
+  6.3,
+  6.8,
+  7.3,
+  7.9,
+  8.4,
+  9,
+  9.5,
+  10.1,
+  10.6,
+  11.1,
+  11.7,
+  12.2,
+  12.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7640,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 601,
+  "output_tokens_details": {
+   "reasoning_tokens": 143
+  },
+  "total_tokens": 8241
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 0.8,
+    "description": "Pipette with attached tip held over a clear multiwell plate/reservoir; positioning above wells."
+   },
+   {
+    "start": 0.8,
+    "end": 3,
+    "description": "Tip is lowered toward/into wells in the clear plate area; possible pipetting action, liquid movement not visible."
+   },
+   {
+    "start": 3,
+    "end": 5.2,
+    "description": "Pipette is raised and repositioned across nearby wells."
+   },
+   {
+    "start": 5.2,
+    "end": 6.8,
+    "description": "Tip lowered again toward/into another well area; possible aspirate/dispense, liquid not visible."
+   },
+   {
+    "start": 6.8,
+    "end": 9.5,
+    "description": "Pipette moved laterally and hovered over adjacent wells; no tip ejection."
+   },
+   {
+    "start": 9.5,
+    "end": 11.7,
+    "description": "Tip lowered toward/into clear plate wells again; possible pipetting action, liquid not visible."
+   },
+   {
+    "start": 11.7,
+    "end": 12.8,
+    "description": "Pipette lifted and moved away/right while tip remains attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "Same tip remains attached while moving over multiple wells, but the frames do not show whether different samples/reagents are involved or whether reuse is inappropriate."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip is not visibly touching bench, glove, tube exterior, or other non-sterile surface."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip remains attached throughout; no visible unexpected drop/ejection/release."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears attached and seated on the pipette; no visible wrong-size or loose fit."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip being positioned and likely used over a clear multiwell plate. No visible tip ejection, non-sterile surface contact, or installation problem is seen. Reuse across different media/samples cannot be determined from the frames."
+ }
+}

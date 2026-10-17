@@ -1,0 +1,644 @@
+{
+  "clipId": "DJI_10",
+  "events": [
+    {
+      "id": "DJI_10-model-1",
+      "clipId": "DJI_10",
+      "start": 0,
+      "end": 2,
+      "action": "Position red-banded pipette at source",
+      "description": "The right hand holds a red-banded pipette with a tip already attached and positions it near a container/source at the right side of the hood. The exact source identity is not readable.",
+      "objects": [
+        "red-banded pipette",
+        "attached pipette tip",
+        "right-side container/source"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 1,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "unknown_sample",
+          "message": "The source being accessed around 0-2s is not readable, so reagent provenance for this apparent addition is uncertain.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        0,
+        1,
+        2
+      ],
+      "actionLabel": "aspirate",
+      "tipState": "unclear"
+    },
+    {
+      "id": "DJI_10-model-2",
+      "clipId": "DJI_10",
+      "start": 3,
+      "end": 9,
+      "action": "Dispense into small tube",
+      "description": "The left hand brings a small clear tube into position while the red-banded pipette tip is inserted into it. The pipette appears to dispense or pipette liquid into the tube.",
+      "objects": [
+        "small clear tube",
+        "red-banded pipette",
+        "pipette tip"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 1,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "unknown_sample",
+          "message": "The small tube and liquid identity are not readable during the apparent reagent addition at 3-9s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        3,
+        6,
+        8,
+        9
+      ],
+      "actionLabel": "dispense",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_10-model-3",
+      "clipId": "DJI_10",
+      "start": 10,
+      "end": 18,
+      "action": "Continue pipetting with same red tip",
+      "description": "The operator keeps the same red-banded pipette and moves between the small tube/nearby tubes and the rack area. The tip is again positioned for liquid handling, but no tip discard or new tip attachment is visible.",
+      "objects": [
+        "red-banded pipette",
+        "small clear tube",
+        "tube rack area",
+        "pipette tip"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 2,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "tip_reuse",
+          "message": "Possible issue needing review: after the apparent first addition into the small tube at 6-9s, the same red-banded pipette tip is used for another apparent reagent/source manipulation at 14-18s with no visible tip ejection or new tip attachment between 9s and 14s.",
+          "status": "needs_review"
+        },
+        {
+          "type": "unknown_sample",
+          "message": "The source or tube used for the apparent second reagent manipulation around 14-18s is not readable.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        10,
+        14,
+        16,
+        17,
+        18
+      ],
+      "actionLabel": "aspirate",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_10-model-4",
+      "clipId": "DJI_10",
+      "start": 19,
+      "end": 25,
+      "action": "Dispense apparent second addition into tube",
+      "description": "The left hand holds the small clear tube while the red-banded pipette tip is inserted again. The motion is consistent with dispensing liquid into the same small tube.",
+      "objects": [
+        "small clear tube",
+        "red-banded pipette",
+        "pipette tip"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 2,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "unknown_sample",
+          "message": "The liquid being dispensed at 21-24s is not identifiable from the video.",
+          "status": "needs_review"
+        },
+        {
+          "type": "tip_reuse",
+          "message": "Possible tip reuse: dense tip audit found no tip change between reagent additions. The three reagent-addition episodes into the held EP tube are visible with the same red/white pipette and the same long clear tip. Between addition 1 and 2 the pipette goes to the purple rack/source around 17.5\u201318.5 s, but the tip remains attached and there is no visible ejection or fresh mounting. Between addition 2 and 3 the same tip remains visible while the pipette again visits the source area around 32.5\u201334 s. No tip-change event is visible between the three additions; the only clear fresh-tip event occurs later, around 50.5\u201351 s, after these additions, when a different pipette is picked up/pressed into the blue tip box. Observed: fresh_tip_attached at 50.5s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "actionLabel": "dispense",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_10-model-5",
+      "clipId": "DJI_10",
+      "start": 26,
+      "end": 33,
+      "action": "Move to another apparent source with same tip",
+      "description": "The same red-banded pipette remains in use while the left hand manipulates the small tube/rack area. The pipette moves toward a nearby source/tube area, consistent with preparing another addition.",
+      "objects": [
+        "red-banded pipette",
+        "small clear tube",
+        "rack area",
+        "pipette tip"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 3,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "tip_reuse",
+          "message": "Possible issue needing review: the same red-banded pipette tip appears to be used from the apparent second addition at 21-24s to another apparent reagent/source manipulation at 29-33s, with no visible tip ejection or new tip attachment between 24s and 29s.",
+          "status": "needs_review"
+        },
+        {
+          "type": "unknown_sample",
+          "message": "The apparent third reagent/source accessed around 29-33s is not readable.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        26,
+        29,
+        30,
+        32,
+        33
+      ],
+      "actionLabel": "aspirate",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_10-model-6",
+      "clipId": "DJI_10",
+      "start": 34,
+      "end": 40,
+      "action": "Dispense apparent third addition into tube",
+      "description": "The operator returns the red-banded pipette tip to the small clear tube held in the left hand. The pipette appears to dispense into the tube again.",
+      "objects": [
+        "small clear tube",
+        "red-banded pipette",
+        "pipette tip"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 3,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "unknown_sample",
+          "message": "The dispensed material at 37-39s is not identifiable from the video.",
+          "status": "needs_review"
+        },
+        {
+          "type": "tip_reuse",
+          "message": "Possible tip reuse: dense tip audit found no tip change between reagent additions. The three reagent-addition episodes into the held EP tube are visible with the same red/white pipette and the same long clear tip. Between addition 1 and 2 the pipette goes to the purple rack/source around 17.5\u201318.5 s, but the tip remains attached and there is no visible ejection or fresh mounting. Between addition 2 and 3 the same tip remains visible while the pipette again visits the source area around 32.5\u201334 s. No tip-change event is visible between the three additions; the only clear fresh-tip event occurs later, around 50.5\u201351 s, after these additions, when a different pipette is picked up/pressed into the blue tip box. Observed: fresh_tip_attached at 50.5s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        34,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "actionLabel": "dispense",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_10-model-7",
+      "clipId": "DJI_10",
+      "start": 41,
+      "end": 47,
+      "action": "Pipette-mix small tube contents",
+      "description": "The red-banded pipette tip is repeatedly held in or near the small clear tube, consistent with pipette mixing after additions. The same tip remains attached.",
+      "objects": [
+        "small clear tube",
+        "red-banded pipette",
+        "pipette tip"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 4,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "tip_reuse",
+          "message": "Possible tip reuse: dense tip audit found no tip change between reagent additions. The three reagent-addition episodes into the held EP tube are visible with the same red/white pipette and the same long clear tip. Between addition 1 and 2 the pipette goes to the purple rack/source around 17.5\u201318.5 s, but the tip remains attached and there is no visible ejection or fresh mounting. Between addition 2 and 3 the same tip remains visible while the pipette again visits the source area around 32.5\u201334 s. No tip-change event is visible between the three additions; the only clear fresh-tip event occurs later, around 50.5\u201351 s, after these additions, when a different pipette is picked up/pressed into the blue tip box. Observed: fresh_tip_attached at 50.5s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        41,
+        44,
+        45,
+        46,
+        47
+      ],
+      "actionLabel": "mix",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_10-model-8",
+      "clipId": "DJI_10",
+      "start": 48,
+      "end": 50,
+      "action": "Set down red pipette and mount fresh tip on white pipette",
+      "description": "The red-banded pipette is lowered/set aside. The right hand then picks up a white pipette and presses it into the blue tip rack, visibly mounting a new tip.",
+      "objects": [
+        "red-banded pipette",
+        "white pipette",
+        "blue tip rack",
+        "fresh pipette tip"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        48,
+        49,
+        50
+      ],
+      "actionLabel": "attach_tip",
+      "tipState": "fresh_tip_attached"
+    },
+    {
+      "id": "DJI_10-model-9",
+      "clipId": "DJI_10",
+      "start": 51,
+      "end": 56,
+      "action": "Aspirate with fresh white pipette",
+      "description": "The white pipette with the newly attached tip is placed into a left-side container/source, then moved back toward the central work area. The liquid/source identity is not readable.",
+      "objects": [
+        "white pipette",
+        "fresh tip",
+        "left-side container/source",
+        "small tube area"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 6,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "unknown_sample",
+          "message": "The container/source accessed by the white pipette at 51-52s is not readable, so provenance of material subsequently handled is uncertain.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        51,
+        52,
+        53,
+        54,
+        56
+      ],
+      "actionLabel": "aspirate",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_10-model-10",
+      "clipId": "DJI_10",
+      "start": 57,
+      "end": 63,
+      "action": "Pipette from small tube with white pipette",
+      "description": "The left hand holds the small clear tube while the white pipette tip is inserted. The motion is consistent with aspirating or pipetting the prepared mixture from the tube before delivery.",
+      "objects": [
+        "white pipette",
+        "pipette tip",
+        "small clear tube"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 6,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [
+        {
+          "type": "unknown_sample",
+          "message": "The small tube contents are presumed to be the prepared mixture, but the tube identity is not readable at 57-63s.",
+          "status": "needs_review"
+        }
+      ],
+      "evidenceFrames": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "actionLabel": "aspirate",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_10-model-11",
+      "clipId": "DJI_10",
+      "start": 64,
+      "end": 70,
+      "action": "Position open culture dish",
+      "description": "The left hand slides and positions an open culture dish with pink medium while the white pipette is held nearby. The dish is readied for addition.",
+      "objects": [
+        "open culture dish",
+        "white pipette",
+        "pipette tip"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 6,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        64,
+        65,
+        66,
+        67,
+        70
+      ],
+      "actionLabel": "handle_dish",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_10-model-12",
+      "clipId": "DJI_10",
+      "start": 71,
+      "end": 76,
+      "action": "Deliver liquid dropwise into dish",
+      "description": "The white pipette tip is held over the open culture dish and liquid is dispensed into the dish. This matches the visible delivery of the prepared material to the cell culture dish.",
+      "objects": [
+        "white pipette",
+        "pipette tip",
+        "open culture dish"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 6,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "actionLabel": "dispense",
+      "tipState": "same_tip_continued"
+    },
+    {
+      "id": "DJI_10-model-13",
+      "clipId": "DJI_10",
+      "start": 77,
+      "end": 78,
+      "action": "Set down pipette after delivery",
+      "description": "The pipette is moved away from the dish and lowered toward the bench area. A tip ejection is not clearly visible.",
+      "objects": [
+        "white pipette",
+        "pipette tip",
+        "bench area"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        77,
+        78
+      ],
+      "actionLabel": "other",
+      "tipState": "unclear"
+    },
+    {
+      "id": "DJI_10-model-14",
+      "clipId": "DJI_10",
+      "start": 79,
+      "end": 91,
+      "action": "Rock and handle culture dish",
+      "description": "The operator grasps the culture dish and gently slides/rocks it back and forth on the hood surface. This appears to mix the added liquid across the dish.",
+      "objects": [
+        "culture dish",
+        "pink medium"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": 7,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        79,
+        80,
+        82,
+        84,
+        86,
+        88,
+        90,
+        91
+      ],
+      "actionLabel": "handle_dish",
+      "tipState": "no_tip"
+    },
+    {
+      "id": "DJI_10-model-15",
+      "clipId": "DJI_10",
+      "start": 92,
+      "end": 94,
+      "action": "End of manipulation / view obscured",
+      "description": "The operator's gloved arm moves across the frame and partially obscures the hood. No additional clear liquid handling action is visible.",
+      "objects": [
+        "gloved hand",
+        "hood workspace"
+      ],
+      "sourceSampleId": null,
+      "destinationSampleId": null,
+      "volumeUl": null,
+      "protocolStep": null,
+      "verification": "pending",
+      "origin": "model",
+      "flags": [],
+      "evidenceFrames": [
+        92,
+        93,
+        94
+      ],
+      "actionLabel": "other",
+      "tipState": "no_tip"
+    }
+  ],
+  "model": "gpt-5.5",
+  "generatedAt": "2026-10-17T12:28:50.137Z",
+  "frameTimes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94
+  ],
+  "source": "model",
+  "analysisMethod": "OpenAI Responses API \u00b7 95 frames @ 1 fps segmentation + 2 fps tip audit \u00b7 structured output",
+  "limitations": "Model summary: The recording shows preparation of a small clear tube with multiple pipetting actions using a red-banded pipette, then a switch to a white pipette with a visibly mounted fresh tip, followed by pipetting into/near the small tube and dropwise delivery to an open culture dish. The dish is then handled and gently rocked/slid. Reagent and tube identities are not readable. No visible tip ejection/new tip attachment occurs between several apparent red-pipette reagent additions, so possible tip reuse should be reviewed. Frames are sampled every 1s, so brief actions can be missed. Dataset error labels were not provided to the model.",
+  "videoSha256": "0eb61cd7e2cd2e948af5dbd26756d03e2ac16e65814b498d0cba7d858f75aafa",
+  "promptVersion": "lablens-vision-v3",
+  "tipAudit": {
+    "tipEvents": [
+      {
+        "t": 50.5,
+        "kind": "fresh_tip_attached",
+        "evidence": "After the red/white pipette is set down at the lower right around 49\u201350 s, the operator picks up/swaps to a different white/black pipette and presses/positions it into the blue tip box; by 51 s this pipette clearly has a long tip attached."
+      }
+    ],
+    "additions": [
+      {
+        "start": 6,
+        "end": 16.5
+      },
+      {
+        "start": 22,
+        "end": 31
+      },
+      {
+        "start": 37,
+        "end": 47
+      }
+    ],
+    "verdict": "tip_reused",
+    "rationale": "The three reagent-addition episodes into the held EP tube are visible with the same red/white pipette and the same long clear tip. Between addition 1 and 2 the pipette goes to the purple rack/source around 17.5\u201318.5 s, but the tip remains attached and there is no visible ejection or fresh mounting. Between addition 2 and 3 the same tip remains visible while the pipette again visits the source area around 32.5\u201334 s. No tip-change event is visible between the three additions; the only clear fresh-tip event occurs later, around 50.5\u201351 s, after these additions, when a different pipette is picked up/pressed into the blue tip box.",
+    "windowEnd": 53,
+    "fps": 2
+  }
+}

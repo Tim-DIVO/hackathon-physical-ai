@@ -1,0 +1,105 @@
+{
+ "clip_id": "pmd_incorrect_wrong_tip_1000ul_tip_on_10ul_pipette_04",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 19,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3,
+  6.8,
+  7.3,
+  7.8,
+  8.3,
+  8.8,
+  9.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 6169,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 601,
+  "output_tokens_details": {
+   "reasoning_tokens": 153
+  },
+  "total_tokens": 6770
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 2.3,
+    "end": 2.8,
+    "description": "Pipette with tip already attached moves into view toward the blue tube rack on the right."
+   },
+   {
+    "start": 2.8,
+    "end": 3.3,
+    "description": "Tip is placed into/at a tube or well in the blue rack; plunger operation not visible, likely aspirate or dispense."
+   },
+   {
+    "start": 3.3,
+    "end": 3.8,
+    "description": "Tip is withdrawn and pipette moves out of view."
+   },
+   {
+    "start": 5.8,
+    "end": 6.3,
+    "description": "Pipette returns with the same visible tip toward the blue rack."
+   },
+   {
+    "start": 6.3,
+    "end": 6.8,
+    "description": "Tip is placed into/at a tube or well in the blue rack again; plunger operation not visible, likely aspirate or dispense."
+   },
+   {
+    "start": 6.8,
+    "end": 7.3,
+    "description": "Tip is withdrawn and pipette moves out of view."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     5.8,
+     6.3,
+     6.8
+    ],
+    "evidence": "The same tip appears to be used for a second operation in the blue rack, but the frames do not show whether it is the same or a different sample/reagent, or whether reuse is inappropriate."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact between the tip and bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip drop, ejection, or unexpected release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [
+     2.3,
+     2.8,
+     5.8
+    ],
+    "evidence": "A tip is attached and appears seated on the pipette; no visible wrong-size or loose fit."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip used twice at the blue rack. No clear technique error is visibly demonstrated; possible tip reuse across different contents cannot be determined from the frames."
+ }
+}

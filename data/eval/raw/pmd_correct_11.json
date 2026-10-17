@@ -1,0 +1,105 @@
+{
+ "clip_id": "pmd_correct_11",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3,
+  6.8,
+  7.3,
+  7.8,
+  8.3,
+  8.8,
+  9.3,
+  9.8,
+  10.3,
+  10.8,
+  11.3,
+  11.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7644,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 487,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8131
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 2.3,
+    "description": "Pipette with tip positioned into/over wells of a yellow microtube/tip rack area; appears to aspirate or dispense from a well, but plunger action/liquid not clearly visible."
+   },
+   {
+    "start": 2.3,
+    "end": 3.3,
+    "description": "Pipette withdrawn and moved from rack/well area toward a purple waste container."
+   },
+   {
+    "start": 3.3,
+    "end": 8.3,
+    "description": "Tip held inside/over purple waste container; several pauses/manipulations, likely dispensing or preparing to eject, but liquid/plunger details unclear."
+   },
+   {
+    "start": 8.3,
+    "end": 9.3,
+    "description": "Tip lifted near the purple waste container rim and moved around the container opening."
+   },
+   {
+    "start": 9.3,
+    "end": 10.8,
+    "description": "Tip inserted/held inside purple waste container; likely disposal-related movement, but tip remains visibly attached."
+   },
+   {
+    "start": 10.8,
+    "end": 11.8,
+    "description": "Pipette withdrawn from purple container and moved back toward the rack/well area with the same visible tip still attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "present",
+    "evidence_timestamps": [
+     11.3,
+     11.8
+    ],
+    "evidence": "The same tip that was placed into/over the purple waste container is still attached and is moved back toward the rack/well area for further use."
+   },
+   "surface": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "The tip is near/inside a purple container, but it is not clearly visible touching a non-sterile surface such as the bench, glove, or tube exterior before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible dropped, ejected, or unexpectedly released tip; the tip remains attached throughout the clip."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip appears seated on the pipette and no wrong-size or poorly fitted tip is visible."
+   }
+  },
+  "overall_summary": "The clip shows pipetting at a rack/well area, movement to a purple waste container, and then return toward the rack with the same tip still attached. Visible evidence supports a reuse/cross-contamination concern; no tip release or installation problem is visible."
+ }
+}

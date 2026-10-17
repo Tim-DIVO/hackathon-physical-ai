@@ -1,0 +1,102 @@
+{
+ "clip_id": "pmd_incorrect_wrong_tip_20ul_tip_on_200ul_pipette_01",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.9,
+  1.5,
+  2,
+  2.6,
+  3.2,
+  3.8,
+  4.4,
+  4.9,
+  5.5,
+  6.1,
+  6.7,
+  7.3,
+  7.8,
+  8.4,
+  9,
+  9.6,
+  10.2,
+  10.7,
+  11.3,
+  11.9,
+  12.5,
+  13.1,
+  13.6
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7640,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 428,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8068
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 0.9,
+    "description": "Bench and pipette rack visible; no pipetting action yet."
+   },
+   {
+    "start": 0.9,
+    "end": 2.6,
+    "description": "Gloved hand removes/holds a pipette that already has a tip attached."
+   },
+   {
+    "start": 3.2,
+    "end": 7.3,
+    "description": "Pipette tip is inserted into wells of a yellow tip/sample rack; appears to aspirate or dispense in wells."
+   },
+   {
+    "start": 7.8,
+    "end": 8.4,
+    "description": "Pipette is lifted from the yellow rack and moved away."
+   },
+   {
+    "start": 8.4,
+    "end": 11.3,
+    "description": "Pipette tip hovers/moves over bench area near a white plate and yellow rack; no clear contact or dispense visible."
+   },
+   {
+    "start": 11.9,
+    "end": 13.6,
+    "description": "Pipette is moved back to the rack/holder area and returned/positioned among hanging pipettes; tip still attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "The same tip is used in/over wells, but the frames do not show whether different samples/reagents are involved or whether it should have been discarded."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact between the tip and bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip remains attached throughout; no unexpected drop/ejection visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears seated on the pipette and compatible in size; no visibly incorrect fit."
+   }
+  },
+  "overall_summary": "A pipette with an attached tip is used in a yellow rack/plate and then moved away and returned to the holder. No clear technique error is visibly present; reuse is unclear because sample identities and intended tip changes are not visible."
+ }
+}

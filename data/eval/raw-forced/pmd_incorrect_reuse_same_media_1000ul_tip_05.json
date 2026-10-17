@@ -1,0 +1,93 @@
+{
+ "clip_id": "pmd_incorrect_reuse_same_media_1000ul_tip_05",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.4,
+  1.1,
+  1.8,
+  2.5,
+  3.2,
+  3.9,
+  4.6,
+  5.3,
+  6,
+  6.7,
+  7.4,
+  8.1,
+  8.8,
+  9.5,
+  10.2,
+  10.9,
+  11.6,
+  12.3,
+  13,
+  13.7,
+  14.4,
+  15.1,
+  15.8,
+  16.5
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7698,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 613,
+  "output_tokens_details": {
+   "reasoning_tokens": 278
+  },
+  "total_tokens": 8311
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.4,
+    "end": 1.1,
+    "description": "Pipette with tip already attached moves into view toward tube rack."
+   },
+   {
+    "start": 1.1,
+    "end": 3.2,
+    "description": "Tip is inserted into a tube in the blue rack; likely aspirates liquid."
+   },
+   {
+    "start": 3.2,
+    "end": 4.6,
+    "description": "Pipette is withdrawn and moved from tube rack toward a multiwell plate/reservoir area."
+   },
+   {
+    "start": 4.6,
+    "end": 16.5,
+    "description": "Tip is positioned over/into wells and liquid is dispensed across several positions; no tip ejection visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Same tip is used from a source tube to dispense into wells, but no visible evidence of reuse on a different sample/reagent or after discard was required."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip does not visibly touch bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip remains attached; no unexpected drop/ejection is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears seated and appropriate on the pipette; no visible misfit."
+   }
+  },
+  "overall_summary": "Visible technique appears consistent with aspirating from a tube and dispensing into wells using an attached tip; no clear pipetting error is shown."
+ }
+}

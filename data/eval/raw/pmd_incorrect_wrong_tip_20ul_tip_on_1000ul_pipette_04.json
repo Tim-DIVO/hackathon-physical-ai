@@ -1,0 +1,101 @@
+{
+ "clip_id": "pmd_incorrect_wrong_tip_20ul_tip_on_1000ul_pipette_04",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 19,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3,
+  6.8,
+  7.3,
+  7.8,
+  8.3,
+  8.8,
+  9.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 6169,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 449,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 6618
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 1.3,
+    "end": 2.3,
+    "description": "User grasps a hanging pipette that already has a tip attached and removes it from the rack."
+   },
+   {
+    "start": 2.3,
+    "end": 3.3,
+    "description": "Moves pipette from rack toward bench area with tube racks/box."
+   },
+   {
+    "start": 3.3,
+    "end": 6.8,
+    "description": "Places/holds pipette tip into a yellow microtube/tip rack well area; appears to perform a pipetting step, but aspiration vs dispense is not visually clear."
+   },
+   {
+    "start": 6.8,
+    "end": 7.8,
+    "description": "Lifts pipette away and moves it back toward the hanging pipette rack."
+   },
+   {
+    "start": 7.8,
+    "end": 8.8,
+    "description": "Returns pipette to the rack with the same tip still attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "The tip is used in one visible rack/well area and then returned to the rack; no second different sample/reagent use is visible."
+   },
+   "surface": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     3.3,
+     3.8,
+     4.3,
+     4.8,
+     5.3,
+     5.8,
+     6.3,
+     6.8
+    ],
+    "evidence": "The tip is inserted/held at a yellow rack/well area, but the frames do not clearly show whether it touches a non-sterile surface versus entering a tube/well."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible dropping, unexpected ejection, or early release of the tip."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears attached and seated on the pipette; no visible wrong-size or loose fit issue."
+   }
+  },
+  "overall_summary": "A pipette with an attached tip is taken from the rack, used at a yellow rack/well area, and returned to the rack with the tip still attached. No definite error is visible; the exact pipetting step and whether the tip contacted a non-sterile surface are unclear."
+ }
+}

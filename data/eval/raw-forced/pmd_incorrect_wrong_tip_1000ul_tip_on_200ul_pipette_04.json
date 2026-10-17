@@ -1,0 +1,118 @@
+{
+ "clip_id": "pmd_incorrect_wrong_tip_1000ul_tip_on_200ul_pipette_04",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.4,
+  2.9,
+  3.4,
+  3.9,
+  4.4,
+  5,
+  5.5,
+  6,
+  6.5,
+  7.1,
+  7.6,
+  8.1,
+  8.6,
+  9.2,
+  9.7,
+  10.2,
+  10.7,
+  11.2,
+  11.8,
+  12.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7698,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 631,
+  "output_tokens_details": {
+   "reasoning_tokens": 103
+  },
+  "total_tokens": 8329
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 2.4,
+    "description": "Hand grasps/removes a pipette from the rack; a tip is already attached."
+   },
+   {
+    "start": 2.4,
+    "end": 3.4,
+    "description": "Moves pipette down toward a small clear container/well area beside the blue rack and positions tip inside/at the opening."
+   },
+   {
+    "start": 3.4,
+    "end": 4.4,
+    "description": "Holds tip in the same container/well area, likely aspirating or dispensing; exact plunger action not clearly visible."
+   },
+   {
+    "start": 4.4,
+    "end": 5.5,
+    "description": "Withdraws pipette and moves it back upward toward the rack."
+   },
+   {
+    "start": 5.5,
+    "end": 7.1,
+    "description": "Returns/parks pipette near the rack area, still with tip attached."
+   },
+   {
+    "start": 7.1,
+    "end": 8.6,
+    "description": "Removes/lowers the same pipette again and moves back toward the same container/well area."
+   },
+   {
+    "start": 8.6,
+    "end": 10.2,
+    "description": "Places tip into/at the same clear container/well area beside the blue rack, likely aspirating or dispensing; exact liquid movement unclear."
+   },
+   {
+    "start": 10.2,
+    "end": 11.8,
+    "description": "Withdraws pipette and moves it back upward toward the rack."
+   },
+   {
+    "start": 11.8,
+    "end": 12.3,
+    "description": "Pipette is brought back to/near the rack; no tip ejection visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The same tip appears to be used only at the same visible container/well area; no visibly different sample/reagent is contacted."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is not seen touching the bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip drop, ejection, or unexpected release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The attached tip appears straight and seated on the pipette; no wrong-size or loose fitting is visible."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip being moved from the rack to the same visible container/well area twice and returned. No visible technique error is more likely than not."
+ }
+}

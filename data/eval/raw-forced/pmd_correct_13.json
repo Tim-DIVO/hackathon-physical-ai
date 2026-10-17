@@ -1,0 +1,123 @@
+{
+ "clip_id": "pmd_correct_13",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.4,
+  1.2,
+  1.9,
+  2.7,
+  3.5,
+  4.2,
+  5,
+  5.8,
+  6.6,
+  7.3,
+  8.1,
+  8.9,
+  9.6,
+  10.4,
+  11.2,
+  12,
+  12.7,
+  13.5,
+  14.3,
+  15,
+  15.8,
+  16.6,
+  17.3,
+  18.1
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7696,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 570,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8266
+ },
+ "output": {
+  "verdict": "error",
+  "actions": [
+   {
+    "start": 0.4,
+    "end": 3.5,
+    "description": "Bench with tip racks/containers visible; no pipette action."
+   },
+   {
+    "start": 4.2,
+    "end": 5.8,
+    "description": "Pipette with tip is positioned into/over yellow tip rack wells; appears to press/seat or insert tip near rack."
+   },
+   {
+    "start": 6.6,
+    "end": 7.3,
+    "description": "Pipette is lifted away from rack with a tip attached."
+   },
+   {
+    "start": 8.1,
+    "end": 14.3,
+    "description": "Pipette tip is held suspended over the bench/front area; no clear aspirate or dispense into a container visible."
+   },
+   {
+    "start": 15,
+    "end": 15.8,
+    "description": "Pipette moves to purple waste cup; tip is inserted/held over cup."
+   },
+   {
+    "start": 16.6,
+    "end": 17.3,
+    "description": "Pipette is withdrawn from waste cup with no tip visible, consistent with tip ejection/disposal."
+   },
+   {
+    "start": 18.1,
+    "end": 18.1,
+    "description": "Pipette moves back toward rack area without visible tip."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible use of the same tip on different samples/reagents; no aspirate/dispense between different media is shown."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is visible suspended and placed in rack/waste cup, but no clear contact with bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears intentionally ejected into the purple waste cup around 15.0-16.6s, not unexpectedly or too early."
+   },
+   "install": {
+    "status": "present",
+    "evidence_timestamps": [
+     4.2,
+     5,
+     5.8,
+     6.6,
+     7.3,
+     8.1,
+     8.9,
+     9.6,
+     10.4,
+     11.2,
+     12,
+     12.7,
+     13.5,
+     14.3
+    ],
+    "evidence": "A small/white tip appears fitted onto a large-volume pipette labeled/ranged around 200 µL, while the nearby rack is labeled 200 µL; the tip looks unusually narrow/short and poorly matched for the pipette, suggesting wrong size or incorrect seating."
+   }
+  },
+  "overall_summary": "The visible sequence mainly shows attaching or handling a tip, hovering, then ejecting it into waste. No cross-contamination or surface touch is clear, but the attached tip appears mismatched or improperly seated, so best-guess verdict is error."
+ }
+}

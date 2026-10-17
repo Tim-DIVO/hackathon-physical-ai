@@ -1,0 +1,81 @@
+{
+ "clip_id": "pmd_incorrect_surface_contamination_20ul_tip_05",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 7,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 2687,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 516,
+  "output_tokens_details": {
+   "reasoning_tokens": 151
+  },
+  "total_tokens": 3203
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 0.8,
+    "description": "Pipette with tip already attached moves toward yellow liquid reservoir/tube rack area."
+   },
+   {
+    "start": 0.8,
+    "end": 1.3,
+    "description": "Tip is placed into/near yellow liquid reservoir; likely aspirating or dispensing liquid."
+   },
+   {
+    "start": 1.3,
+    "end": 2.3,
+    "description": "Pipette is withdrawn and moved across bench toward the center/left area."
+   },
+   {
+    "start": 2.3,
+    "end": 2.8,
+    "description": "Pipette hovers over a plate/rack area; no clear dispensing or contact visible."
+   },
+   {
+    "start": 2.8,
+    "end": 3.3,
+    "description": "Pipette moves back toward the yellow reservoir area with the same tip attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Same tip is used while moving between reservoir/plate areas, but no visibly different sample or inappropriate reuse is shown."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip remains in the air or in/near liquid; no visible contact with bench, glove, tube exterior, or other non-sterile surface."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip stays attached throughout; no premature ejection or dropping visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears properly seated and appropriate for the pipette."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip moving to/from a yellow liquid reservoir and nearby labware. No visible technique error is more likely than not."
+ }
+}

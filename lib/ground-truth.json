@@ -1,0 +1,100 @@
+{
+ "DJI_09": {
+  "hasError": true,
+  "error": "Added reagent 1/2/3 without changing the pipette tip",
+  "operation": "CRISPR Delivery (w/ issue)",
+  "steps": [
+   {
+    "id": 1,
+    "start": 17,
+    "end": 35,
+    "demonstrated": true
+   },
+   {
+    "id": 2,
+    "start": 36,
+    "end": 49,
+    "demonstrated": true
+   },
+   {
+    "id": 3,
+    "start": 50,
+    "end": 64,
+    "demonstrated": true
+   },
+   {
+    "id": 4,
+    "start": 65,
+    "end": 79,
+    "demonstrated": true
+   },
+   {
+    "id": 5,
+    "start": null,
+    "end": null,
+    "demonstrated": false
+   },
+   {
+    "id": 6,
+    "start": 80,
+    "end": 89,
+    "demonstrated": true
+   },
+   {
+    "id": 7,
+    "start": 90,
+    "end": 100,
+    "demonstrated": true
+   }
+  ]
+ },
+ "DJI_10": {
+  "hasError": false,
+  "error": null,
+  "operation": "CRISPR Delivery (correct)",
+  "steps": [
+   {
+    "id": 1,
+    "start": 0,
+    "end": 20,
+    "demonstrated": true
+   },
+   {
+    "id": 2,
+    "start": 20,
+    "end": 34,
+    "demonstrated": true
+   },
+   {
+    "id": 3,
+    "start": 34,
+    "end": 53,
+    "demonstrated": true
+   },
+   {
+    "id": 4,
+    "start": 53,
+    "end": 70,
+    "demonstrated": true
+   },
+   {
+    "id": 5,
+    "start": null,
+    "end": null,
+    "demonstrated": false
+   },
+   {
+    "id": 6,
+    "start": 70,
+    "end": 80,
+    "demonstrated": true
+   },
+   {
+    "id": 7,
+    "start": 80,
+    "end": 95,
+    "demonstrated": true
+   }
+  ]
+ }
+}

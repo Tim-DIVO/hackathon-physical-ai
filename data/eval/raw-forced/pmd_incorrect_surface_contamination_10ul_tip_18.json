@@ -1,0 +1,73 @@
+{
+ "clip_id": "pmd_incorrect_surface_contamination_10ul_tip_18",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 9,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 3277,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 332,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 3609
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.8,
+    "description": "Pipette with attached tip moves toward/into the yellow reagent reservoir/box area; likely aspirating or positioning, but plunger action/liquid uptake not visible."
+   },
+   {
+    "start": 2.3,
+    "end": 3.8,
+    "description": "Pipette moves from the yellow reservoir area toward the clear plate/tube-strip area in the center and hovers over wells/tubes; possible dispense, but liquid release is not clearly visible."
+   },
+   {
+    "start": 4.3,
+    "end": 4.3,
+    "description": "Pipette remains above the work area with the same tip attached; no ejection visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "Same tip appears to move between a yellow reservoir area and central wells/tubes, but the media/sample identities and whether liquid was transferred are not clear from the frames."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the tip with bench, glove, tube exterior, or other non-sterile surface."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip stays attached throughout; no drop/ejection or unexpected release visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears seated and appropriately sized; no visible poor fit or mismatch."
+   }
+  },
+  "overall_summary": "No visible technique error is more likely than not; key liquid handling details are partly unclear."
+ }
+}

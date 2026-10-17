@@ -1,0 +1,129 @@
+{
+ "clip_id": "pmd_incorrect_reuse_same_media_1000ul_tip_05",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.4,
+  1.1,
+  1.8,
+  2.5,
+  3.2,
+  3.9,
+  4.6,
+  5.3,
+  6,
+  6.7,
+  7.4,
+  8.1,
+  8.8,
+  9.5,
+  10.2,
+  10.9,
+  11.6,
+  12.3,
+  13,
+  13.7,
+  14.4,
+  15.1,
+  15.8,
+  16.5
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7640,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 554,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8194
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.4,
+    "end": 0.4,
+    "description": "Bench setup visible; pipette not yet in use."
+   },
+   {
+    "start": 1.1,
+    "end": 3.2,
+    "description": "Pipette tip is placed into/held over a tube in the blue rack; likely aspirating from a tube."
+   },
+   {
+    "start": 3.9,
+    "end": 4.6,
+    "description": "Pipette moved from blue tube rack toward the white multiwell plate."
+   },
+   {
+    "start": 5.3,
+    "end": 6.7,
+    "description": "Tip positioned in/over a well of the white plate; likely dispensing."
+   },
+   {
+    "start": 7.4,
+    "end": 9.5,
+    "description": "Pipette lifted and moved across/over other wells in the white plate with same tip."
+   },
+   {
+    "start": 10.2,
+    "end": 10.9,
+    "description": "Tip returned to/near the blue tube rack area."
+   },
+   {
+    "start": 11.6,
+    "end": 14.4,
+    "description": "Pipette moved back toward and over the white plate with same visible tip."
+   },
+   {
+    "start": 15.1,
+    "end": 16.5,
+    "description": "Tip positioned again in/over wells of the white plate; likely dispensing or mixing."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     7.4,
+     8.1,
+     8.8,
+     9.5,
+     11.6,
+     12.3,
+     13,
+     13.7,
+     14.4,
+     15.1,
+     15.8,
+     16.5
+    ],
+    "evidence": "The same visible tip is used while moving between a tube rack and wells, but the frames do not show whether these are different samples/reagents or whether the tip should have been discarded."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the tip with bench, glove, hand, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip ejection, dropping, or unexpected release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [
+     3.9,
+     4.6,
+     5.3
+    ],
+    "evidence": "Tip appears attached and seated normally on the pipette; no visible wrong-size or loose fit."
+   }
+  },
+  "overall_summary": "The clip shows a pipette used between a tube rack and a white multiwell plate with the same attached tip visible. No clear surface contact, tip release, or installation problem is visible. Reuse/cross-contamination cannot be confirmed from the frames because the identities of the source/destination wells or reagents are not visible."
+ }
+}

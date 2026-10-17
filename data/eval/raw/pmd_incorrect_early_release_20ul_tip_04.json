@@ -1,0 +1,75 @@
+{
+ "clip_id": "pmd_incorrect_early_release_20ul_tip_04",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 7,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 2629,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 488,
+  "output_tokens_details": {
+   "reasoning_tokens": 132
+  },
+  "total_tokens": 3117
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 0.8,
+    "description": "Pipette with tip attached is held over the bench near a yellow tube rack/block."
+   },
+   {
+    "start": 0.8,
+    "end": 1.8,
+    "description": "Pipette is moved to the right side of the bench, hovering above/near racks and containers."
+   },
+   {
+    "start": 1.8,
+    "end": 2.3,
+    "description": "Pipette is held stationary on the right side; no clear aspiration or dispense visible."
+   },
+   {
+    "start": 2.3,
+    "end": 3.3,
+    "description": "Pipette is moved back left toward the yellow rack/block, still with tip attached; no clear contact with liquid or container visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible use of the same tip in different samples/reagents; no aspiration/dispense is clearly shown."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is not visibly touching the bench, glove, tube exterior, or other non-sterile surface."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip remains attached throughout the visible frames; no drop/ejection/release is shown."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "A tip is attached and appears seated on the pipette; no visible wrong-size or poor fit issue."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip being moved around the bench, but no clear aspiration, dispensing, or tip ejection. No visible technique error is evident from the sampled frames."
+ }
+}

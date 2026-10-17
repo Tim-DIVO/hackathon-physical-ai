@@ -1,0 +1,102 @@
+{
+ "clip_id": "pmd_correct_13",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.4,
+  1.2,
+  1.9,
+  2.7,
+  3.5,
+  4.2,
+  5,
+  5.8,
+  6.6,
+  7.3,
+  8.1,
+  8.9,
+  9.6,
+  10.4,
+  11.2,
+  12,
+  12.7,
+  13.5,
+  14.3,
+  15,
+  15.8,
+  16.6,
+  17.3,
+  18.1
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7638,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 424,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8062
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.4,
+    "end": 3.5,
+    "description": "Bench setup visible; no pipette use."
+   },
+   {
+    "start": 4.2,
+    "end": 6.6,
+    "description": "Pipette with attached tip is held over/near yellow tip rack area; no clear liquid transfer visible."
+   },
+   {
+    "start": 7.3,
+    "end": 14.3,
+    "description": "Pipette is moved away from rack and held suspended over the bench/front area; tip remains attached."
+   },
+   {
+    "start": 15,
+    "end": 15.8,
+    "description": "Pipette is moved to the right and tip is inserted into/near a purple waste container."
+   },
+   {
+    "start": 16.6,
+    "end": 17.3,
+    "description": "Pipette is held above/near the purple waste container; tip appears no longer visible, consistent with possible tip ejection/disposal, but ejection moment is not clearly shown."
+   },
+   {
+    "start": 18.1,
+    "end": 18.1,
+    "description": "Pipette is moved back toward the bench/tip rack area."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible aspiration/dispense into different media or reuse of a tip between samples/reagents."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is not visibly touching the bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No unexpected or early tip drop is visible; movement toward the waste container appears consistent with intentional disposal, though the exact ejection moment is not shown."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears attached and aligned on the pipette; no visibly wrong size or poor seating."
+   }
+  },
+  "overall_summary": "A pipette with an attached tip is handled near a tip rack and then moved to a waste container, likely for disposal. No visible technique error is clearly shown."
+ }
+}

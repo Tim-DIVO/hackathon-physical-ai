@@ -1,0 +1,93 @@
+{
+ "clip_id": "pmd_incorrect_wrong_tip_20ul_tip_on_10ul_pipette_05",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 14,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3,
+  6.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 4752,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 404,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 5156
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.3,
+    "description": "Pipettes are hanging on rack; gloved hand reaches for rightmost yellow-coded pipette."
+   },
+   {
+    "start": 1.3,
+    "end": 2.3,
+    "description": "Pipette is removed from rack and moved toward bench/tip area."
+   },
+   {
+    "start": 2.3,
+    "end": 2.8,
+    "description": "Pipette is positioned over a red-lidded tip box; a tip appears to be attached/pressed onto the pipette."
+   },
+   {
+    "start": 2.8,
+    "end": 5.3,
+    "description": "Pipette tip is held in/near the tip box area; no clear aspiration or dispensing from a sample is visible."
+   },
+   {
+    "start": 5.3,
+    "end": 6.3,
+    "description": "Pipette is moved back toward the rack with tip still attached."
+   },
+   {
+    "start": 6.3,
+    "end": 6.8,
+    "description": "Pipette is returned to the rack."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No transfer between different samples/reagents is visible; only tip pickup and return to rack are shown."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is not visibly touching the bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip drop/ejection or unexpected release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The visible tip appears seated on the pipette; no wrong-size or poorly fitted tip is apparent."
+   }
+  },
+  "overall_summary": "The clip shows selecting a pipette, attaching a tip from a tip box, and returning the pipette to the rack. No visible technique error is more likely than not."
+ }
+}

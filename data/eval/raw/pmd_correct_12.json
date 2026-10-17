@@ -1,0 +1,98 @@
+{
+ "clip_id": "pmd_correct_12",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 20,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3,
+  6.8,
+  7.3,
+  7.8,
+  8.3,
+  8.8,
+  9.3,
+  9.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 6464,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 483,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 6947
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.8,
+    "description": "Pipette with tip is held over/near a yellow tip rack area; no clear liquid handling visible."
+   },
+   {
+    "start": 2.3,
+    "end": 2.8,
+    "description": "Pipette is moved from rack/bench area toward the right side near a purple waste cup."
+   },
+   {
+    "start": 3.3,
+    "end": 4.8,
+    "description": "Tip is positioned over the bench area in front of the waste cup; a small orange liquid appears at/inside the tip, suggesting liquid has been aspirated or is present in the tip."
+   },
+   {
+    "start": 5.3,
+    "end": 7.8,
+    "description": "Pipette tip remains over the bench/waste-cup area with visible orange liquid in the tip; no clear dispense into a container is visible."
+   },
+   {
+    "start": 8.3,
+    "end": 9.3,
+    "description": "Pipette tip is inserted into or held inside the purple waste cup, consistent with dispensing/discarding liquid or moving toward waste."
+   },
+   {
+    "start": 9.8,
+    "end": 9.8,
+    "description": "Pipette is withdrawn and moved away from the waste cup."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "Only one tip use is visible, and the source/destination media are not clearly shown; cannot determine reuse across different samples/reagents."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is held near the bench and waste cup, but no clear contact with bench, glove, tube exterior, or other non-sterile surface is visible before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip stays attached to the pipette throughout the visible frames; no unexpected drop or early ejection is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip appears seated on the pipette and remains attached; no visibly wrong size or poor fit is apparent."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip being moved near a rack and then into a purple waste cup, with orange liquid visible in the tip for part of the clip. No definite technique error is visible from the sampled frames."
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "clip_id": "pmd_incorrect_surface_contamination_10ul_tip_18",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 9,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 3219,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 335,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 3554
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 0.8,
+    "description": "Pipette with tip moves toward yellow tip box/area."
+   },
+   {
+    "start": 1.3,
+    "end": 2.3,
+    "description": "Tip is positioned in/near the yellow rack area; possible tip seating or contact with rack, but exact action unclear."
+   },
+   {
+    "start": 2.8,
+    "end": 4.3,
+    "description": "Pipette moves away from rack and hovers over/near a clear multiwell plate; no clear aspirate or dispense visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "No clear aspirate/dispense into different samples or reagents is visible, and prior tip history is not shown."
+   },
+   "surface": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "The tip approaches the yellow rack/box area, but frames do not clearly show contact with a non-sterile surface followed by use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip drop, ejection, or unexpected release is visible."
+   },
+   "install": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     1.3,
+     1.8,
+     2.3
+    ],
+    "evidence": "Tip appears to be positioned into/near the yellow rack area, possibly being fitted or seated, but the seating/fit cannot be clearly judged from the frames."
+   }
+  },
+  "overall_summary": "The clip shows the pipette moving around the tip rack and toward a plate, but no definitive pipetting error is visible in the sampled frames."
+ }
+}

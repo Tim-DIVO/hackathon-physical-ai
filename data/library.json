@@ -1,0 +1,42 @@
+[
+  {
+    "id": "pmd_correct_02",
+    "title": "Pipette technique clip A",
+    "duration": 12.7,
+    "videoUrl": "/videos/lsv/pmd_correct_02.mp4",
+    "sourcePath": "data/eval/clips/pmd_correct_02.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Short pipette-use segment from the LSV PMD split (pipette technique practice)",
+    "referenceLabel": "correct"
+  },
+  {
+    "id": "pmd_correct_06",
+    "title": "Pipette technique clip B",
+    "duration": 14,
+    "videoUrl": "/videos/lsv/pmd_correct_06.mp4",
+    "sourcePath": "data/eval/clips/pmd_correct_06.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Short pipette-use segment from the LSV PMD split (pipette technique practice)",
+    "referenceLabel": "correct"
+  },
+  {
+    "id": "pmd_incorrect_reuse_200ul_tip_12",
+    "title": "Pipette technique clip C",
+    "duration": 8.5,
+    "videoUrl": "/videos/lsv/pmd_incorrect_reuse_200ul_tip_12.mp4",
+    "sourcePath": "data/eval/clips/pmd_incorrect_reuse_200ul_tip_12.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Short pipette-use segment from the LSV PMD split (pipette technique practice)",
+    "referenceLabel": "error: reuse_tip"
+  },
+  {
+    "id": "pmd_incorrect_reuse_same_media_10ul_tip_08",
+    "title": "Pipette technique clip D",
+    "duration": 6.8,
+    "videoUrl": "/videos/lsv/pmd_incorrect_reuse_same_media_10ul_tip_08.mp4",
+    "sourcePath": "data/eval/clips/pmd_incorrect_reuse_same_media_10ul_tip_08.mp4",
+    "viewpoint": "First-person · smart glasses",
+    "protocol": "Short pipette-use segment from the LSV PMD split (pipette technique practice)",
+    "referenceLabel": "error: reuse_same_media"
+  }
+]

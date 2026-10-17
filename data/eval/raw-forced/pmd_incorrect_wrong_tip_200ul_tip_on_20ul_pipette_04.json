@@ -1,0 +1,87 @@
+{
+ "clip_id": "pmd_incorrect_wrong_tip_200ul_tip_on_20ul_pipette_04",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 13,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 4457,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 392,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 4849
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.3,
+    "description": "Hand removes a pipette with an attached tip from the rack/holder and moves it toward the bench."
+   },
+   {
+    "start": 1.3,
+    "end": 2.8,
+    "description": "Pipette tip is inserted into a yellow tip box/open rack area; no liquid container is clearly visible, so aspiration/dispense cannot be confirmed."
+   },
+   {
+    "start": 2.8,
+    "end": 3.3,
+    "description": "Pipette is withdrawn from the rack/box area and moved upward."
+   },
+   {
+    "start": 3.3,
+    "end": 4.8,
+    "description": "Pipette is returned to the rack/holder with the tip still attached."
+   },
+   {
+    "start": 4.8,
+    "end": 6.3,
+    "description": "Pipettes remain hanging; hand reaches back toward the same pipette."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible use of the same tip across different samples/reagents; no clear aspiration or dispense into different media is shown."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is not visibly touching a bench, glove, hand, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip is dropped/ejected unexpectedly; the pipette remains controlled and the tip stays attached."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears seated on the pipette and appropriately sized; no visible poor fit or wrong-size tip."
+   }
+  },
+  "overall_summary": "A pipette with an attached tip is removed from the holder, placed into/near a tip box or rack, then returned to the holder. No clear technique error is visible."
+ }
+}

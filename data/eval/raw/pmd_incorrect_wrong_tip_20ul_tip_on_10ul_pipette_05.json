@@ -1,0 +1,99 @@
+{
+ "clip_id": "pmd_incorrect_wrong_tip_20ul_tip_on_10ul_pipette_05",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 14,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3,
+  6.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 4694,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 457,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 5151
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.3,
+    "description": "Pipettes hanging on rack; gloved hand reaches for rightmost/yellow-top pipette."
+   },
+   {
+    "start": 1.3,
+    "end": 2.3,
+    "description": "Pipette is removed from rack and moved toward the bench/tip box area."
+   },
+   {
+    "start": 2.8,
+    "end": 3.3,
+    "description": "Pipette tip is positioned over/into a red tip box; appears to seat or pick up a tip."
+   },
+   {
+    "start": 3.3,
+    "end": 5.3,
+    "description": "Pipette remains at the red tip box with tip in/near tip positions; no liquid aspiration/dispense visible."
+   },
+   {
+    "start": 5.3,
+    "end": 6.3,
+    "description": "Pipette is lifted away from tip box and moved back toward rack."
+   },
+   {
+    "start": 6.3,
+    "end": 6.8,
+    "description": "Pipette is returned to rack with a long tip/nozzle visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No aspiration/dispense into different media or reuse across samples is visible."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip is not visibly touching a bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip is visibly dropped, ejected, or released unexpectedly."
+   },
+   "install": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     2.8,
+     3.3,
+     3.8,
+     4.3,
+     4.8,
+     5.3
+    ],
+    "evidence": "The pipette is placed into a red tip box and later has a long tip/nozzle visible, but the frames do not clearly show whether the tip is correctly seated or whether it is the wrong size."
+   }
+  },
+  "overall_summary": "The visible clip shows a pipette being taken from the rack, positioned in a tip box, then returned to the rack. No visible aspiration/dispense or clear technique error is shown; tip installation quality is not clear from the frames."
+ }
+}

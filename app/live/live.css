@@ -1,0 +1,301 @@
+/* Smart-glasses HUD: the wearer's view fills the screen; annotations float on glass. */
+.hud {
+  --glass: rgba(14, 22, 19, 0.5);
+  --glass-strong: rgba(14, 22, 19, 0.72);
+  --edge: rgba(255, 255, 255, 0.14);
+  --text: #eef6f2;
+  --dim: #a9c2b8;
+  --accent: #6ee7b7;
+  --warn: #f6b04a;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #050807;
+  color: var(--text);
+  font-size: 13px;
+}
+.hud-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.hud-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 40% 50%, transparent 55%, rgba(0, 0, 0, 0.55) 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.45), transparent 16%, transparent 78%, rgba(0, 0, 0, 0.55));
+}
+.hud-corners i {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border: 2px solid rgba(110, 231, 183, 0.55);
+  pointer-events: none;
+}
+.hud-corners i:nth-child(1) { top: 64px; left: 18px; border-right: 0; border-bottom: 0; border-radius: 10px 0 0 0; }
+.hud-corners i:nth-child(2) { top: 64px; right: 418px; border-left: 0; border-bottom: 0; border-radius: 0 10px 0 0; }
+.hud-corners i:nth-child(3) { bottom: 92px; left: 18px; border-right: 0; border-top: 0; border-radius: 0 0 0 10px; }
+.hud-corners i:nth-child(4) { bottom: 92px; right: 418px; border-left: 0; border-top: 0; border-radius: 0 0 10px 0; }
+
+.hud-top {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.hud-id,
+.hud-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  border: 1px solid var(--edge);
+  border-radius: 99px;
+  background: var(--glass);
+  backdrop-filter: blur(14px) saturate(1.3);
+}
+.hud-id b { letter-spacing: -0.02em; }
+.hud-id span { color: var(--dim); font-size: 12px; }
+.hud-time { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+.hud-rec {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #6b7f77;
+}
+.hud-rec.live { background: #ff4d4d; box-shadow: 0 0 10px #ff4d4d; animation: hud-blink 1.2s infinite; }
+.hud-rec.replay { background: var(--accent); }
+@keyframes hud-blink { 50% { opacity: 0.35; } }
+.hud-controls { padding: 5px 6px; }
+.hud-controls select,
+.hud-controls button,
+.hud-exit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.hud-controls select { max-width: 280px; }
+.hud-controls select option { color: #111; }
+.hud-controls button:hover,
+.hud-exit:hover { background: rgba(255, 255, 255, 0.16); }
+.hud-controls .hud-go { background: var(--accent); color: #062a1d; font-weight: 650; }
+.hud-controls button:disabled { opacity: 0.4; }
+
+.hud-observation {
+  position: absolute;
+  left: 34px;
+  top: 92px;
+  display: grid;
+  gap: 2px;
+  max-width: 380px;
+  padding: 10px 14px 10px 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 4px 14px 14px 4px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  animation: hud-in 0.35s ease;
+}
+.hud-observation small { color: var(--accent); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; }
+.hud-observation strong { font-size: 17px; letter-spacing: -0.01em; }
+.hud-observation em { color: var(--dim); font-style: normal; font-size: 12.5px; }
+.hud-alert {
+  position: absolute;
+  left: 50%;
+  top: 92px;
+  transform: translateX(calc(-50% - 200px));
+  display: grid;
+  gap: 6px;
+  width: min(460px, 40vw);
+  padding: 14px 16px;
+  border: 1px solid rgba(246, 176, 74, 0.6);
+  border-radius: 16px;
+  background: rgba(60, 36, 4, 0.72);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 0 4px rgba(246, 176, 74, 0.12), 0 12px 40px rgba(0, 0, 0, 0.4);
+  animation: hud-in 0.35s ease;
+}
+.hud-alert b { color: var(--warn); font-size: 15px; }
+.hud-alert span { color: #fbe8c8; line-height: 1.45; }
+.hud-alert div { display: flex; gap: 8px; margin-top: 2px; }
+.hud-alert button {
+  padding: 5px 12px;
+  border: 1px solid rgba(246, 176, 74, 0.5);
+  border-radius: 99px;
+  background: transparent;
+  color: #fbe8c8;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.hud-alert button:last-child { background: var(--warn); color: #2a1803; border-color: transparent; font-weight: 600; }
+.hud-error {
+  position: absolute;
+  left: 34px;
+  bottom: 120px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(120, 20, 20, 0.7);
+}
+@keyframes hud-in { from { opacity: 0; transform: translateY(-6px); } }
+.hud-alert { animation-name: hud-in-alert; }
+@keyframes hud-in-alert { from { opacity: 0; } }
+
+.hud-panel {
+  position: absolute;
+  top: 64px;
+  right: 18px;
+  bottom: 18px;
+  width: 384px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  border-radius: 20px;
+  background: var(--glass);
+  backdrop-filter: blur(18px) saturate(1.3);
+}
+.hud-panel section { flex-shrink: 0; }
+.hud-panel h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 7px;
+  color: var(--dim);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.hud-panel h4 span { padding: 0 6px; border-radius: 99px; background: rgba(255, 255, 255, 0.1); color: var(--text); }
+.hud-panel h4 button {
+  margin-left: auto;
+  padding: 2px 9px;
+  border: 1px solid var(--edge);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+.hud-steps { display: grid; gap: 3px; margin: 0; padding: 0; list-style: none; }
+.hud-steps li { display: flex; gap: 8px; align-items: center; color: rgba(238, 246, 242, 0.5); font-size: 12px; }
+.hud-steps li span {
+  display: grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 10px;
+}
+.hud-steps li.past { color: rgba(238, 246, 242, 0.75); }
+.hud-steps li.past span { border-color: var(--accent); color: var(--accent); }
+.hud-steps li.now { color: var(--text); font-weight: 600; }
+.hud-steps li.now span { background: var(--accent); border-color: var(--accent); color: #062a1d; }
+.hud-feed-wrap { flex: 1 1 auto !important; min-height: 120px; display: flex; flex-direction: column; }
+.hud-feed { flex: 1; min-height: 0; overflow-y: auto; display: grid; gap: 6px; align-content: start; padding-right: 4px; }
+.hud-empty { margin: 4px 0; color: var(--dim); line-height: 1.5; }
+.hud-note {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.05);
+  animation: hud-in 0.4s ease;
+}
+.hud-note.operator { border-color: rgba(125, 180, 255, 0.35); background: rgba(80, 140, 255, 0.12); }
+.hud-note header { display: flex; gap: 7px; color: var(--dim); font-size: 10.5px; }
+.hud-note time { font-family: ui-monospace, Menlo, monospace; color: var(--text); }
+.hud-note p { margin: 0; font-size: 12.5px; line-height: 1.4; }
+.hud-note small { color: var(--dim); font-size: 11px; }
+.hud-note .hud-facts { color: #bcd6ff; font-weight: 600; }
+.hud-flag { color: var(--warn) !important; }
+.hud-flag.dismissed { color: var(--dim) !important; text-decoration: line-through; }
+.hud-samples { display: flex; flex-wrap: wrap; gap: 5px; }
+.hud-samples span {
+  padding: 3px 9px;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 99px;
+  color: var(--dim);
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 11px;
+}
+.hud-samples span.linked { border-style: solid; border-color: #7db4ff; color: #dbe9ff; background: rgba(80, 140, 255, 0.16); }
+
+/* Compact simulated cell atlas restyled for glass. */
+.hud-atlas .ca { gap: 6px; padding: 0; border: 0; background: transparent; color: var(--text); }
+.hud-atlas .ca-banner { padding: 4px 8px; font-size: 10px; background: rgba(255, 255, 255, 0.06); border-color: var(--edge); color: var(--dim); }
+.hud-atlas .ca-sub,
+.hud-atlas .ca-stats,
+.hud-atlas .ca-axis { display: none; }
+.hud-atlas .ca-title { font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.08em; }
+.hud-atlas .ca-head { gap: 6px; }
+.hud-atlas .ca-seg button { font-size: 10px; padding: 2px 6px; color: var(--dim); }
+.hud-atlas .ca-main { grid-template-columns: 1fr; gap: 6px; }
+.hud-atlas .ca-plot { height: 190px; min-height: 0; background: rgba(255, 255, 255, 0.95); border-radius: 12px; }
+.hud-atlas .ca-side { display: none; }
+
+.hud-bottom {
+  position: absolute;
+  left: 18px;
+  right: 418px;
+  bottom: 14px;
+  display: grid;
+  gap: 8px;
+}
+.hud-voice { display: grid; gap: 10px; }
+.hud-captions { display: grid; gap: 4px; justify-items: start; }
+.hud-caption {
+  max-width: 760px;
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: var(--glass-strong);
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+  line-height: 1.45;
+  animation: hud-in 0.3s ease;
+}
+.hud-caption.you { color: var(--dim); font-style: italic; }
+.hud-caption .vp-tag { margin-right: 8px; }
+.hud-voice-row { display: flex; align-items: center; gap: 12px; }
+.hud-voice .vp-orb { width: 58px; height: 58px; }
+.hud-voice-meta { display: grid; gap: 1px; }
+.hud-voice-meta span { color: var(--dim); font-size: 12px; }
+.hud-voice-meta label { display: inline-flex; gap: 6px; align-items: center; color: var(--dim); font-size: 11.5px; cursor: pointer; }
+.hud-voice-meta input { accent-color: var(--accent); }
+.hud-track {
+  position: relative;
+  height: 6px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.hud-track i { position: absolute; top: 0; bottom: 0; border-radius: 99px; background: rgba(110, 231, 183, 0.7); }
+.hud-track i.operator { width: 3px !important; background: #7db4ff; }
+.hud-track i.flagged { background: var(--warn); }
+.hud-track b { position: absolute; top: -4px; width: 3px; height: 14px; border-radius: 2px; background: #fff; }
+.hud-credit { margin: 0; color: rgba(238, 246, 242, 0.55); font-size: 10.5px; }

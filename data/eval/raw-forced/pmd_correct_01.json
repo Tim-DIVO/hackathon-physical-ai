@@ -1,0 +1,103 @@
+{
+ "clip_id": "pmd_correct_01",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.4,
+  1.2,
+  2,
+  2.8,
+  3.6,
+  4.4,
+  5.2,
+  6,
+  6.8,
+  7.5,
+  8.3,
+  9.1,
+  9.9,
+  10.7,
+  11.5,
+  12.3,
+  13.1,
+  13.9,
+  14.7,
+  15.5,
+  16.3,
+  17.1,
+  17.9,
+  18.7
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7698,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 555,
+  "output_tokens_details": {
+   "reasoning_tokens": 127
+  },
+  "total_tokens": 8253
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 2.8,
+    "end": 4.4,
+    "description": "Pipette with tip enters frame and moves to red tube/strip rack."
+   },
+   {
+    "start": 4.4,
+    "end": 6,
+    "description": "Tip is held in/over a red rack well/tube, likely aspirating or dispensing."
+   },
+   {
+    "start": 6,
+    "end": 7.5,
+    "description": "Pipette withdrawn from red rack and moved toward the white multiwell plate area."
+   },
+   {
+    "start": 7.5,
+    "end": 13.9,
+    "description": "Tip positioned over/into wells of the white plate; plunger is manipulated, consistent with dispensing/aspirating into plate wells."
+   },
+   {
+    "start": 13.9,
+    "end": 14.7,
+    "description": "Pipette is lifted away and exits frame."
+   },
+   {
+    "start": 17.1,
+    "end": 18.7,
+    "description": "Pipette re-enters from the right and moves back toward the work area with tip still attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "Same tip appears to be used across the visible steps, but the clip does not show enough context to determine whether different samples/reagents are involved or whether the tip should have been discarded."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the tip with bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No unexpected tip drop or premature ejection is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears attached and seated normally on the pipette; no wrong-size or loose fitting is visible."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip being moved from a red rack area to a white plate and manipulated over wells. No visible technique error is more likely than not from the sampled frames."
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "clip_id": "pmd_incorrect_surface_contamination_200ul_tip_06",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 7,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 2629,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 358,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 2987
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.3,
+    "description": "Pipette with tip is positioned over/near the work area and moved toward the tip box on the right."
+   },
+   {
+    "start": 1.8,
+    "end": 2.8,
+    "description": "Tip is placed into the yellow tip rack/box, consistent with ejecting or discarding the tip."
+   },
+   {
+    "start": 3.3,
+    "end": 3.3,
+    "description": "Pipette is lifted away from the tip rack area."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible aspiration/dispense into different samples or reuse of the same tip across media is shown."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is not visibly touched to a bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     1.8,
+     2.3,
+     2.8
+    ],
+    "evidence": "The tip appears to be put into a yellow tip rack/box, but the frames do not clearly show whether this is intentional disposal/release or an unexpected/too-early release."
+   },
+   "install": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "A tip is visible on the pipette, but seating/size cannot be reliably judged from the frames."
+   }
+  },
+  "overall_summary": "The clip mainly shows a pipette being moved to a yellow tip rack/box and the tip being placed/ejected there. No visible cross-contamination or non-sterile surface contact is shown. Tip release and installation correctness cannot be determined confidently from the sampled frames."
+ }
+}

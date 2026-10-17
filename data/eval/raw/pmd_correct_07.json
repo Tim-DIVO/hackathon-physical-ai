@@ -1,0 +1,112 @@
+{
+ "clip_id": "pmd_correct_07",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.4,
+  1.1,
+  1.9,
+  2.6,
+  3.4,
+  4.1,
+  4.9,
+  5.6,
+  6.4,
+  7.1,
+  7.9,
+  8.6,
+  9.4,
+  10.1,
+  10.9,
+  11.6,
+  12.4,
+  13.1,
+  13.9,
+  14.6,
+  15.4,
+  16.1,
+  16.8,
+  17.6
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7644,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 523,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8167
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.4,
+    "end": 3.4,
+    "description": "Pipette is brought into view over the bench toward the tip rack."
+   },
+   {
+    "start": 4.1,
+    "end": 5.6,
+    "description": "Tip attach: pipette is lowered into the blue tip rack and seated onto a tip."
+   },
+   {
+    "start": 6.4,
+    "end": 7.1,
+    "description": "Pipette is lifted from the tip rack with a tip attached and moved toward the clear tube/strip area."
+   },
+   {
+    "start": 7.9,
+    "end": 9.4,
+    "description": "Tip is inserted/held in a clear container or tube near the rack; likely aspirating, but plunger motion/liquid is not clearly visible."
+   },
+   {
+    "start": 10.1,
+    "end": 14.6,
+    "description": "Pipette is positioned over/into wells of a clear multiwell plate/strip; likely dispensing into wells, but liquid movement is not clearly visible."
+   },
+   {
+    "start": 15.4,
+    "end": 16.8,
+    "description": "Pipette is moved right toward the purple waste container area; no tip ejection is clearly visible."
+   },
+   {
+    "start": 17.6,
+    "end": 17.6,
+    "description": "Pipette returns toward the blue rack/clear tube area with a tip still visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "The same tip appears to be used across movements, but the media/samples/reagents involved and whether different samples are contacted are not clearly identifiable."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the pipette tip with bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible unexpected dropping or premature ejection/release of the tip."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [
+     4.1,
+     4.9,
+     5.6,
+     6.4
+    ],
+    "evidence": "Tip is visibly picked up from the rack and remains seated on the pipette; no clear wrong-size or poorly fitted tip is visible."
+   }
+  },
+  "overall_summary": "The clip shows a tip being attached, then the pipette moving between a rack/tube area and a clear well/strip area, with likely aspiration and dispense steps. No visible surface contact, tip release, or installation problem is evident. Reuse/cross-contamination cannot be determined from the visible frames."
+ }
+}

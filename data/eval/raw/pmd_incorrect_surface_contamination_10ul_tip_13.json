@@ -1,0 +1,77 @@
+{
+ "clip_id": "pmd_incorrect_surface_contamination_10ul_tip_13",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 8,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 2924,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 651,
+  "output_tokens_details": {
+   "reasoning_tokens": 277
+  },
+  "total_tokens": 3575
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 0.8,
+    "description": "Pipette held with a tip already attached; hand hovers above the bench near a red tube rack."
+   },
+   {
+    "start": 1.3,
+    "end": 2.8,
+    "description": "Pipette is moved across the bench area, passing over/near a white plate or tube strip and toward the right-side tube rack; no clear aspirate or dispense is visible."
+   },
+   {
+    "start": 3.3,
+    "end": 3.8,
+    "description": "Pipette tip is positioned near the red tube rack/label area; at the end it appears to touch or rest on the rack/label area."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "No clear aspirate/dispense or transfer between different samples/reagents is visible, so tip reuse across media cannot be determined."
+   },
+   "surface": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     3.8
+    ],
+    "evidence": "The tip appears to contact the red rack/label area, but no subsequent use after this contact is visible in the clip."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip ejection, dropping, or unexpected release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [
+     0.3,
+     1.3,
+     2.8
+    ],
+    "evidence": "A tip is attached and appears seated on the pipette; no visible wrong-size or poorly fitted tip is evident."
+   }
+  },
+  "overall_summary": "The clip mainly shows a pipette with an attached tip being moved around the bench. No clear liquid aspiration or dispensing is visible. Possible tip contact with a rack/label occurs near the end, but there is no visible subsequent use."
+ }
+}

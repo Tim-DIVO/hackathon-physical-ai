@@ -1,0 +1,74 @@
+{
+ "clip_id": "pmd_incorrect_surface_contamination_200ul_tip_11",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 11,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 3809,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 323,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 4132
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.8,
+    "description": "Pipette with tip already attached is held above/near a clear multiwell plate; no liquid transfer is clearly visible."
+   },
+   {
+    "start": 1.8,
+    "end": 3.8,
+    "description": "Pipette is moved laterally over the clear plate and toward the yellow tip box area; tip remains attached."
+   },
+   {
+    "start": 3.8,
+    "end": 5.3,
+    "description": "Pipette is moved back/held above the clear plate area; no clear aspirate, dispense, or eject action is visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "A tip is already on the pipette, but no prior use or use in different samples/reagents is visible."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is visible suspended above labware/bench and does not visibly touch a non-sterile surface."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip remains attached throughout the visible frames; no drop or premature ejection is seen."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "A tip is attached and appears seated on the pipette; no visible wrong-size or misfit issue."
+   }
+  },
+  "overall_summary": "The clip mainly shows a pipette with an attached tip being moved above the work area. No definite pipetting transfer or visible technique error is shown."
+ }
+}

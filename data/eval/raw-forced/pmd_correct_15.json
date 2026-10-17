@@ -1,0 +1,95 @@
+{
+ "clip_id": "pmd_correct_15",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.9,
+  1.5,
+  2.2,
+  2.8,
+  3.4,
+  4,
+  4.6,
+  5.3,
+  5.9,
+  6.5,
+  7.1,
+  7.7,
+  8.4,
+  9,
+  9.6,
+  10.2,
+  10.8,
+  11.5,
+  12.1,
+  12.7,
+  13.3,
+  13.9,
+  14.6
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7698,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 382,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8080
+ },
+ "output": {
+  "verdict": "error",
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 4,
+    "description": "Pipette tip is inserted/held in a yellow tube rack well; likely aspirating or dispensing in one tube."
+   },
+   {
+    "start": 4.6,
+    "end": 11.5,
+    "description": "Pipette is lifted and moved away from the rack while retaining the same tip; held over/near the bench area."
+   },
+   {
+    "start": 12.1,
+    "end": 13.9,
+    "description": "Pipette moves to the right near a purple waste/container; tip is still attached and not visibly ejected."
+   },
+   {
+    "start": 14.6,
+    "end": 14.6,
+    "description": "Pipette moves back toward the yellow tube rack with the same tip still attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "present",
+    "evidence_timestamps": [
+     14.6
+    ],
+    "evidence": "The same tip used in the rack at 0.3–4.0 s is still attached after moving away and is brought back toward the rack, suggesting reuse after not discarding; exact target medium is partly unclear but reuse is more likely than not."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact between the tip and bench, glove, tube exterior, or other non-sterile surface."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip drop, ejection, or unexpected release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears seated on the pipette and appropriately sized; no visible misfit."
+   }
+  },
+  "overall_summary": "A single tip is used in the rack, carried around, and then brought back toward the rack without visible disposal, making a reuse-type technique error more likely than not."
+ }
+}

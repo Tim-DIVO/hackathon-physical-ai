@@ -1,0 +1,123 @@
+{
+ "clip_id": "pmd_incorrect_early_release_200ul_tip_06",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.5,
+  1.5,
+  2.6,
+  3.6,
+  4.6,
+  5.7,
+  6.7,
+  7.7,
+  8.8,
+  9.8,
+  10.8,
+  11.8,
+  12.9,
+  13.9,
+  14.9,
+  16,
+  17,
+  18,
+  19.1,
+  20.1,
+  21.1,
+  22.1,
+  23.2,
+  24.2
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7638,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 944,
+  "output_tokens_details": {
+   "reasoning_tokens": 393
+  },
+  "total_tokens": 8582
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.5,
+    "end": 1.5,
+    "description": "Pipette is in hand near the right-side tip rack, then moves out of frame."
+   },
+   {
+    "start": 2.6,
+    "end": 13.9,
+    "description": "Gloved hand repeatedly picks up/handles small clear plastic items from the yellow tip rack area and places or moves them near the clear well plate/bench area; no pipette liquid transfer is visible."
+   },
+   {
+    "start": 14.9,
+    "end": 16,
+    "description": "Pipette is pressed into the yellow tip rack, consistent with attaching/seating a tip."
+   },
+   {
+    "start": 16,
+    "end": 17,
+    "description": "Pipette with a tip is lifted from the tip rack."
+   },
+   {
+    "start": 18,
+    "end": 19.1,
+    "description": "Pipette tip is lowered back toward/into the yellow tip rack area; no liquid aspiration/dispense is clearly visible."
+   },
+   {
+    "start": 20.1,
+    "end": 21.1,
+    "description": "Pipette is moved over the clear well plate area; no clear contact with wells or liquid transfer is visible."
+   },
+   {
+    "start": 22.1,
+    "end": 22.1,
+    "description": "Pipette is positioned again over the yellow tip rack area."
+   },
+   {
+    "start": 23.2,
+    "end": 24.2,
+    "description": "Pipette moves toward the central tube rack/clear well plate area; no definite aspiration or dispense is visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible aspiration/dispense into different samples or reagents with the same tip."
+   },
+   "surface": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     2.6,
+     3.6,
+     5.7,
+     7.7,
+     9.8,
+     12.9
+    ],
+    "evidence": "The gloved hand handles items in/near the tip rack, but it is not clear that a contaminated touched tip is the same tip later used by the pipette."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip is visibly dropped, ejected unexpectedly, or released too early."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [
+     14.9,
+     16,
+     17
+    ],
+    "evidence": "The visible tip appears seated on the pipette; no wrong-size or poorly fitted tip is evident."
+   }
+  },
+  "overall_summary": "The clip mainly shows manual handling near the tip rack and a pipette attaching/lifting a tip. No definite liquid transfer is visible. No clear reuse, release, or installation error is visible; possible glove contact with tips is unclear because the exact tip later used cannot be confirmed."
+ }
+}

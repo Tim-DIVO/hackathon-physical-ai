@@ -1,0 +1,118 @@
+{
+ "clip_id": "pmd_correct_07",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.4,
+  1.1,
+  1.9,
+  2.6,
+  3.4,
+  4.1,
+  4.9,
+  5.6,
+  6.4,
+  7.1,
+  7.9,
+  8.6,
+  9.4,
+  10.1,
+  10.9,
+  11.6,
+  12.4,
+  13.1,
+  13.9,
+  14.6,
+  15.4,
+  16.1,
+  16.8,
+  17.6
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7702,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 506,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8208
+ },
+ "output": {
+  "verdict": "correct",
+  "actions": [
+   {
+    "start": 0.4,
+    "end": 3.4,
+    "description": "Pipette brought into view with tip already attached; moves toward tube/rack area."
+   },
+   {
+    "start": 4.1,
+    "end": 5.6,
+    "description": "Tip inserted into/held over a small white tube near the blue rack; likely aspirating or dispensing."
+   },
+   {
+    "start": 6.4,
+    "end": 7.1,
+    "description": "Pipette withdrawn and moved across bench toward the white multiwell/plate area."
+   },
+   {
+    "start": 7.9,
+    "end": 9.4,
+    "description": "Tip positioned into/over a well in the white plate area; plunger hand posture suggests liquid transfer."
+   },
+   {
+    "start": 10.1,
+    "end": 14.6,
+    "description": "Pipette remains over/near the white plate wells; repeated positioning/possible dispense or aspiration not clearly visible."
+   },
+   {
+    "start": 15.4,
+    "end": 16.8,
+    "description": "Pipette moved right toward large purple container/waste area; no clear tip ejection visible."
+   },
+   {
+    "start": 17.6,
+    "end": 17.6,
+    "description": "Pipette moved back toward the blue rack/tube area with same visible tip still attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     4.1,
+     5.6,
+     7.9,
+     9.4,
+     17.6
+    ],
+    "evidence": "The same tip appears to be used between a tube/rack area and plate wells, then moved back, but the media/sample identity and whether this constitutes improper reuse cannot be determined from the clip."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the tip with bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No dropped, ejected, or unexpectedly released tip is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [
+     3.4,
+     4.1,
+     7.9
+    ],
+    "evidence": "Tip appears seated and appropriately sized on the pipette; no visible loose or mismatched fit."
+   }
+  },
+  "overall_summary": "Pipette transfers liquid between a tube/rack area and plate/wells with no clear visible technique error. Reuse/cross-contamination is uncertain due to limited context, so best-guess verdict is correct."
+ }
+}

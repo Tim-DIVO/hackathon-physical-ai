@@ -1,0 +1,8 @@
+{
+  "n_clips": 50, "n_error": 35, "n_correct": 15,
+  "accuracy": 0.2, "balanced_accuracy": 0.333,
+  "confusion": { "tp": 0, "fp": 5, "tn": 10, "fn": 35 },
+  "n_unclear": 40, "category_named": 0,
+  "cost_usd": 3.12,
+  "forced": { "n_clips": 24, "balanced_accuracy": 0.344, "accuracy": 0.25, "confusion": { "tp": 1, "fp": 3, "tn": 5, "fn": 15 } }
+}

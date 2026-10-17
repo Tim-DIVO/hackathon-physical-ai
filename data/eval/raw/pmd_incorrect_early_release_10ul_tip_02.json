@@ -1,0 +1,69 @@
+{
+ "clip_id": "pmd_incorrect_early_release_10ul_tip_02",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 6,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 2334,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 365,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 2699
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.3,
+    "description": "Pipette with tip positioned in/over a red tip rack or tube rack area; tip appears to contact or be seated in an opening."
+   },
+   {
+    "start": 1.3,
+    "end": 2.3,
+    "description": "Pipette is lifted and moved leftward/forward away from the red rack toward the center bench area, with a tip attached."
+   },
+   {
+    "start": 2.3,
+    "end": 2.8,
+    "description": "Pipette is held above the center bench/clear plate area and then moved back toward the right/red rack area; no clear aspirate or dispense is visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "A single tip appears to be used/moved, but the frames do not show whether it contacts different samples/reagents or should have been discarded."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is visible above racks/bench area, but no clear contact with bench, glove, tube exterior, or other non-sterile surface is shown."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip remains on the pipette; no drop/ejection/release is visible."
+   },
+   "install": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "A tip appears attached, but the frames do not clearly show seating/fit or size compatibility."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip being positioned at the red rack and moved across the bench. No definite aspirate/dispense or visible technique error is shown; several details remain unclear from the sampled frames."
+ }
+}

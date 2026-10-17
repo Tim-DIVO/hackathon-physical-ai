@@ -1,0 +1,96 @@
+{
+ "clip_id": "pmd_incorrect_wrong_tip_200ul_tip_on_1000ul_pipette_03",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 18,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3,
+  6.8,
+  7.3,
+  7.8,
+  8.3,
+  8.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 5874,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 656,
+  "output_tokens_details": {
+   "reasoning_tokens": 229
+  },
+  "total_tokens": 6530
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 0.8,
+    "description": "Hand reaches to the hanging pipettes/rack area, then withdraws without a clear liquid-handling step."
+   },
+   {
+    "start": 2.3,
+    "end": 3.8,
+    "description": "Hand grasps a hanging pipette and lifts it off the rack."
+   },
+   {
+    "start": 4.3,
+    "end": 4.8,
+    "description": "Pipette is moved from the rack area toward a yellow tip box on the bench."
+   },
+   {
+    "start": 4.8,
+    "end": 6.3,
+    "description": "Pipette cone is pressed into the yellow tip rack to attach/seat a tip."
+   },
+   {
+    "start": 6.3,
+    "end": 7.3,
+    "description": "Pipette is lifted away from the tip box and moved back toward the rack area."
+   },
+   {
+    "start": 7.3,
+    "end": 8.8,
+    "description": "Pipette is returned to the hanging rack/holder."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No aspiration/dispense or transfer between samples/reagents is visible, and no reused tip is shown being used on another medium."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip/cone is only seen contacting the tip rack; no contact with bench, glove, tube exterior, or other non-sterile surface is visible before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip or pipette is visibly dropped, ejected, or released unexpectedly."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip attachment appears to be done by pressing the pipette into the tip rack; no visibly wrong-size or poorly seated tip is apparent."
+   }
+  },
+  "overall_summary": "The visible clip shows selecting a pipette, attaching/seating a tip from a tip rack, and returning the pipette to the rack. No visible pipetting technique error is evident in the sampled frames."
+ }
+}

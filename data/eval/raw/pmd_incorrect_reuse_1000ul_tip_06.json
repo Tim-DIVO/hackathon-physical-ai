@@ -1,0 +1,77 @@
+{
+ "clip_id": "pmd_incorrect_reuse_1000ul_tip_06",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.4,
+  1.2,
+  2.1,
+  2.9,
+  3.7,
+  4.5,
+  5.4,
+  6.2,
+  7,
+  7.8,
+  8.6,
+  9.5,
+  10.3,
+  11.1,
+  11.9,
+  12.8,
+  13.6,
+  14.4,
+  15.2,
+  16.1,
+  16.9,
+  17.7,
+  18.5,
+  19.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7642,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 275,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 7917
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.4,
+    "end": 19.3,
+    "description": "Pipette with an attached tip is held over/near a multiwell plate and moved slightly around the plate area; no clear aspiration, dispensing, tip attachment, or ejection is visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "Only one tip is seen; no visible transfer between different samples/reagents or prior use/discard point."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is visible hovering above labware/bench area and does not visibly touch a bench, glove, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip remains attached throughout the visible frames; no drop or premature ejection is seen."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip appears seated on the pipette and remains aligned/attached; no visible wrong-size or loose fit issue."
+   }
+  },
+  "overall_summary": "The clip mainly shows a pipette with an attached tip hovering and moving over a plate area. No clear pipetting liquid action is visible, and no visible technique error is confirmed."
+ }
+}

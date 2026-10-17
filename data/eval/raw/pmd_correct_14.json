@@ -1,0 +1,106 @@
+{
+ "clip_id": "pmd_correct_14",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 23,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3,
+  6.8,
+  7.3,
+  7.8,
+  8.3,
+  8.8,
+  9.3,
+  9.8,
+  10.3,
+  10.8,
+  11.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7349,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 863,
+  "output_tokens_details": {
+   "reasoning_tokens": 406
+  },
+  "total_tokens": 8212
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 2.3,
+    "description": "Pipette is pressed into the yellow tip rack, apparently attaching/seating a tip."
+   },
+   {
+    "start": 2.8,
+    "end": 3.8,
+    "description": "Pipette is lifted away from the tip rack and moved toward the front white multiwell/plate area."
+   },
+   {
+    "start": 4.3,
+    "end": 8.3,
+    "description": "Pipette tip is held over or near the front white multiwell/plate area; no clear liquid transfer is visible."
+   },
+   {
+    "start": 8.8,
+    "end": 9.3,
+    "description": "Pipette is moved rightward away from the work area toward the purple waste container."
+   },
+   {
+    "start": 9.8,
+    "end": 10.8,
+    "description": "Pipette is positioned over/inside the purple waste container, consistent with tip disposal/ejection, though the tip release itself is not clearly seen."
+   },
+   {
+    "start": 11.3,
+    "end": 11.3,
+    "description": "Pipette is moved back toward the bench area after the waste-container step."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible use of the same tip on a different sample/reagent or after a required discard."
+   },
+   "surface": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "The tip is near racks/containers, but frames do not clearly show the tip touching a non-sterile surface and then being used."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears to be taken to the waste container intentionally; no unexpected or premature drop/release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [
+     0.3,
+     0.8,
+     1.3,
+     2.3
+    ],
+    "evidence": "Tip appears to be seated from a 200 µL tip rack onto a compatible pipette; no visibly wrong size or poor fit."
+   }
+  },
+  "overall_summary": "Visible actions show tip attachment, movement over the work area, and likely disposal in the waste container. No clear technique error is visibly present; surface contact is not clear enough to judge."
+ }
+}

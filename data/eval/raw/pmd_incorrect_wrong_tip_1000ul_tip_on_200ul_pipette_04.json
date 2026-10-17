@@ -1,0 +1,117 @@
+{
+ "clip_id": "pmd_incorrect_wrong_tip_1000ul_tip_on_200ul_pipette_04",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.4,
+  2.9,
+  3.4,
+  3.9,
+  4.4,
+  5,
+  5.5,
+  6,
+  6.5,
+  7.1,
+  7.6,
+  8.1,
+  8.6,
+  9.2,
+  9.7,
+  10.2,
+  10.7,
+  11.2,
+  11.8,
+  12.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7640,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 679,
+  "output_tokens_details": {
+   "reasoning_tokens": 107
+  },
+  "total_tokens": 8319
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.8,
+    "description": "Hand grasps a pipette from the rack/stand; a tip appears already attached."
+   },
+   {
+    "start": 1.8,
+    "end": 2.9,
+    "description": "Pipette is moved from the stand toward the blue rack/plate area on the bench."
+   },
+   {
+    "start": 2.9,
+    "end": 4.4,
+    "description": "Tip is placed into/over wells of the blue rack/plate; possible aspirate or dispense action, but liquid movement is not visible."
+   },
+   {
+    "start": 4.4,
+    "end": 5.5,
+    "description": "Pipette is lifted away from the blue rack/plate and moved back toward the stand."
+   },
+   {
+    "start": 5.5,
+    "end": 7.1,
+    "description": "Pipette is returned to/hung on the stand with the tip still attached."
+   },
+   {
+    "start": 7.1,
+    "end": 8.1,
+    "description": "Same pipette is grasped again from the stand and moved back toward the blue rack/plate."
+   },
+   {
+    "start": 8.1,
+    "end": 10.2,
+    "description": "Tip is again placed into/over wells of the blue rack/plate; possible aspirate or dispense action, but liquid movement is not visible."
+   },
+   {
+    "start": 10.2,
+    "end": 11.8,
+    "description": "Pipette is lifted away from the blue rack/plate and moved back toward the stand."
+   },
+   {
+    "start": 11.8,
+    "end": 12.3,
+    "description": "Pipette is returned to/hung on the stand with the tip still attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "The same attached tip appears to be used in two visits to the blue rack/plate, but the frames do not show whether different samples/reagents/media are contacted or whether the tip should have been discarded."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No visible contact of the tip with a glove, bench, tube exterior, or other non-sterile surface before use."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip is visibly dropped, ejected, or released unexpectedly."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The visible tip appears seated on the pipette; no wrong-size or poorly fitted tip is evident."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip being removed from a stand, used at a blue rack/plate area, returned to the stand, then used again at the same area. No clear technique error is visibly demonstrated, though reuse status is unclear because the contacted liquid/sample identities are not visible."
+ }
+}

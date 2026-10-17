@@ -1,0 +1,1343 @@
+{
+ "metrics": {
+  "n_clips": 50,
+  "n_error": 35,
+  "n_correct": 15,
+  "accuracy_unclear_as_no_error": 0.2,
+  "accuracy_strict_unclear_is_wrong": 0.02,
+  "accuracy_excluding_unclear": 0.1,
+  "balanced_accuracy": 0.333,
+  "per_class": {
+   "error": {
+    "precision": 0,
+    "recall": 0,
+    "support": 35
+   },
+   "correct": {
+    "precision": 0.222,
+    "recall": 0.667,
+    "support": 15
+   }
+  },
+  "confusion_counts": {
+   "tp": 0,
+   "fp": 5,
+   "tn": 10,
+   "fn": 35,
+   "note": "positive class = error; unclear predictions counted as 'no error flagged'"
+  },
+  "n_unclear": 40,
+  "per_true_category": {
+   "reuse": {
+    "clips": 8,
+    "flagged_error_at_all": 0,
+    "correct_category_flagged": 0
+   },
+   "surface": {
+    "clips": 9,
+    "flagged_error_at_all": 0,
+    "correct_category_flagged": 0
+   },
+   "release": {
+    "clips": 9,
+    "flagged_error_at_all": 0,
+    "correct_category_flagged": 0
+   },
+   "install": {
+    "clips": 9,
+    "flagged_error_at_all": 0,
+    "correct_category_flagged": 0
+   }
+  },
+  "category_match_rate_on_errors": 0,
+  "usage": {
+   "input_tokens": 280630,
+   "output_tokens": 24247,
+   "reasoning_tokens": 3574,
+   "estimated_cost_usd": 2.131,
+   "pricing_assumption": "USD 5/M input, 30/M output tokens (assumed; not read from the API)"
+  },
+  "config": {
+   "model": "gpt-5.5",
+   "fps": 2,
+   "max_frames": 24,
+   "frame_width": 640,
+   "detail": "high",
+   "reasoning_effort": "low"
+  }
+ },
+ "results": [
+  {
+   "clip_id": "pmd_correct_01",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "error",
+   "correct": false,
+   "present_categories": [
+    "reuse"
+   ],
+   "unclear_categories": [],
+   "evidence": {
+    "reuse": {
+     "status": "present",
+     "evidence_timestamps": [
+      4.4,
+      5.2,
+      6.8,
+      9.1,
+      12.3,
+      13.9
+     ],
+     "evidence": "The same attached tip is used at the red rack/wells and then moved to and used at the white plate without any visible tip change or ejection."
+    }
+   },
+   "summary": "A pipette with an already attached tip is used first at the red rack/wells and then at a white plate without a visible tip change. No surface contact, premature release, or installation problem is visible.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_02",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "A single tip appears to remain on the pipette, but the frames do not clearly show aspiration/dispensing into different media or samples."
+    }
+   },
+   "summary": "The clip mainly shows a pipette with an attached tip being moved around the bench and toward a waste container, but no clear aspirate, dispense, or tip ejection is visible. No definite technique error is visible from the sampled frames.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_03",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "A tip appears to remain on the pipette as it moves between areas, but the frames do not show different samples/reagents being contacted or a required discard point."
+    }
+   },
+   "summary": "The clip shows the pipette being used/moved around a red rack and waste area with a tip attached, but no clear visible technique error is captured.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_04",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "release"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same tip appears to be used in the blue rack and then placed in waste, but no transfer between different samples/reagents is visibly confirmed."
+    },
+    "release": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      17.1,
+      18,
+      18.8,
+      19.6
+     ],
+     "evidence": "The tip is placed into the waste container, but frames do not clearly show whether it was ejected normally, released early, or still attached afterward."
+    }
+   },
+   "summary": "A pipette with an attached tip is used in a tube/well in the blue rack and then moved to the waste container. No clear technique error is visibly confirmed from the frames.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_05",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same tip appears to be used across the blue rack and white multiwell area, but the media/samples/reagents and whether this constitutes improper reuse are not visible."
+    }
+   },
+   "summary": "The clip shows pipetting from/near a blue rack to a white multiwell area, then movement to a waste container. No clear surface touch, premature release, or installation problem is visible. Reuse/cross-contamination cannot be determined from the frames.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_06",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "error",
+   "correct": false,
+   "present_categories": [
+    "reuse"
+   ],
+   "unclear_categories": [
+    "release"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "present",
+     "evidence_timestamps": [
+      0.3,
+      0.9,
+      1.5,
+      2,
+      2.6,
+      3.2,
+      3.8,
+      4.4,
+      4.9,
+      5.5,
+      6.1,
+      6.7,
+      7.3,
+      7.9,
+      8.4,
+      9,
+      9.6,
+      10.2,
+      13.7
+     ],
+     "evidence": "The same visible tip is used at the blue rack and then at the clear/white tube strip without visible tip change; after going to waste, a tip still appears visible when returning toward the blue rack."
+    },
+    "release": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      11.9,
+      12.5
+     ],
+     "evidence": "Tip is placed into/over the waste container, but the frames do not clearly show whether it is actually ejected or released unexpectedly."
+    }
+   },
+   "summary": "Visible technique shows a likely cross-contamination/reuse error: the same tip is used across different locations without a visible tip change. No visible surface contact or installation error; tip release at waste is unclear.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_07",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same tip appears to be used across movements, but the media/samples/reagents involved and whether different samples are contacted are not clearly identifiable."
+    }
+   },
+   "summary": "The clip shows a tip being attached, then the pipette moving between a rack/tube area and a clear well/strip area, with likely aspiration and dispense steps. No visible surface contact, tip release, or installation problem is evident. Reuse/cross-contamination cannot be determined from the visible frames.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_08",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "error",
+   "correct": false,
+   "present_categories": [
+    "reuse"
+   ],
+   "unclear_categories": [],
+   "evidence": {
+    "reuse": {
+     "status": "present",
+     "evidence_timestamps": [
+      0.3,
+      0.9,
+      1.4,
+      2,
+      11.3,
+      11.9,
+      12.5,
+      13.6
+     ],
+     "evidence": "The same visible tip is used at the blue rack, then placed into the purple container, and then carried back toward the blue rack without visible tip ejection/change."
+    }
+   },
+   "summary": "The clip shows a pipette tip used at the blue rack, moved into a purple container, and then returned toward the rack without a visible tip change, so reuse/cross-contamination is visibly present. Other error categories are not visibly present.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_09",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "error",
+   "correct": false,
+   "present_categories": [
+    "reuse"
+   ],
+   "unclear_categories": [
+    "surface"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "present",
+     "evidence_timestamps": [
+      10.1,
+      10.7,
+      11.2,
+      11.8,
+      12.4,
+      13.5
+     ],
+     "evidence": "The same tip is placed into/over the purple waste container and then returned to the blue rack/well without visible tip change."
+    },
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The tip passes near bench/tray surfaces, but visible contact with a non-sterile surface is not clear."
+    }
+   },
+   "summary": "The clip shows the pipette using a single attached tip at the blue rack, moving to a waste container, then returning to the blue rack with the same tip. This visibly indicates tip reuse after it should have been discarded; no clear surface touch, premature release, or installation problem is visible.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_10",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "surface"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same tip appears to be used throughout, but the frames do not clearly show aspirating/dispensing between different samples or reagents."
+    },
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The tip is near racks/containers and inside the waste container, but a touch to a non-sterile surface followed by use is not clearly visible."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip being moved between a rack/clear container area and a purple waste container. No definite technique error is visible from the sampled frames.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_11",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "error",
+   "correct": false,
+   "present_categories": [
+    "reuse"
+   ],
+   "unclear_categories": [
+    "surface"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "present",
+     "evidence_timestamps": [
+      11.3,
+      11.8
+     ],
+     "evidence": "The same tip that was placed into/over the purple waste container is still attached and is moved back toward the rack/well area for further use."
+    },
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The tip is near/inside a purple container, but it is not clearly visible touching a non-sterile surface such as the bench, glove, or tube exterior before use."
+    }
+   },
+   "summary": "The clip shows pipetting at a rack/well area, movement to a purple waste container, and then return toward the rack with the same tip still attached. Visible evidence supports a reuse/cross-contamination concern; no tip release or installation problem is visible.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_12",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "Only one tip use is visible, and the source/destination media are not clearly shown; cannot determine reuse across different samples/reagents."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip being moved near a rack and then into a purple waste cup, with orange liquid visible in the tip for part of the clip. No definite technique error is visible from the sampled frames.",
+   "frames": 20
+  },
+  {
+   "clip_id": "pmd_correct_13",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "correct",
+   "correct": true,
+   "present_categories": [],
+   "unclear_categories": [],
+   "evidence": {},
+   "summary": "A pipette with an attached tip is handled near a tip rack and then moved to a waste container, likely for disposal. No visible technique error is clearly shown.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_correct_14",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "surface"
+   ],
+   "evidence": {
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The tip is near racks/containers, but frames do not clearly show the tip touching a non-sterile surface and then being used."
+    }
+   },
+   "summary": "Visible actions show tip attachment, movement over the work area, and likely disposal in the waste container. No clear technique error is visibly present; surface contact is not clear enough to judge.",
+   "frames": 23
+  },
+  {
+   "clip_id": "pmd_correct_15",
+   "label": "correct",
+   "mistake_type": "none",
+   "true_category": "none",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "Same tip appears to remain attached throughout, but the frames do not clearly show transfer between different samples/reagents or any completed aspirate/dispense into distinct media."
+    }
+   },
+   "summary": "The clip shows a pipette with a fitted tip being used near a rack, then moved over the bench and toward a waste container, but no clear liquid handling event or tip ejection is visible. No visible technique error can be confirmed from the sampled frames.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_incorrect_reuse_1000ul_tip_06",
+   "label": "error",
+   "mistake_type": "reuse_tip",
+   "true_category": "reuse",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "Only one tip is seen; no visible transfer between different samples/reagents or prior use/discard point."
+    }
+   },
+   "summary": "The clip mainly shows a pipette with an attached tip hovering and moving over a plate area. No clear pipetting liquid action is visible, and no visible technique error is confirmed.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_incorrect_reuse_10ul_tip_02",
+   "label": "error",
+   "mistake_type": "reuse_tip",
+   "true_category": "reuse",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "Same tip remains attached while moving over multiple wells, but the frames do not show whether different samples/reagents are involved or whether reuse is inappropriate."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip being positioned and likely used over a clear multiwell plate. No visible tip ejection, non-sterile surface contact, or installation problem is seen. Reuse across different media/samples cannot be determined from the frames.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_incorrect_reuse_200ul_tip_01",
+   "label": "error",
+   "mistake_type": "reuse_tip",
+   "true_category": "reuse",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "install"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same tip appears to be used across multiple wells, but the contents/media and whether these are different samples/reagents are not visible."
+    },
+    "install": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      1.5,
+      2,
+      2.6
+     ],
+     "evidence": "The pipette contacts the yellow tip rack, but frames do not clearly show whether a new tip is being attached or whether it is properly seated; no obvious wrong-size tip is visible."
+    }
+   },
+   "summary": "The clip shows a gloved person using a pipette with a tip over a white multiwell plate after moving from a yellow rack. No clear surface contamination or tip release is visible. Reuse and tip installation correctness cannot be determined from the sampled frames.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_incorrect_reuse_200ul_tip_12",
+   "label": "error",
+   "mistake_type": "reuse_tip",
+   "true_category": "reuse",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "surface"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "Same tip remains attached throughout, but no visible aspiration/dispense into different media or samples."
+    },
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "Tip is near the plate/wells, but frames do not clearly show it touching a non-sterile surface and then being used."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip being moved and positioned near a multiwell plate, but no clear aspiration, dispense, surface contact, tip ejection, or tip installation problem is visible.",
+   "frames": 17
+  },
+  {
+   "clip_id": "pmd_incorrect_reuse_20ul_tip_07",
+   "label": "error",
+   "mistake_type": "reuse_tip",
+   "true_category": "reuse",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      1.7,
+      3.1,
+      4.5,
+      16.4
+     ],
+     "evidence": "The same tip is used after being in the yellow rack/plate and then over the clear plate/tray, but the frames do not show whether these are different samples/reagents or an intended transfer."
+    }
+   },
+   "summary": "A tip is already installed, used in a yellow rack/plate, then moved to a clear plate/tray for apparent dispensing. No visible release, surface contact, or installation error; reuse/cross-contamination cannot be determined from the frames.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_incorrect_reuse_same_media_1000ul_tip_05",
+   "label": "error",
+   "mistake_type": "reuse_same_media",
+   "true_category": "reuse",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      7.4,
+      8.1,
+      8.8,
+      9.5,
+      11.6,
+      12.3,
+      13,
+      13.7,
+      14.4,
+      15.1,
+      15.8,
+      16.5
+     ],
+     "evidence": "The same visible tip is used while moving between a tube rack and wells, but the frames do not show whether these are different samples/reagents or whether the tip should have been discarded."
+    }
+   },
+   "summary": "The clip shows a pipette used between a tube rack and a white multiwell plate with the same attached tip visible. No clear surface contact, tip release, or installation problem is visible. Reuse/cross-contamination cannot be confirmed from the frames because the identities of the source/destination wells or reagents are not visible.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_incorrect_reuse_same_media_10ul_tip_08",
+   "label": "error",
+   "mistake_type": "reuse_same_media",
+   "true_category": "reuse",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "Only one tip is visible, but no aspiration/dispense into different media or samples is shown."
+    }
+   },
+   "summary": "The clip shows a pipette with a tip being held/positioned over labware, without clear pipetting into containers. No visible technique error is evident, though reuse cannot be assessed from these frames.",
+   "frames": 14
+  },
+  {
+   "clip_id": "pmd_incorrect_reuse_same_media_20ul_tip_01",
+   "label": "error",
+   "mistake_type": "reuse_same_media",
+   "true_category": "reuse",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "Same tip appears used over the plate, but different media/samples/reagents or need to discard are not visible."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip moving from the rack/open box area to a multiwell plate and working over wells. No visible tip drop, surface contact, or incorrect installation is seen. Reuse/cross-contamination cannot be determined from the frames.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_incorrect_surface_contamination_10ul_tip_03",
+   "label": "error",
+   "mistake_type": "surface_contamination",
+   "true_category": "surface",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "A tip is already attached, but the frames do not show whether it was used previously or transferred between different samples/reagents."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip being moved between labware, but no clear aspirate/dispense event is visible. No visible technique error is confirmed from the sampled frames.",
+   "frames": 6
+  },
+  {
+   "clip_id": "pmd_incorrect_surface_contamination_10ul_tip_08",
+   "label": "error",
+   "mistake_type": "surface_contamination",
+   "true_category": "surface",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "surface"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "Only one tip is visible, but the clip does not show prior use or whether different samples/reagents are involved."
+    },
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      2.3,
+      2.8
+     ],
+     "evidence": "The tip is lowered near the red rack/tubes; contact with a non-sterile surface is not clearly visible, and no subsequent use is shown."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip being moved from the plate area toward a red tube rack. No clear aspiration, dispense, tip reuse across materials, or tip ejection is visible. Possible contact near the rack is not clear enough to mark as an error.",
+   "frames": 6
+  },
+  {
+   "clip_id": "pmd_incorrect_surface_contamination_10ul_tip_13",
+   "label": "error",
+   "mistake_type": "surface_contamination",
+   "true_category": "surface",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "surface"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "No clear aspirate/dispense or transfer between different samples/reagents is visible, so tip reuse across media cannot be determined."
+    },
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      3.8
+     ],
+     "evidence": "The tip appears to contact the red rack/label area, but no subsequent use after this contact is visible in the clip."
+    }
+   },
+   "summary": "The clip mainly shows a pipette with an attached tip being moved around the bench. No clear liquid aspiration or dispensing is visible. Possible tip contact with a rack/label occurs near the end, but there is no visible subsequent use.",
+   "frames": 8
+  },
+  {
+   "clip_id": "pmd_incorrect_surface_contamination_10ul_tip_18",
+   "label": "error",
+   "mistake_type": "surface_contamination",
+   "true_category": "surface",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "surface",
+    "install"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "No clear aspirate/dispense into different samples or reagents is visible, and prior tip history is not shown."
+    },
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The tip approaches the yellow rack/box area, but frames do not clearly show contact with a non-sterile surface followed by use."
+    },
+    "install": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      1.3,
+      1.8,
+      2.3
+     ],
+     "evidence": "Tip appears to be positioned into/near the yellow rack area, possibly being fitted or seated, but the seating/fit cannot be clearly judged from the frames."
+    }
+   },
+   "summary": "The clip shows the pipette moving around the tip rack and toward a plate, but no definitive pipetting error is visible in the sampled frames.",
+   "frames": 9
+  },
+  {
+   "clip_id": "pmd_incorrect_surface_contamination_200ul_tip_02",
+   "label": "error",
+   "mistake_type": "surface_contamination",
+   "true_category": "surface",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "No aspiration/dispense or use on multiple samples/reagents is visible, so reuse cannot be assessed."
+    }
+   },
+   "summary": "A pipette with an attached tip is positioned and moved over the workspace. No liquid transfer is visible. No visible surface contact, premature release, or installation problem is shown; reuse is unclear because no actual sample/reagent use is visible.",
+   "frames": 6
+  },
+  {
+   "clip_id": "pmd_incorrect_surface_contamination_200ul_tip_06",
+   "label": "error",
+   "mistake_type": "surface_contamination",
+   "true_category": "surface",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "release",
+    "install"
+   ],
+   "evidence": {
+    "release": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      1.8,
+      2.3,
+      2.8
+     ],
+     "evidence": "The tip appears to be put into a yellow tip rack/box, but the frames do not clearly show whether this is intentional disposal/release or an unexpected/too-early release."
+    },
+    "install": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "A tip is visible on the pipette, but seating/size cannot be reliably judged from the frames."
+    }
+   },
+   "summary": "The clip mainly shows a pipette being moved to a yellow tip rack/box and the tip being placed/ejected there. No visible cross-contamination or non-sterile surface contact is shown. Tip release and installation correctness cannot be determined confidently from the sampled frames.",
+   "frames": 7
+  },
+  {
+   "clip_id": "pmd_incorrect_surface_contamination_200ul_tip_11",
+   "label": "error",
+   "mistake_type": "surface_contamination",
+   "true_category": "surface",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "A tip is already on the pipette, but no prior use or use in different samples/reagents is visible."
+    }
+   },
+   "summary": "The clip mainly shows a pipette with an attached tip being moved above the work area. No definite pipetting transfer or visible technique error is shown.",
+   "frames": 11
+  },
+  {
+   "clip_id": "pmd_incorrect_surface_contamination_20ul_tip_05",
+   "label": "error",
+   "mistake_type": "surface_contamination",
+   "true_category": "surface",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "surface"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same tip is visible throughout, but the frames do not clearly show aspiration/dispense into different media or samples."
+    },
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      2.8
+     ],
+     "evidence": "The tip appears close to a plate/lid area, but actual contact with a non-sterile surface is not clear."
+    }
+   },
+   "summary": "A pipette with an attached tip is moved into/near a yellow reservoir and then across the work area. No definite technique error is visible; possible liquid handling and any surface contact are unclear from the sampled frames.",
+   "frames": 7
+  },
+  {
+   "clip_id": "pmd_incorrect_surface_contamination_20ul_tip_10",
+   "label": "error",
+   "mistake_type": "surface_contamination",
+   "true_category": "surface",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same tip appears attached throughout, but the frames do not clearly show aspiration/dispense or contact with different samples/reagents."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip moving between a reservoir, tip rack area, and tube/plate area. No clear pipetting liquid transfer or visible technique error is shown.",
+   "frames": 9
+  },
+  {
+   "clip_id": "pmd_incorrect_early_release_1000ul_tip_03",
+   "label": "error",
+   "mistake_type": "early_release",
+   "true_category": "release",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "install"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "No visible aspiration/dispense into different samples or reagents, and tip history is not clear."
+    },
+    "install": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      0.8,
+      1.3,
+      1.8
+     ],
+     "evidence": "Tip appears to be fitted in the blue rack, but sampled frames do not clearly show whether it is fully/correctly seated or the correct size."
+    }
+   },
+   "summary": "The clip mainly shows a pipette tip being placed into or seated from a blue tip rack, then moved away. No clear pipetting into liquids, cross-contamination, surface contact, or premature tip release is visible.",
+   "frames": 9
+  },
+  {
+   "clip_id": "pmd_incorrect_early_release_1000ul_tip_08",
+   "label": "error",
+   "mistake_type": "early_release",
+   "true_category": "release",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      2.8,
+      3.3,
+      3.8,
+      4.3
+     ],
+     "evidence": "The same tip appears to move between positions in the blue rack, but it is not visible whether these contain different samples/reagents or whether reuse is inappropriate."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip being inserted into positions in a blue rack and moved between them. No clear technique error is visibly demonstrated; possible reuse between rack positions is unclear because sample/reagent identity is not visible.",
+   "frames": 9
+  },
+  {
+   "clip_id": "pmd_incorrect_early_release_10ul_tip_02",
+   "label": "error",
+   "mistake_type": "early_release",
+   "true_category": "release",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "install"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "A single tip appears to be used/moved, but the frames do not show whether it contacts different samples/reagents or should have been discarded."
+    },
+    "install": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "A tip appears attached, but the frames do not clearly show seating/fit or size compatibility."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip being positioned at the red rack and moved across the bench. No definite aspirate/dispense or visible technique error is shown; several details remain unclear from the sampled frames.",
+   "frames": 6
+  },
+  {
+   "clip_id": "pmd_incorrect_early_release_10ul_tip_07",
+   "label": "error",
+   "mistake_type": "early_release",
+   "true_category": "release",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "install"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "A tip is already attached, but the clip does not show prior use or use on different samples/reagents."
+    },
+    "install": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      0.3,
+      0.8,
+      1.3,
+      2.8,
+      4.8
+     ],
+     "evidence": "A tip is attached and appears seated, but frames are not sufficient to verify correct size/fit."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip being moved over racks/plate area, with no clearly visible liquid handling step or visible technique error.",
+   "frames": 10
+  },
+  {
+   "clip_id": "pmd_incorrect_early_release_10ul_tip_12",
+   "label": "error",
+   "mistake_type": "early_release",
+   "true_category": "release",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same tip is seen moving between areas, but no clear transfer into different samples/reagents or required discard point is visible."
+    }
+   },
+   "summary": "The clip shows a pipette with a fitted tip moving to a red tube rack, away over a central plate, then back. No definite technique error is visible from the sampled frames.",
+   "frames": 8
+  },
+  {
+   "clip_id": "pmd_incorrect_early_release_200ul_tip_01",
+   "label": "error",
+   "mistake_type": "early_release",
+   "true_category": "release",
+   "prediction": "correct",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [],
+   "evidence": {},
+   "summary": "The clip shows a pipette with an attached tip being held/moved over the workspace, but no clear liquid handling step or technique error is visible.",
+   "frames": 7
+  },
+  {
+   "clip_id": "pmd_incorrect_early_release_200ul_tip_06",
+   "label": "error",
+   "mistake_type": "early_release",
+   "true_category": "release",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "surface"
+   ],
+   "evidence": {
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      2.6,
+      3.6,
+      5.7,
+      7.7,
+      9.8,
+      12.9
+     ],
+     "evidence": "The gloved hand handles items in/near the tip rack, but it is not clear that a contaminated touched tip is the same tip later used by the pipette."
+    }
+   },
+   "summary": "The clip mainly shows manual handling near the tip rack and a pipette attaching/lifting a tip. No definite liquid transfer is visible. No clear reuse, release, or installation error is visible; possible glove contact with tips is unclear because the exact tip later used cannot be confirmed.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_incorrect_early_release_20ul_tip_04",
+   "label": "error",
+   "mistake_type": "early_release",
+   "true_category": "release",
+   "prediction": "correct",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [],
+   "evidence": {},
+   "summary": "The clip shows a pipette with an attached tip being moved around the bench, but no clear aspiration, dispensing, or tip ejection. No visible technique error is evident from the sampled frames.",
+   "frames": 7
+  },
+  {
+   "clip_id": "pmd_incorrect_early_release_20ul_tip_09",
+   "label": "error",
+   "mistake_type": "early_release",
+   "true_category": "release",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "surface",
+    "install"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "No clear aspirate/dispense into different media or reuse after required discard is visible."
+    },
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      10.8,
+      11.3
+     ],
+     "evidence": "Tip is moved close to bench and nearby boxes, but visible frames do not clearly show the tip touching a non-sterile surface before use."
+    },
+    "install": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      8.8,
+      9.3,
+      9.8
+     ],
+     "evidence": "Tip is already on the pipette and/or being pressed into the rack, but frames do not clearly show whether the tip is wrong size or incorrectly seated."
+    }
+   },
+   "summary": "The clip mainly shows handling near a tip rack and a pipette with a tip attached. No definite pipetting transfer or definite technique error is visible.",
+   "frames": 23
+  },
+  {
+   "clip_id": "pmd_incorrect_wrong_tip_1000ul_tip_on_10ul_pipette_04",
+   "label": "error",
+   "mistake_type": "wrong_tip_for_pipette",
+   "true_category": "install",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      5.8,
+      6.3,
+      6.8
+     ],
+     "evidence": "The same tip appears to be used for a second operation in the blue rack, but the frames do not show whether it is the same or a different sample/reagent, or whether reuse is inappropriate."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip used twice at the blue rack. No clear technique error is visibly demonstrated; possible tip reuse across different contents cannot be determined from the frames.",
+   "frames": 19
+  },
+  {
+   "clip_id": "pmd_incorrect_wrong_tip_1000ul_tip_on_200ul_pipette_04",
+   "label": "error",
+   "mistake_type": "wrong_tip_for_pipette",
+   "true_category": "install",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same attached tip appears to be used in two visits to the blue rack/plate, but the frames do not show whether different samples/reagents/media are contacted or whether the tip should have been discarded."
+    }
+   },
+   "summary": "The clip shows a pipette with an attached tip being removed from a stand, used at a blue rack/plate area, returned to the stand, then used again at the same area. No clear technique error is visibly demonstrated, though reuse status is unclear because the contacted liquid/sample identities are not visible.",
+   "frames": 24
+  },
+  {
+   "clip_id": "pmd_incorrect_wrong_tip_1000ul_tip_on_20ul_pipette_05",
+   "label": "error",
+   "mistake_type": "wrong_tip_for_pipette",
+   "true_category": "install",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "install"
+   ],
+   "evidence": {
+    "install": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      3.3,
+      3.8,
+      4.3,
+      4.8
+     ],
+     "evidence": "The pipette tip is inserted into a blue rack/box, but the frames do not clearly show whether the tip is correctly fitted/seated or whether the tip size is appropriate."
+    }
+   },
+   "summary": "A pipette is taken from the rack, placed into a blue tip box/rack area as if to attach a tip, then removed and returned to the rack. No clear pipetting into samples or visible contamination/reuse/release error is shown. Tip installation correctness is unclear from the frames.",
+   "frames": 13
+  },
+  {
+   "clip_id": "pmd_incorrect_wrong_tip_10ul_tip_on_200ul_pipette_01",
+   "label": "error",
+   "mistake_type": "wrong_tip_for_pipette",
+   "true_category": "install",
+   "prediction": "correct",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [],
+   "evidence": {},
+   "summary": "The clip shows a gloved hand taking a pipette with an attached tip from a rack, moving it around the bench area, and raising it back toward the rack. No aspiration, dispensing, tip ejection, surface contact, or clear technique error is visible.",
+   "frames": 10
+  },
+  {
+   "clip_id": "pmd_incorrect_wrong_tip_200ul_tip_on_1000ul_pipette_03",
+   "label": "error",
+   "mistake_type": "wrong_tip_for_pipette",
+   "true_category": "install",
+   "prediction": "correct",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [],
+   "evidence": {},
+   "summary": "The visible clip shows selecting a pipette, attaching/seating a tip from a tip rack, and returning the pipette to the rack. No visible pipetting technique error is evident in the sampled frames.",
+   "frames": 18
+  },
+  {
+   "clip_id": "pmd_incorrect_wrong_tip_200ul_tip_on_20ul_pipette_04",
+   "label": "error",
+   "mistake_type": "wrong_tip_for_pipette",
+   "true_category": "install",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same tip is used in one visible well/tube and then left on the pipette, but no second different medium/sample/reagent use is visible."
+    }
+   },
+   "summary": "A pipette with a pre-attached tip is taken from the rack, used in a yellow rack well/tube, and returned to the rack with the tip still attached. No definite listed technique error is visible, though later reuse cannot be determined from this clip.",
+   "frames": 13
+  },
+  {
+   "clip_id": "pmd_incorrect_wrong_tip_20ul_tip_on_1000ul_pipette_04",
+   "label": "error",
+   "mistake_type": "wrong_tip_for_pipette",
+   "true_category": "install",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse",
+    "surface"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The tip is used in one visible rack/well area and then returned to the rack; no second different sample/reagent use is visible."
+    },
+    "surface": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      3.3,
+      3.8,
+      4.3,
+      4.8,
+      5.3,
+      5.8,
+      6.3,
+      6.8
+     ],
+     "evidence": "The tip is inserted/held at a yellow rack/well area, but the frames do not clearly show whether it touches a non-sterile surface versus entering a tube/well."
+    }
+   },
+   "summary": "A pipette with an attached tip is taken from the rack, used at a yellow rack/well area, and returned to the rack with the tip still attached. No definite error is visible; the exact pipetting step and whether the tip contacted a non-sterile surface are unclear.",
+   "frames": 19
+  },
+  {
+   "clip_id": "pmd_incorrect_wrong_tip_20ul_tip_on_10ul_pipette_05",
+   "label": "error",
+   "mistake_type": "wrong_tip_for_pipette",
+   "true_category": "install",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "install"
+   ],
+   "evidence": {
+    "install": {
+     "status": "unclear",
+     "evidence_timestamps": [
+      2.8,
+      3.3,
+      3.8,
+      4.3,
+      4.8,
+      5.3
+     ],
+     "evidence": "The pipette is placed into a red tip box and later has a long tip/nozzle visible, but the frames do not clearly show whether the tip is correctly seated or whether it is the wrong size."
+    }
+   },
+   "summary": "The visible clip shows a pipette being taken from the rack, positioned in a tip box, then returned to the rack. No visible aspiration/dispense or clear technique error is shown; tip installation quality is not clear from the frames.",
+   "frames": 14
+  },
+  {
+   "clip_id": "pmd_incorrect_wrong_tip_20ul_tip_on_200ul_pipette_01",
+   "label": "error",
+   "mistake_type": "wrong_tip_for_pipette",
+   "true_category": "install",
+   "prediction": "unclear",
+   "correct": false,
+   "present_categories": [],
+   "unclear_categories": [
+    "reuse"
+   ],
+   "evidence": {
+    "reuse": {
+     "status": "unclear",
+     "evidence_timestamps": [],
+     "evidence": "The same tip is used in/over wells, but the frames do not show whether different samples/reagents are involved or whether it should have been discarded."
+    }
+   },
+   "summary": "A pipette with an attached tip is used in a yellow rack/plate and then moved away and returned to the holder. No clear technique error is visibly present; reuse is unclear because sample identities and intended tip changes are not visible.",
+   "frames": 24
+  }
+ ]
+}

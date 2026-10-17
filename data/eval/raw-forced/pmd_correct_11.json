@@ -1,0 +1,121 @@
+{
+ "clip_id": "pmd_correct_11",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 24,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8,
+  5.3,
+  5.8,
+  6.3,
+  6.8,
+  7.3,
+  7.8,
+  8.3,
+  8.8,
+  9.3,
+  9.8,
+  10.3,
+  10.8,
+  11.3,
+  11.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 7702,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 485,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 8187
+ },
+ "output": {
+  "verdict": "error",
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 2.3,
+    "description": "Pipette with attached tip is positioned into/over a well of the yellow 96-well plate; likely aspirate or dispense in the plate."
+   },
+   {
+    "start": 2.3,
+    "end": 3.3,
+    "description": "Tip is lifted from the plate and moved toward the purple waste container."
+   },
+   {
+    "start": 3.3,
+    "end": 8.3,
+    "description": "Tip is held at/inside the purple waste container; appears to dispense or empty liquid into waste."
+   },
+   {
+    "start": 8.8,
+    "end": 9.3,
+    "description": "Pipette is raised and repositioned above the waste container."
+   },
+   {
+    "start": 9.8,
+    "end": 10.8,
+    "description": "Same tip is inserted/held in the purple waste container again; possible second dispense or contact with waste container interior."
+   },
+   {
+    "start": 10.8,
+    "end": 11.8,
+    "description": "Pipette with same tip is moved back from waste area toward the 96-well plate."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "present",
+    "evidence_timestamps": [
+     11.3,
+     11.8
+    ],
+    "evidence": "The same tip used in/at the purple waste container is moved back toward the well plate, suggesting reuse after waste contact/use."
+   },
+   "surface": {
+    "status": "present",
+    "evidence_timestamps": [
+     3.3,
+     3.8,
+     4.3,
+     4.8,
+     5.3,
+     5.8,
+     6.3,
+     6.8,
+     7.3,
+     7.8,
+     8.3,
+     9.8,
+     10.3,
+     10.8
+    ],
+    "evidence": "The tip is placed at/inside the purple waste container, a non-sterile/waste surface, and then is moved back toward the plate."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "No tip ejection, dropping, or unexpected release is visible."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "Tip appears attached and appropriately seated; no visible wrong-size or loose fitting issue."
+   }
+  },
+  "overall_summary": "The visible issue is that the same tip contacts/enters the waste container and is then brought back toward the sample plate, making contamination/reuse error more likely than not."
+ }
+}

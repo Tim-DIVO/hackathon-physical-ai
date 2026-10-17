@@ -1,0 +1,79 @@
+{
+ "clip_id": "pmd_incorrect_early_release_10ul_tip_07",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 10,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3,
+  4.8
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 3514,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 337,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 3851
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 1.8,
+    "description": "Pipette with tip attached is held above/near the red tube rack; no clear aspiration or dispensing visible."
+   },
+   {
+    "start": 1.8,
+    "end": 2.8,
+    "description": "Pipette is moved away from the red rack toward the center/clear well area."
+   },
+   {
+    "start": 2.8,
+    "end": 4.8,
+    "description": "Pipette is held hovering over the clear plate/bench area; no clear contact, aspiration, dispense, or tip ejection visible."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "A tip is already attached, but the clip does not show prior use or use on different samples/reagents."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip remains visibly suspended; no contact with bench, glove, tube exterior, or other non-sterile surface is shown."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip stays attached throughout the visible clip; no dropping or ejection is seen."
+   },
+   "install": {
+    "status": "unclear",
+    "evidence_timestamps": [
+     0.3,
+     0.8,
+     1.3,
+     2.8,
+     4.8
+    ],
+    "evidence": "A tip is attached and appears seated, but frames are not sufficient to verify correct size/fit."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip being moved over racks/plate area, with no clearly visible liquid handling step or visible technique error."
+ }
+}

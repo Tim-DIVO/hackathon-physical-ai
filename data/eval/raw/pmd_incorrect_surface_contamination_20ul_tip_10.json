@@ -1,0 +1,82 @@
+{
+ "clip_id": "pmd_incorrect_surface_contamination_20ul_tip_10",
+ "model": "gpt-5.5-2026-04-23",
+ "frames": 9,
+ "frame_times": [
+  0.3,
+  0.8,
+  1.3,
+  1.8,
+  2.3,
+  2.8,
+  3.3,
+  3.8,
+  4.3
+ ],
+ "frame_width": 640,
+ "detail": "high",
+ "usage": {
+  "input_tokens": 3219,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 371,
+  "output_tokens_details": {
+   "reasoning_tokens": 0
+  },
+  "total_tokens": 3590
+ },
+ "output": {
+  "actions": [
+   {
+    "start": 0.3,
+    "end": 0.8,
+    "description": "Pipette with a tip already attached is held over/near the yellow liquid reservoir."
+   },
+   {
+    "start": 0.8,
+    "end": 1.8,
+    "description": "Pipette is moved from the reservoir area toward the yellow tip rack on the right."
+   },
+   {
+    "start": 1.8,
+    "end": 2.3,
+    "description": "Tip is positioned over/at the tip rack area; no clear tip attachment or ejection is visible."
+   },
+   {
+    "start": 2.3,
+    "end": 3.8,
+    "description": "Pipette is moved back across the bench over the tube strip/plate area."
+   },
+   {
+    "start": 3.8,
+    "end": 4.3,
+    "description": "Pipette returns toward the yellow reservoir; tip remains attached."
+   }
+  ],
+  "categories": {
+   "reuse": {
+    "status": "unclear",
+    "evidence_timestamps": [],
+    "evidence": "The same tip appears attached throughout, but the frames do not clearly show aspiration/dispense or contact with different samples/reagents."
+   },
+   "surface": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip is not visibly touching the bench, glove, tube exterior, or other non-sterile surface."
+   },
+   "release": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "The tip remains attached; no visible dropped or prematurely ejected tip."
+   },
+   "install": {
+    "status": "absent",
+    "evidence_timestamps": [],
+    "evidence": "A tip is visible and appears seated on the pipette; no visible size mismatch or poor fit."
+   }
+  },
+  "overall_summary": "The clip shows a pipette with an attached tip moving between a reservoir, tip rack area, and tube/plate area. No clear pipetting liquid transfer or visible technique error is shown."
+ }
+}

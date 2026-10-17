@@ -1,0 +1,287 @@
+{
+  "runId": "run-mvce6l2f",
+  "startedAt": "2026-10-17T12:48:07.335Z",
+  "windows": [
+    {
+      "start": 0,
+      "end": 4,
+      "events": [
+        {
+          "id": "pmd_correct_06-live-0-0",
+          "clipId": "pmd_correct_06",
+          "start": 0,
+          "end": 3.5,
+          "action": "Pipette in tube",
+          "actionLabel": "other",
+          "tipState": "unclear",
+          "description": "A gloved hand holds a white micropipette with a tip inserted into a small tube/opening in a blue tube rack. The plunger/volume dial is not legible, and no clear aspiration or dispensing motion is visible in the frames.",
+          "objects": [
+            "micropipette",
+            "pipette tip",
+            "blue tube rack",
+            "small tube/opening"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "The identity of the tube/sample in the blue rack is not readable and may need review.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            0,
+            0.5,
+            1,
+            1.5,
+            2,
+            2.5,
+            3,
+            3.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3021,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 200,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3221
+      }
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "events": [
+        {
+          "id": "pmd_correct_06-live-40-0",
+          "clipId": "pmd_correct_06",
+          "start": 4,
+          "end": 7.5,
+          "action": "Pipette over tubes",
+          "actionLabel": "other",
+          "tipState": "unclear",
+          "description": "A gloved hand holds a single-channel micropipette with a white/clear tip attached and moves/positions it over a white rack of small tubes or wells. No clear aspiration, dispensing, tip pickup, or tip ejection is visible, and container/sample identity is unreadable.",
+          "objects": [
+            "single-channel micropipette",
+            "attached pipette tip",
+            "white tube/well rack"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": "single-channel micropipette, white/clear tip",
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Possible issue needing review: the pipette is positioned over small tubes/wells, but the container/sample identity is unreadable and no specific reagent or EP tube can be confirmed.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            4,
+            4.5,
+            5,
+            5.5,
+            6,
+            6.5,
+            7,
+            7.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3021,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 232,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3253
+      }
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "events": [
+        {
+          "id": "pmd_correct_06-live-80-0",
+          "clipId": "pmd_correct_06",
+          "start": 8,
+          "end": 10,
+          "action": "Pipette over tubes",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "Gloved hand holds a pipette with a clear/white tip over a cluster of small clear tubes/containers on the bench; the tip remains attached and is positioned near the tube openings, but no definite aspiration or dispensing is visible.",
+          "objects": [
+            "pipette",
+            "attached tip",
+            "small clear tubes"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [
+            {
+              "type": "unknown_sample",
+              "message": "Container/sample identity matters but the small tubes under the pipette are unreadable; review whether this corresponds to a protocol reagent or EP tube.",
+              "status": "needs_review"
+            }
+          ],
+          "evidenceFrames": [
+            8,
+            8.5,
+            9,
+            9.5,
+            10
+          ]
+        },
+        {
+          "id": "pmd_correct_06-live-80-1",
+          "clipId": "pmd_correct_06",
+          "start": 10.5,
+          "end": 11.5,
+          "action": "Place pipette in waste",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The pipette is moved from the tube area toward the purple container labeled WASTE, and the attached tip is lowered into the waste container. No visible tip ejection occurs in this window.",
+          "objects": [
+            "pipette",
+            "attached tip",
+            "waste container"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            10.5,
+            11,
+            11.5
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 8,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 3035,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 311,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3346
+      }
+    },
+    {
+      "start": 12,
+      "end": 14,
+      "events": [
+        {
+          "id": "pmd_correct_06-live-120-0",
+          "clipId": "pmd_correct_06",
+          "start": 12,
+          "end": 12.5,
+          "action": "Pipette over waste",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "A gloved hand holds a pipette with an attached tip positioned into/over a container labeled WASTE. No liquid transfer or tip ejection is visibly confirmed.",
+          "objects": [
+            "pipette",
+            "attached tip",
+            "waste container"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            12,
+            12.5
+          ]
+        },
+        {
+          "id": "pmd_correct_06-live-120-1",
+          "clipId": "pmd_correct_06",
+          "start": 12.5,
+          "end": 13,
+          "action": "Move pipette away",
+          "actionLabel": "other",
+          "tipState": "same_tip_continued",
+          "description": "The same pipette with attached tip is moved away from the waste container across the bench area toward racks/boxes. No aspiration, dispense, or tip change is visible.",
+          "objects": [
+            "pipette",
+            "attached tip",
+            "bench racks"
+          ],
+          "sourceSampleId": null,
+          "destinationSampleId": null,
+          "volumeUl": null,
+          "visualQuantity": null,
+          "protocolStep": null,
+          "verification": "pending",
+          "origin": "model",
+          "flags": [],
+          "evidenceFrames": [
+            12.5,
+            13
+          ]
+        }
+      ],
+      "tipStateAtEnd": "same_tip_continued",
+      "frames": 3,
+      "model": "gpt-5.5",
+      "usage": {
+        "input_tokens": 1577,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 242,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1819
+      }
+    }
+  ]
+}
