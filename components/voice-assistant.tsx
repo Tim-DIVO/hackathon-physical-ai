@@ -35,6 +35,28 @@ export interface VoiceAssistantProps {
   procedure?: string;
   /** HUD: connect hands-free when true (no tap-to-talk). */
   autoConnect?: boolean;
+  /** A yes/no check the supervisor has put to the operator (HUD). Answered by voice, never by clicking. */
+  pendingCheck?: { key: string; question: string } | null;
+  /** The operator answered the pending check: ok = "that's fine", false = "log it as a deviation". */
+  onAnswerCheck?: (ok: boolean, words: string) => void;
+  /** HUD: the supervisor's current question or warning (null once answered), for the page to show in view. */
+  onAsk?: (ask: { text: string; kind: "question" | "warning" } | null) => void;
+}
+
+const LAB_CONTENT =
+  /\d|µ|\b(ul|ml|mg|ug|ng|mm|nm|x)\b|%|reagent|tube|tip|plasmid|cell|buffer|medi(a|um)|dmso|pbs|fbs|virus|moi|polybrene|incubat|mix|dilut|lipofect|opti-?mem|dna|rna|cas9|guide|dish|vial|confluen|aliquot|label|spun|centrifug|pellet|wash/i;
+const YES =/\b(yes|yeah|yep|yup|sure|fine|ok(ay)?|that'?s (fine|ok(ay)?|intended|right)|it'?s (fine|ok(ay)?|intended)|go ahead|all good|no problem|same reagent|intended|correct)\b/i;
+const NO = /\b(no|nope|nah|log it|my bad|mistake|oops|wrong|didn'?t mean|not intended|i forgot|deviation)\b/i;
+
+/** Classifies a reply to a yes/no check. "No problem" is a yes; anything ambiguous is null. */
+export function classifyAnswer(text: string): boolean | null {
+  const t = text.toLowerCase();
+  // "No, that's fine" / "no problem" mean yes; check those before the bare "no".
+  if (/\bno problem\b|\bnot a problem\b|\b(that'?s|it'?s|that is|it is) (fine|ok(ay)?|intended)\b/.test(t)) return true;
+  const yes = YES.test(t);
+  const no = NO.test(t);
+  if (yes === no) return null;
+  return yes;
 }
 
 type Tag = "Model observation" | "Operator fact" | "Reference protocol" | "Supervisor" | "Action";
@@ -97,6 +119,15 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
   const [spokenAlerts, setSpokenAlerts] = useState(true);
   const [coach, setCoach] = useState(false);
   const [micMuted, setMicMuted] = useState(false);
+  /** What the supervisor last asked or warned about, shown in view until the operator answers out loud. */
+  const [ask, setAsk] = useState<{ text: string; kind: "question" | "warning" } | null>(null);
+  const awaitingAlertReply = useRef(false);
+  useEffect(() => {
+    props.onAsk?.(ask);
+    if (!ask) return;
+    const t = setTimeout(() => setAsk(null), 20000);
+    return () => clearTimeout(t);
+  }, [ask]);
   const recognition = useRef<Recognition | null>(null);
   const active = useRef(true);
   const playback = useRef<HTMLAudioElement | null>(null);
@@ -302,6 +333,15 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
     onMessage: ({ message, source }) => {
       if (!message || message.startsWith(ALERT_PREFIX)) return;
       add({ role: source === "user" ? "you" : "assistant", text: message });
+      if (source === "user") {
+        setAsk(null);
+        // Resolve checks and write the notebook from the transcript itself, not via agent tool calls.
+        if (!answerCheck(message)) recordUtterance(message);
+        return;
+      }
+      if (/\?\s*$/.test(message)) setAsk({ text: message, kind: "question" });
+      else if (awaitingAlertReply.current) setAsk({ text: message, kind: "warning" });
+      awaitingAlertReply.current = false;
     },
     onConnect: () => setMode("ElevenLabs · live"),
     onDisconnect: () => {
@@ -315,9 +355,52 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
   });
   const connected = conversation.status === "connected";
 
+  /**
+   * Everything the operator says lands in the notebook here, in the browser: facts (sample, volume,
+   * concentration, tip change) on the matching event, other statements as notes. The voice agent never
+   * has to call a tool first, so it can answer straight away.
+   */
+  function recordUtterance(text: string): string | null {
+    const { p, visible, step } = state();
+    const result = interpretCommand(text, visible.filter((e) => e.origin === "model"), p.samples, p.protocol, step);
+    const conc = text.match(/(\d+(?:\.\d+)?\s*(?:µg\/µl|ug\/ul|ng\/µl|ng\/ul|mg\/ml|µm|um|nm|mm|x))/i)?.[1];
+    if (result.patch || conc) {
+      const tipChanged = result.patch?.flags?.some((f) => f.type === "tip_reuse" && f.status === "dismissed");
+      return tools.update_event({
+        source_sample_id: result.patch?.sourceSampleId ?? undefined,
+        destination_sample_id: result.patch?.destinationSampleId ?? undefined,
+        volume_ul: result.patch?.volumeUl ?? undefined,
+        concentration: conc,
+        tip_changed: tipChanged,
+      });
+    }
+    const question = /\?\s*$/.test(text) || /^(what|how|why|when|which|where|who|did|do|does|can|could|should|is|are|am)\b/i.test(text.trim());
+    // Only statements with lab content become notes; "okay, let's see" is conversation, not a record.
+    if (question || text.trim().split(/\s+/).length < 3 || !LAB_CONTENT.test(text)) return null;
+    return tools.add_note({ text });
+  }
+
+  /** A spoken reply to the open check resolves it at once, before the voice agent has even answered. */
+  function answerCheck(text: string): boolean {
+    const check = latest.current.pendingCheck;
+    if (!check || !latest.current.onAnswerCheck) return false;
+    const ok = classifyAnswer(text);
+    if (ok === null) return false;
+    latest.current.onAnswerCheck(ok, text);
+    if (conversation.status === "connected")
+      conversation.sendContextualUpdate(
+        `[Check answered] The operator answered "${check.question}" with "${text}" (${ok ? "fine as is" : "log it as a deviation"}). It is recorded; do not ask again. Acknowledge in at most four words.`,
+      );
+    return true;
+  }
+
   /** Typed or browser-recognised input runs the same tools locally. */
   function execute(text: string, audible: boolean) {
     add({ role: "you", text });
+    if (answerCheck(text)) {
+      if (audible) void speakTts("Got it, noted.");
+      return;
+    }
     const lower = text.toLowerCase();
     let reply: string;
     const tab = VIEW_TABS.find((t) => lower.includes(`open ${t.toLowerCase()}`) || lower.includes(`show ${t.toLowerCase()}`));
@@ -331,27 +414,9 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
     else {
       const { p, visible, step } = state();
       const result = interpretCommand(text, visible.filter((e) => e.origin === "model"), p.samples, p.protocol, step);
-      const conc = text.match(/(\d+(?:\.\d+)?\s*(?:µg\/µl|ug\/ul|ng\/µl|ng\/ul|mg\/ml|µm|um|nm|mm|x))/i)?.[1];
-      if (result.patch || conc) {
-        const s = result.patch?.sourceSampleId ?? undefined;
-        const d = result.patch?.destinationSampleId ?? undefined;
-        const tipChanged = result.patch?.flags?.some((f) => f.type === "tip_reuse" && f.status === "dismissed");
-        reply = tools.update_event({
-          source_sample_id: s,
-          destination_sample_id: d,
-          volume_ul: result.patch?.volumeUl ?? undefined,
-          concentration: conc,
-          tip_changed: tipChanged,
-        });
-      } else if (/mistake|warning|flag|problem|wrong/.test(lower)) {
-        reply = result.reply;
-        add({ role: "assistant", text: reply, tag: "Model observation" });
-      } else if (!/\?\s*$/.test(text) && !/^(what|how|why|when|which|did|do|can|is|are)\b/.test(lower)) {
-        reply = tools.add_note({ text });
-      } else {
-        reply = result.reply;
-        add({ role: "assistant", text: reply });
-      }
+      const recorded = /mistake|warning|flag|problem|wrong/.test(lower) ? null : recordUtterance(text);
+      reply = recorded ?? result.reply;
+      if (!recorded) add({ role: "assistant", text: reply });
     }
     if (audible) void speakTts(reply);
   }
@@ -360,9 +425,10 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
   async function speakUp(facts: string, kind: "alert" | "coach") {
     const instruction =
       kind === "alert"
-        ? "Speak up now about this, directly to the operator."
-        : "The operator just reached this step. Give one short, practical tip for it.";
+        ? "Ask the operator one short yes/no question about this (max 12 words)."
+        : "The operator just reached this step. Tell them in max 12 words what to do now.";
     if (connected) {
+      if (kind === "alert") awaitingAlertReply.current = true;
       conversation.sendUserMessage(`${ALERT_PREFIX} ${instruction} Facts: ${facts}`);
       return;
     }
@@ -375,6 +441,7 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
       const data = await response.json();
       if (!response.ok || !data.text || !active.current) return;
       add({ role: "assistant", text: data.text, tag: kind === "alert" ? "Supervisor" : "Reference protocol" });
+      setAsk({ text: data.text, kind: /\?\s*$/.test(data.text) ? "question" : "warning" });
       void speakTts(data.text);
     } catch {
       // Proactive speech is best-effort; the flag stays visible in the HUD.
@@ -392,8 +459,12 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
     const open = visible
       .flatMap((e) => e.flags.filter((f) => f.status === "needs_review").map((f) => `${f.type.replace("_", " ")} at ${fmt(e.start)}`))
       .slice(-4);
+    const stepNow = step ? props.protocol.find((s) => s.id === step) : undefined;
+    const stepNext = props.protocol.find((s) => s.id === (step ?? 0) + 1);
     const summary = [
       `Procedure: ${props.procedure ?? "CRISPR-Cas9 lipofection into HEK293T"}.`,
+      stepNow ? `Protocol now: ${stepNow.description}` : "",
+      stepNext ? `Protocol next: ${stepNext.description}` : "",
       `Time ${fmt(props.currentTime)}.`,
       step ? `Protocol step ${step}.` : "",
       current ? `Right now: ${current.action}${current.visualQuantity ? ` (${current.visualQuantity})` : ""}, tip ${current.tipState ?? "unclear"}.` : "",
@@ -414,8 +485,9 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
     for (const event of props.events) {
       if (event.start > t + 0.5 || t - event.end > 12) continue;
       for (const flag of event.flags) {
-        if (flag.status !== "needs_review") continue;
-        const key = flag.type === "unknown_sample" ? "unknown_sample" : flag.type === "tip_reuse" ? "tip_reuse" : `${event.id}:${flag.type}`;
+        // Never quiz the operator about sample or reagent IDs; those stay silent gaps in the record.
+        if (flag.status !== "needs_review" || flag.type === "unknown_sample") continue;
+        const key = flag.type === "tip_reuse" ? "tip_reuse" : `${event.id}:${flag.type}`;
         if (alerted.current.has(key) || !spokenAlerts) continue;
         alerted.current.add(key);
         void speakUp(alertFacts(event, flag), "alert");
@@ -500,6 +572,14 @@ export function VoiceAssistant(props: VoiceAssistantProps) {
     const label = orbState === "speaking" ? "Supervisor speaking" : live ? (micMuted ? "Mic off · supervisor can still warn you" : "Listening") : mode === "Ready" ? "Supervisor standby" : mode;
     return (
       <>
+        {/* The page's own check card takes this spot while a flag is open, so the two never stack. */}
+        {ask && !props.pendingCheck && !props.onAsk && (
+          <div className={`hud-ask ${ask.kind}`} role="status" key={ask.text}>
+            <small>{ask.kind === "question" ? "Supervisor asks" : "Heads up"}</small>
+            <b>{ask.text}</b>
+            <span>Answer out loud</span>
+          </div>
+        )}
         <div className={`hud-voice-pill ${micMuted ? "muted" : orbState}`} role="status" aria-live="polite">
           <i />
           {label}

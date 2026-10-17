@@ -8,6 +8,22 @@ import { protocolSteps, sampleRegistry } from "@/lib/reference";
 import { applySupervisor } from "@/lib/supervisor";
 import { VoiceAssistant } from "@/components/voice-assistant";
 import { downloadNotebook } from "@/lib/export";
+import { sayIdeas } from "@/lib/say-ideas";
+import { LabNotebook, notebookLines } from "@/components/lab-notebook";
+
+/** The supervisor's yes/no question for an open flag, as shown in view and answered by voice. */
+function checkQuestion(flag: LabEvent["flags"][number]) {
+  if (flag.type === "tip_reuse") return "Same tip as the last reagent. Intended?";
+  if (flag.type === "missing_step") return "Did the 20-min incubation happen?";
+  return flag.message;
+}
+
+/** How an answered check reads in the lab notes. */
+function checkNote(flag: LabEvent["flags"][number], ok: boolean) {
+  if (flag.type === "tip_reuse") return ok ? "Same tip across reagents, confirmed intended." : "Deviation: tip reused between reagents.";
+  if (flag.type === "missing_step") return ok ? "20-min incubation done off camera." : "Deviation: 20-min incubation skipped.";
+  return ok ? `Checked, OK: ${flag.message}` : `Deviation: ${flag.message}`;
+}
 
 interface Clip {
   id: string;
@@ -45,6 +61,7 @@ export default function LivePage() {
   const [current, setCurrent] = useState(0);
   const [hasReplay, setHasReplay] = useState(false);
   const [autoStart, setAutoStart] = useState(false);
+  const [agentAsk, setAgentAsk] = useState<{ text: string; kind: "question" | "warning" } | null>(null);
   const video = useRef<HTMLVideoElement>(null);
   const run = useRef({ token: 0, id: "", nextStart: 0, tipState: "unknown at start" });
   const eventsRef = useRef<LabEvent[]>([]);
@@ -192,10 +209,35 @@ export default function LivePage() {
   // Live annotations land a few seconds after the action; show the latest recent one.
   const now = [...visible].reverse().find((e) => e.origin === "model" && current - e.end < 10);
   const latestStep = [...visible].reverse().find((e) => e.protocolStep)?.protocolStep ?? null;
+  // An open check stays up until it is answered by voice (or 25 s pass); it is never a clickable pop-up.
   const alert = [...visible]
     .reverse()
-    .flatMap((e) => e.flags.filter((f) => f.status === "needs_review" && f.type !== "unknown_sample").map((f, i) => ({ e, f, i: e.flags.indexOf(f) })))
-    .find(({ e }) => current - e.end < 12);
+    .flatMap((e) => e.flags.filter((f) => f.status === "needs_review" && f.type !== "unknown_sample").map((f) => ({ e, f, i: e.flags.indexOf(f) })))
+    .find(({ e }) => current - e.end < 25);
+  const pendingCheck = alert ? { key: `${alert.e.id}:${alert.f.type}`, question: checkQuestion(alert.f) } : null;
+  function answerCheck(ok: boolean, words: string) {
+    if (!alert) return;
+    setFlag(alert.e, alert.i, ok ? "dismissed" : "confirmed");
+    const t = Math.round(current * 10) / 10;
+    const note: LabEvent = {
+      id: `check-${Date.now()}`,
+      clipId,
+      start: t,
+      end: t,
+      action: "Check",
+      description: checkNote(alert.f, ok),
+      objects: [],
+      sourceSampleId: null,
+      destinationSampleId: null,
+      volumeUl: null,
+      protocolStep: null,
+      verification: "confirmed",
+      origin: "operator",
+      flags: [],
+      evidenceFrames: [t],
+    };
+    setEvents((old) => [...old, note].sort((a, b) => a.start - b.start));
+  }
   const stepFacts = useMemo(() => {
     const stepStart = latestStep ? (visible.find((e) => e.protocolStep === latestStep)?.start ?? 0) : 0;
     const inStep = visible.filter((e) => e.start >= stepStart);
@@ -210,18 +252,30 @@ export default function LivePage() {
     const transfer = !clipId.startsWith("DJI") || !latestStep || [1, 2, 3, 6].includes(latestStep);
     const rows: { label: string; value: string | null; missing: string }[] = transfer
       ? [
-          { label: "Sample", value: source || destination ? `${source ?? "?"} → ${destination ?? "?"}` : null, missing: "Unidentified · say which tube" },
-          { label: "Volume", value: volume ? `${volume} µL${pipette ? ` · ${pipette}` : ""}` : null, missing: pipette ? `Not stated · ${pipette}` : "Not stated" },
-          { label: "Concentration", value: concentration, missing: "Not recorded" },
+          // Sample identity only shows once it's known: the operator is never asked for IDs.
+          ...(source || destination ? [{ label: "Sample", value: `${source ?? "?"} → ${destination ?? "?"}`, missing: "" }] : []),
+          { label: "Volume", value: volume ? `${volume} µL${pipette ? ` · ${pipette}` : ""}` : null, missing: pipette ? `${pipette} · say the volume` : "say the volume" },
+          { label: "Concentration", value: concentration, missing: "say it to record it" },
           { label: "Tip", value: tip ? tip.replaceAll("_", " ") : null, missing: "Not seen" },
         ]
       : [];
     return { rows };
   }, [visible, latestStep, clipId]);
-  const samplesSeen = sampleRegistry.map((s) => ({
-    ...s,
-    links: visible.filter((e) => e.sourceSampleId === s.id || e.destinationSampleId === s.id),
-  }));
+  const ideas = sayIdeas(clip?.protocol, latestStep, crispr);
+  // A flagged check outranks a free-form question from the voice supervisor; only one card is ever shown.
+  const centre = pendingCheck
+    ? { key: pendingCheck.key, kind: "check", label: "Check", text: pendingCheck.question, hint: "Say “that's fine” or “log it”" }
+    : agentAsk
+      ? {
+          key: agentAsk.text,
+          kind: agentAsk.kind,
+          label: agentAsk.kind === "question" ? "Question" : "Heads up",
+          text: agentAsk.text,
+          hint: `Answer out loud · e.g. ${ideas[0]}`,
+        }
+      : null;
+  const stepNow = crispr ? protocolSteps[(latestStep ?? 1) - 1] : undefined;
+  const stepNext = crispr ? protocolSteps[latestStep ?? 1] : undefined;
   const status =
     mode === "live"
       ? inFlight.length
@@ -296,75 +350,55 @@ export default function LivePage() {
         </div>
       </header>
 
-      {/* Protocol guidance + what is needed for this step, in the field of view. Gaps are highlighted. */}
-      <div className="hud-protocol">
+      {/* Step-by-step guide in view: what's done, what to do now (in the protocol's words), what's next. */}
+      <div className="hud-guide">
         {crispr && (
-        <div className="hud-protocol-steps">
-          {protocolSteps.map((st) => {
-            const deviation = all.some(
-              (e) => e.protocolStep === st.id && e.flags.some((f) => f.type !== "unknown_sample" && f.status !== "dismissed"),
-            );
-            const cls = st.id === latestStep ? "now" : latestStep && st.id < latestStep ? "past" : "";
-            return (
-              <span key={st.id} className={`${cls} ${deviation ? "deviation" : ""}`} title={st.description}>
-                {deviation ? "!" : st.id}
-              </span>
-            );
-          })}
-        </div>
-        )}
-        <strong>
-          {!crispr
-            ? clip?.protocol ?? "Bench procedure"
-            : latestStep
-              ? `Step ${latestStep} · ${protocolSteps[latestStep - 1].title}`
-              : "Step 1 · Add reagent 1"}
-        </strong>
-        {now && <span className="hud-now">Now: {now.action}</span>}
-        {stepFacts.rows.length > 0 && (
-          <dl className="hud-facts-grid">
-            {stepFacts.rows.map((r) => (
-              <div key={r.label} className={r.value ? (r.value.startsWith("same tip") ? "warn" : "ok") : "missing"}>
-                <dt>{r.label}</dt>
-                <dd>{r.value ?? r.missing}</dd>
-              </div>
-            ))}
-          </dl>
-        )}
-        {crispr && latestStep && latestStep < 7 && <small>Next: {protocolSteps[latestStep].description}</small>}
-      </div>
-
-      {/* Annotations float in view and fade; the full record is in the workspace notebook. */}
-      <div className="hud-annotations" aria-live="polite">
-        {visible
-          .filter((e) => current - e.start < 9)
-          .slice(-3)
-          .map((e) => (
-            <div key={e.id} className={`hud-tag ${e.origin}`}>
-              <time>{fmt(e.start)}</time>
-              <b>{e.origin === "model" ? e.action : e.description}</b>
-              {e.visualQuantity && <em>{e.visualQuantity}</em>}
-              {(e.sourceSampleId || e.volumeUl) && (
-                <em>
-                  {e.sourceSampleId ?? "?"} → {e.destinationSampleId ?? "?"}
-                  {e.volumeUl ? ` · ${e.volumeUl} µL` : ""}
-                </em>
-              )}
-            </div>
-          ))}
-      </div>
-
-      {alert && (
-        <div className="hud-alert" role="alert" key={`${alert.e.id}-${alert.f.type}`}>
-          <b>{alert.f.type === "tip_reuse" ? "Possible tip reuse" : "Protocol check"}</b>
-          <span>{alert.f.message}</span>
-          <div>
-            <button onClick={() => setFlag(alert.e, alert.i, "dismissed")}>It&apos;s fine</button>
-            <button onClick={() => setFlag(alert.e, alert.i, "confirmed")}>Log deviation</button>
+          <div className="hud-protocol-steps" aria-hidden>
+            {protocolSteps.map((st) => {
+              const deviation = all.some(
+                (e) => e.protocolStep === st.id && e.flags.some((f) => f.type !== "unknown_sample" && f.status !== "dismissed"),
+              );
+              const cls = st.id === (latestStep ?? 1) ? "now" : latestStep && st.id < latestStep ? "past" : "";
+              return (
+                <span key={st.id} className={`${cls} ${deviation ? "deviation" : ""}`}>
+                  {deviation ? "!" : st.id}
+                </span>
+              );
+            })}
           </div>
+        )}
+        {crispr && latestStep && latestStep > 1 && <div className="g-done">✓ {protocolSteps[latestStep - 2].title}</div>}
+        <div className="g-now">
+          <span>{stepNow ? `Step ${stepNow.id} of ${protocolSteps.length} · do now` : "Procedure"}</span>
+          <b>{stepNow ? stepNow.description : (clip?.protocol ?? "Bench procedure")}</b>
+        </div>
+        {stepNext && <div className="g-next">Next · {stepNext.description}</div>}
+      </div>
+
+      {/* Lab notes stack on the right as they are made. */}
+      <LabNotebook lines={notebookLines(visible)} />
+
+      {/* One card in view whenever the supervisor needs an answer: the check or question, plus this step's
+          volume / concentration / tip. Answered out loud, it goes away. Nothing to click. */}
+      {centre && (
+        <div className={`hud-ask ${centre.kind}`} role="status" key={centre.key}>
+          <small>{centre.label}</small>
+          <b>{centre.text}</b>
+          {stepFacts.rows.length > 0 && (
+            <dl className="hud-facts-grid">
+              {stepFacts.rows.map((r) => (
+                <div key={r.label} className={r.value ? (r.value.startsWith("same tip") ? "warn" : "ok") : "missing"}>
+                  <dt>{r.label}</dt>
+                  <dd>{r.value ?? r.missing}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
+          <span>{centre.hint}</span>
         </div>
       )}
       {error && <div className="hud-error">{error}</div>}
+
 
 
       <VoiceAssistant
@@ -376,7 +410,10 @@ export default function LivePage() {
         events={visible}
         currentTime={current}
         samples={sampleRegistry}
-        protocol={protocolSteps}
+        protocol={crispr ? protocolSteps : []}
+        pendingCheck={pendingCheck}
+        onAnswerCheck={answerCheck}
+        onAsk={setAgentAsk}
         onUpdateEvent={update}
         onAddEvent={(e) => setEvents((old) => [...old, e].sort((a, b) => a.start - b.start))}
         onSeek={(s) => video.current && (video.current.currentTime = s)}

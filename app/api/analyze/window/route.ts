@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import { z } from "zod";
 import { analyzeWindow } from "@/lib/live-analysis";
@@ -54,15 +54,32 @@ export async function POST(request: Request) {
   }
 }
 
-/** Returns the most recent live run for replay without spending tokens. */
+type RunLog = { runId: string; startedAt: string; windows: { events?: unknown[] }[] };
+const eventCount = (run: RunLog) => run.windows.reduce((n, w) => n + (w.events?.length ?? 0), 0);
+
+/**
+ * Returns the newest live run of this clip that produced observations, for replay without spending
+ * tokens. Each run has its own log (data/live-runs/<clip>/<runId>.json), so an aborted or failed run
+ * never hides an earlier good one; <clip>.json is the older single-file format.
+ */
 export async function GET(request: Request) {
   const id = clipIdSchema.safeParse(new URL(request.url).searchParams.get("clipId"));
   if (!id.success) return NextResponse.json({ error: "Invalid clipId." }, { status: 400 });
-  try {
-    return NextResponse.json(JSON.parse(await readFile(path.join(runsDir, `${id.data}.json`), "utf8")));
-  } catch {
-    return NextResponse.json({ error: "No previous live run." }, { status: 404 });
+  const dir = path.join(runsDir, id.data);
+  const names = await readdir(dir).catch(() => [] as string[]);
+  const runs = await Promise.all(
+    names.filter((n) => n.endsWith(".json")).map(async (n) => ({ file: path.join(dir, n), mtime: (await stat(path.join(dir, n))).mtimeMs })),
+  );
+  runs.sort((a, b) => b.mtime - a.mtime);
+  for (const file of [...runs.map((r) => r.file), path.join(runsDir, `${id.data}.json`)]) {
+    try {
+      const run = JSON.parse(await readFile(file, "utf8")) as RunLog;
+      if (eventCount(run) > 0) return NextResponse.json(run);
+    } catch {
+      // Missing or half-written log: try the next one.
+    }
   }
+  return NextResponse.json({ error: "No previous live run with observations." }, { status: 404 });
 }
 
 // Serialise read-modify-write of run logs; windows arrive concurrently.
@@ -74,8 +91,9 @@ function appendRun(clipId: string, runId: string, window: Record<string, unknown
 }
 
 async function appendRunUnsafe(clipId: string, runId: string, window: Record<string, unknown>) {
-  await mkdir(runsDir, { recursive: true });
-  const file = path.join(runsDir, `${clipId}.json`);
+  const dir = path.join(runsDir, clipId);
+  await mkdir(dir, { recursive: true });
+  const file = path.join(dir, `${runId}.json`);
   let run = { runId, startedAt: new Date().toISOString(), windows: [] as Record<string, unknown>[] };
   try {
     const existing = JSON.parse(await readFile(file, "utf8"));

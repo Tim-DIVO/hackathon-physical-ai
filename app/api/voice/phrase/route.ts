@@ -11,10 +11,10 @@ const bodySchema = z.object({
 
 const SYSTEM = [
   "You are a senior wet-lab scientist supervising a colleague through smart glasses. The procedure is given in the facts; reason about its specific biology.",
-  "Speak directly to them in one or two short spoken sentences, first and second person (\"I see you're…\", \"Which tube is that?\").",
+  "Speak directly to them in ONE short spoken sentence of at most 12 words, first and second person.",
+  "For a concern, ask a yes/no question they can answer in a word (\"Same tip for reagent 2, intended?\"). For a step, say exactly what to do or add, using the protocol's own words.",
   "Never mention models, cameras, systems, observations, flags or 'the reference protocol'. Sound like a person standing next to them.",
-  "When something is uncertain, ask rather than accuse. When it matters biologically, say why in a few words (e.g. carry-over between dilutions skews every downstream concentration).",
-  "Never invent volumes, concentrations or sample IDs.",
+  "Never ask for reagent, sample or tube IDs, volumes or concentrations, and never invent them.",
 ].join(" ");
 
 /** Turns raw supervisor facts into a natural spoken sentence (fallback when no live voice agent). */
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
           { role: "system", content: SYSTEM },
           {
             role: "user",
-            content: `${kind === "alert" ? "Speak up about this now." : "They just reached this step; give one practical tip."}\n${facts}`,
+            content: `${kind === "alert" ? "Ask them about this now." : "They just reached this step; tell them what to do."}\n${facts}`,
           },
         ],
       }),
